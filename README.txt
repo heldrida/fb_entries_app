@@ -12,3 +12,13 @@
 	- full page background
 
 		http://css-tricks.com/perfect-full-page-background-image/
+
+	- animations
+
+		http://lvivski.com/anima/#toc_12
+
+		http://daneden.github.io/animate.css/
+
+		https://github.com/maccman/gfx/blob/master/README.md
+
+		http://lvivski.com/anima/
