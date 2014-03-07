@@ -31,165 +31,53 @@
                 <nav>
                     <ul>
                         <li class="txt-a opt">
-                            home
+                            <a href="#/home">home</a>
                         </li>
                         <li class="txt-a opt">
-                            enter
+                            <a href="#/enter">enter</a>
                         </li>
                         <li class="txt-a nav-logo">
                             <img src="img/logo.png?20140306">
                         </li>
                         <li class="txt-a opt">
-                            entries
+                            <a href="#/entries">entries</a>
                         </li>
                         <li class="txt-a opt">
                             t's&amp;c's
                         </li>
                     </ul>
                 </nav>
-
-                <main role="main">
-                    
-                    <div class="row row-a row-header">
-                        <img src="img/header_getyourfaceintospace.png?20140306" />
-                    </div>
-
-                    <div class="row row-b row-enter-now planet-enter-blue font-gothic">
-                        <div class="astronauts">
-                            <div class="lady">
-                                <img src="img/spacewoman.png" />
-                            </div>
-                            <div class="can-cat">
-                                <img src="img/spacecatred.png" />
-                            </div>
-                        </div>
-                        <div class="balloons">
-                            <div class="first">
-                                <img src="img/Ballon_float1.png" />
-                            </div>
-                            <div class="second">
-                                <img src="img/Ballon_float2.png" />
-                            </div>
-                        </div>
-                        <div class="text-shadow-dark">
-                            <img src="img/Enter_now.png?20140306" />
-                            <p>time to pack those bags and put your socks on space kids.<br/>cause' we're taking you on a <span class="highlight">journey through time &amp; space</span>. <br/> well...pretty much.</p>
-                            <p>we are giving <span class="highlight">one lucky winner</span> the chance to get their beautiful face up <span class="highlight">into the stratosphere</span>.<br/>so what are you waiting for?<br/>sign up for the <span class="highlight">emerge space programme now!</span></p>
-                            <p>all you have to do is upload your finest selfie and tell us why you should be the one...</p>
-                        </div>
-                    </div>
-
-                    <div class="row row-b row-countdown font-gothic">
-
-                        <table id="contdown">
-                            <thead class="text-shadow-soft">
-                                <tr>
-                                    <td>days</td>
-                                    <td></td>
-                                    <td>hours</td>
-                                    <td></td>
-                                    <td>minutes</td>
-                                    <td></td>
-                                    <td>seconds</td>
-                                </tr>
-                            </thead>
-                            <tbody class="text-shadow-dark">
-                                <tr>
-                                    <td>
-                                        <span class="days">00</span>
-                                    </td>
-                                    <td>:</td>
-                                    <td>
-                                        <span class="hours">00</span>
-                                    </td>
-                                    <td>:</td>
-                                    <td>
-                                        <span class="minutes">00</span>
-                                    </td>
-                                    <td>:</td>
-                                    <td>
-                                        <span class="seconds">00</span>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <p class="text-shadow-soft">until launch!</p>
-
-                        <div class="contest-description text-shadow-dark">
-
-                            <p>the competition runs from start date 01/05/2014 to 31/05/2014 at that point we'll go through all of the entries and the one that we feel has given us the best reason to go will be picked as our intergalactic hero.</p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="row row-b row-video font-gothic">
-                        
-                        <p class="text-shadow-soft">check out this "space cowboy"</p>
-                        
-                        <iframe width="586" height="356" src="//www.youtube.com/embed/Y-rFT-uHm4w?rel=0" frameborder="0" allowfullscreen></iframe>
-
-                    </div>
-
-                    <div class="row row-b row-blastoff font-gothic">
-                        
-                        <div class="description">
-
-                            <p>a winner will be selected and with the use of some advanced cloning technological, top of the range scene and math, their face will be transformed into an intergalactic phenomenon, aka (a wibbly wobbly spaceman model.)</p>
-
-                            <p>it will then be launched up into the stratosphere to gaze down on this little planet we call home.</p>
-                            
-                            <p>we'll be filming this spectacular eet in glorious technicolor so your mission can be played over and over again.</p>
-
-                            
-                            <div class="spacecat">
-                                <img src="img/spacecat.png?20140306" />
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="row row-b row-enter-now font-gothic">
-
-                        <div class="planet">
-                            <img src="img/planet_blue.png" />
-                        </div>
-                        
-                        <button>enter now!</button>
-
-                    </div>
-
-                    <div class="row row-b row-footer font-gothic text-shadow-soft">
-                        
-                        <div class="footer-logo"></div>
-
-                        <p class="text-shadow-superglow"><a href="http://www.emergespaceprogramme.com" target="_blank">www.emergespaceprogramme.com</a> <a href="https://twitter.com/search?q=%23YourFaceInSpace&src=hash" target="blank"><span class="hashtag">#</span>yourfaceinspace</p>
-
-                        <div class="description text-shadow-blue">
-
-                            <p>t's and c's apply. please read full terms at our facebook address. the winners face represented on a 3d model will be sent on a weather balloon to the edge of space. competition runs until 16:00 gmt 31/05/2014. you must be over 16 years to enter. <br/> no purchase necessary. you must be a uk resident.</p>
-
-                            <p>copyright © <?php echo date('Y', time()); ?> cott beverages ltd. all rights reserved.</p>
-
-                        </div>
-
-                    </div>
-
+ 
+                <main role="main" ui-view>
                 </main>
 
             </div>
 
+            <!-- s: templates -->
+            <?php include_once("templates.php"); ?>
+            <!-- e: templates -->
+
         </div>
         <!-- e: emerge space app -->
 
-
-        <link href="bower_components/animo.js/animate+animo.css" rel="stylesheet" type="text/css">
-
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/3.46/jquery.form.min.js"></script>
+        <script src="js/mysettings.js"></script>
+        <script src="js/jqform.js"></script>
+        <script src="bower_components/angular-easyfb/angular-easyfb.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-animate.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+        <!-- s: hammer js -->
+        <script src="js/vendor/hammer.min.js"></script>
+        <script src="js/vendor/hammer.fakemultitouch.js"></script>
+        <script src="js/vendor/hammer.showtouches.js"></script>
+        <!-- e: hammer js -->
+        <link href="bower_components/animo.js/animate+animo.css" rel="stylesheet" type="text/css">
         <script src="bower_components/animo.js/animo.js" type="text/javascript"></script>
+        <script src="js/main.js"></script>
 
         <script type="text/javascript">
         // set the date we're counting down to
@@ -250,6 +138,11 @@
 
         });
         </script>
-
+        <script>
+            var _gaq=[['_setAccount','UA-10353005-1'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src='//www.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
     </body>
 </html>

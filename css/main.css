@@ -102,6 +102,10 @@ nav li {
         -ms-transition: all 0.45s;
     transition: all 0.45s;
 }
+nav a {
+    text-decoration: none;
+    color: #FFF;
+}
 li.opt:hover,
 li.active {
     text-shadow: 0 0 10px #6BB2C4, 0 0 5px #87F,
