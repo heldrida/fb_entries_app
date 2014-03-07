@@ -28,21 +28,21 @@
             
             <div class="pure-u-1">
             
-                <nav>
+                <nav ng-controller="navigationCtrl">
                     <ul>
-                        <li class="txt-a opt">
+                        <li class="txt-a opt" ng-class="isActive('/home')">
                             <a href="#/home">home</a>
                         </li>
-                        <li class="txt-a opt">
+                        <li class="txt-a opt" ng-class="isActive('/enter')">
                             <a href="#/enter">enter</a>
                         </li>
                         <li class="txt-a nav-logo">
                             <img src="img/logo.png?20140306">
                         </li>
-                        <li class="txt-a opt">
+                        <li class="txt-a opt" ng-class="isActive('/entries')">
                             <a href="#/entries">entries</a>
                         </li>
-                        <li class="txt-a opt">
+                        <li class="txt-a opt" ng-class="isActive('/terms-and-conditions')">
                             t's&amp;c's
                         </li>
                     </ul>
@@ -135,6 +135,9 @@
 
             $('.balloons .second').animo({animation: "vanish",
                 iterate: "infinite", duration: 6.9, delay: -1.5 });
+
+            $('.animatable-elements .cat-foo').animo({animation: "vanish_longer",
+                iterate: "infinite", duration: 4 });
 
         });
         </script>

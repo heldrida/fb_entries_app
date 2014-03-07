@@ -1,5 +1,41 @@
 <script type="text/ng-template" id="entries.html">
+<div class="row row-a row-header row-header-entries">
+    <img src="img/space_cowboys.png?20140307" />
 
+    <div class="astronauts">
+        <div class="lady animated bounce" style="animation-duration: 4s; animation-iteration-count: infinite; animation-timing-function: linear;">
+            <img src="img/spacewoman.png">
+        </div>
+    </div>
+</div>
+<div class="row row-entries">
+    <div class="entry" ng-repeat="entry in entries">
+        <div class="photo">
+            <img ng-src="{{ entry.photo }}" />
+        </div>
+        <div class="details">
+            <p class="red">Name</p>
+            <p class="full_name">{{ entry.full_name }}</p>
+            <p class="red">Why should you be the one?</p>            
+            <p class="description">{{ entry.description }}</p>
+        </div>
+    </div>
+    <button class="space">load more faces!</button>
+    <div class="animatable-elements">
+        <div class="cat-foo">
+            <img src="img/cat-foo.png" />
+        </div>
+        <div class="balloons">
+            <div class="first animated vanish" style="animation-duration: 6s; animation-iteration-count: infinite; animation-timing-function: linear;">
+                <img src="img/Ballon_float1.png">
+            </div>
+            <div class="second animated vanish" style="animation-duration: 6.9s; animation-iteration-count: infinite; animation-timing-function: linear;">
+                <img src="img/Ballon_float2.png">
+            </div>
+        </div>
+    </div>
+</div>
+<ng-include src="'footer.html'"></ng-include>
 </script>
 <script type="text/ng-template" id="home.html">
 <div class="row row-a row-header">
@@ -109,10 +145,13 @@
         <img src="img/planet_blue.png" />
     </div>
     
-    <button>enter now!</button>
+    <button class="space">enter now!</button>
 
 </div>
 
+<ng-include src="'footer.html'"></ng-include>
+</script>
+<script type="text/ng-template" id="footer.html">
 <div class="row row-b row-footer font-gothic text-shadow-soft">
     
     <div class="footer-logo"></div>
