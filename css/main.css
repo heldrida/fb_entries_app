@@ -380,6 +380,39 @@ button.space:hover {
     position: relative;
     bottom: 720px;
 }
+.terms-and-conditions {
+    width: 530px;
+    margin: 0 auto;
+}
+.row-enter-your-face .photo {
+    border: 4px solid #FFFFFF;
+    float: left;
+    height: 198px;
+    margin-right: 25px;
+    width: 198px;
+}
+.row-enter-your-face .myForm {
+    margin: 0 auto;
+    width: 535px;
+}
+.myForm > div {
+    display: inline-block;
+}
+.myForm .col-a {
+    width: 210px;
+}
+.myForm .col-b {
+    width: 310px;
+}
+.myForm input,
+.myForm p {
+    float: left;
+}
+.row-enter-your-face .col input,
+.row-enter-your-face .col textarea {
+    width: 100%;
+}
+
 
 
 /* custom animations */

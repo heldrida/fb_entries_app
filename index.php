@@ -33,8 +33,8 @@
                         <li class="txt-a opt" ng-class="isActive('/home')">
                             <a href="#/home">home</a>
                         </li>
-                        <li class="txt-a opt" ng-class="isActive('/enter')">
-                            <a href="#/enter">enter</a>
+                        <li class="txt-a opt" ng-class="isActive('/enter-your-face')">
+                            <a href="#/enter-your-face">enter</a>
                         </li>
                         <li class="txt-a nav-logo">
                             <img src="img/logo.png?20140306">
@@ -43,7 +43,7 @@
                             <a href="#/entries">entries</a>
                         </li>
                         <li class="txt-a opt" ng-class="isActive('/terms-and-conditions')">
-                            t's&amp;c's
+                            <a href="#/terms-and-conditions">t's&amp;c's</a>
                         </li>
                     </ul>
                 </nav>
