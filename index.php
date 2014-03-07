@@ -43,7 +43,7 @@
                             <a href="#/entries">entries</a>
                         </li>
                         <li class="txt-a opt" ng-class="isActive('/terms-and-conditions')">
-                            t's&amp;c's
+                            t<span class="small">s</span>&amp;c<span class="small">s</span>
                         </li>
                     </ul>
                 </nav>
