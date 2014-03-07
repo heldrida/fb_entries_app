@@ -8,10 +8,20 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 			templateUrl: 'home.html',
 			controller: 'homeCtrl'
 		})
+		.state('enter-your-face', {
+			url: '/enter-your-face',
+			templateUrl: 'enter-your-face.html',
+			controller: 'enterYourFaceCtrl'
+		})
 		.state('entries', {
 			url: '/entries',
 			templateUrl: 'entries.html',
 			controller: 'entriesCtrl'
+		})
+		.state('terms-and-conditions', {
+			url: '/terms-and-conditions',
+			templateUrl: 'terms-and-conditions.html',
+			controller: 'termsAndConditionsCtrl'
 		});
 
 		$urlRouterProvider.otherwise("/home");
@@ -25,6 +35,14 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 	$scope.isActive = function (viewLocation) {
 		return viewLocation !== '/home' && viewLocation === $location.path() ? 'active' : null;
 	};
+
+})
+
+.controller('enterYourFaceCtrl', function($scope){
+
+})
+
+.controller('termsAndConditionsCtrl', function($scope){
 
 })
 
