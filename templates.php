@@ -75,7 +75,7 @@ OPERATOR: (1) This competition is operated by Cott Beverages Limited (Cott) of C
 <div class="row row-entries">
     <div class="entry" ng-repeat="entry in entries">
         <div class="photo">
-            <img ng-src="{{ entry.photo }}" />
+            <img ng-src="{{ wp_base_path }}/wp-content/plugins/space_competition/uploads/{{ entry.photo }}" />
         </div>
         <div class="details">
             <p class="red">Name</p>
@@ -84,7 +84,7 @@ OPERATOR: (1) This competition is operated by Cott Beverages Limited (Cott) of C
             <p class="description">{{ entry.description }}</p>
         </div>
     </div>
-    <button class="space">load more faces!</button>
+    <button class="space" ng-click="load_more()">load more faces!</button>
     <div class="animatable-elements">
         <div class="cat-foo">
             <img src="img/cat-foo.png" />

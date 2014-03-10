@@ -22,3 +22,12 @@
 		https://github.com/maccman/gfx/blob/master/README.md
 
 		http://lvivski.com/anima/
+
+	- angular js preloader
+
+		http://polycademy.com/blog/id/147/preloading_page_content_like_youtube_using_angularjs
+
+	- css 3 preloaders
+
+		http://www.jqueryrain.com/?C9yJS02s
+		

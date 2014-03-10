@@ -47,6 +47,8 @@
                         </li>
                     </ul>
                 </nav>
+
+                <div class="spinner"></div>
  
                 <main role="main" ui-view>
                 </main>
