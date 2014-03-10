@@ -18,7 +18,7 @@
 
                 <br>
 
-                <button>use profile photo</button>
+                <button class="red_spc_bg">use profile photo</button>
 
                 <br>
 
@@ -43,8 +43,9 @@
 
             </div>
             <div class="row">                
-                <p><input type="checkbox" name="agreement"> I agree to the T's and C's and that I am over 16 years old, and if I am under 18 years old I have the permission of my parent or guardian to enter this competition.</p>
+                <p class="text_agreement"><input type="checkbox" name="agreement"> I agree to the T's and C's and that I am over 16 years of age and a resident in the UK. </p>
             </div>
+            <button class="space your_face">submit your face!</button>
         </div>
 
 </div>
@@ -56,7 +57,7 @@
 </div>
 <div class="row row-terms-and-conditions">
     <div class="terms-and-conditions">
-"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur"
+OPERATOR: (1) This competition is operated by Cott Beverages Limited (Cott) of Citrus Grove, Sideley, Kegworth, Derby, DE74 2FJ. Any correspondence concerning the operation of this competition should be sent to that addressed marked for the attention of Emerge Marketing. ENTRY REQUIREMENTS: (2) Entry into this competition is open to UK residents aged over 16 excluding employees (or family members of employees) of Cott or its associated companies and agents. (3) Entry into this competition is subject to these terms and conditions. If you fail to comply with any of the requirements of these terms and conditions then Cott may at its discretion disqualify your entry. (4) The competition is free to enter and there is no requirement to purchase any product in order to enter. (5) Entries into this competition can only be submitted via the facebook page operated on Cott’s behalf at facebook.com/emergestimulationdrink and, entrants must arrange at their own expense for internet access in order to be able to enter. (6) Entries into this competition can be made until 17:00 GMT on 31 May 2014. PRIZE: (7) There is one prize for the winner of this competition which consists of a figure being created in their likeness, this figure will then travel up towards space suspended under a weather balloon. (8) Any other expenses incurred by the winner of this prize draw are excluded and will be the sole responsibility of the winner. (9) This is a two stage competition, for the first stage you must upload your photo to our Facebook app and describe why you deserve the prize, for the second stage our panel of judges will look at all of the entries and decide who deserves the prize based on their entry description. (10) Cott reserves the right to amend or substitute the prize on offer with an alternative of equal or greater value although, there is no cash alternative available. (11) The name and general geographic location of the winner of this competition will be available on request by writing to Cott at the address set out at the start of these terms and conditions after the closing date for this competition. USE OF PERSONAL INFORMATION: (12) The winner of this competition shall participate in any reasonable amount of post promotion publicity as Cott may reasonably request. (13) Cott may use personal information collected about individuals as a result of entering into this competition in accordance with its privacy policy which is available by visiting the www.emergeenergy.com website. GENERAL: (14) The decisions of Cott concerning the operation of this competition will be final and binding. (15) Apart from death or personal injury caused by the negligence acts or omissions of Cott, Cott will not be liable for any loss or damage suffered by entrants in connection with this prize draw nor for any loss or damage which the winner of this prize draw may suffer as a result of enjoying their prize. In particular, Cott shall not be liable for any delay or inability to fulfil the prize due to circumstances outside of the reasonable control of Cott. (15) Force Majeure, Cott cannot be held responsible for anything that is out of its control on delivering the prize, which can include any weather issues that could affect the flight of the balloon and the recovery of the video footage. 
     </div>
 </div>
 <ng-include src="'footer.html'"></ng-include>
