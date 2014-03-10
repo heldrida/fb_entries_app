@@ -274,7 +274,6 @@ button.space {
     color: #FFFFFF;
     font-size: 1.5em;
     height: 68px;
-    line-height: 68px;
     text-transform: uppercase;
     width: auto;
     -webkit-transition: all 0.3s;
@@ -395,24 +394,83 @@ button.space:hover {
     margin: 0 auto;
     width: 535px;
 }
+.row-enter-your-face > p {
+    text-align: center;
+    text-transform: uppercase;
+}
 .myForm > div {
     display: inline-block;
 }
+.myForm .col {
+    float: left;
+}
 .myForm .col-a {
     width: 210px;
+    margin-right: 25px;
+}
+.myForm .col-a button {
+    border: 4px solid #FFFFFF;
+    width: 206px;
+    text-transform: uppercase;
+    background: url("../img/button_bckground_patern.png?20140307") repeat scroll 0 0 transparent;
+    color: #FFF;
+    line-height: 32px;
+}
+.myForm .col-a button:hover {
+    opacity: 0.75;
+}
+.myForm .col-a input {
+    width: 200px !important;    
+}
+.myForm .photo,
+.myForm button {
+    margin-bottom: 10px;
 }
 .myForm .col-b {
-    width: 310px;
+    width: 300px;
+}
+.myForm .col-b p {
+    color: #EA342F;
+    text-transform: uppercase;
+}
+.myForm .col-b textarea[name="description"] {
+    min-height: 100px;
 }
 .myForm input,
 .myForm p {
     float: left;
 }
+.myForm p {
+    margin: 0px;
+}
+.myForm input {
+    margin-bottom: 15px;
+    height: 30px;
+}
+.myForm .row p {
+    line-height: 20px;
+    text-indent: 10px;
+}
+.myForm .row input {
+    padding-right: 25px;
+    position: relative;
+    top: 2px;
+    cursor: pointer;
+    height: auto;
+}
+.myForm .text_agreement {
+    font-size: 12px;
+}
 .row-enter-your-face .col input,
 .row-enter-your-face .col textarea {
     width: 100%;
 }
-
+button.your_face {
+    width: 100%;
+}
+.red_spc_bg {
+    background: url('../img/button_bckground_patern_red.png') repeat-x 0 0 transparent !important;
+}
 
 
 /* custom animations */
