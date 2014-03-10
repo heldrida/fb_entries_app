@@ -1,0 +1,95 @@
+#space_competition h2 {
+    background: url("icon-dark.png") no-repeat scroll 0 17px transparent;
+    padding-left: 30px;
+}
+#space_competition table {
+	padding: 40px 0;
+}
+#space_competition table tr {}
+#space_competition table th,
+#space_competition table td {
+	padding: 20px;
+}
+#space_competition table th,
+#space_competition table thead td {
+	color: #111;
+	background: #BBB;
+	font-weight: bold;
+	text-transform: capitalize;
+}
+#space_competition table tbody td {
+	background: #DDD;	
+}
+#space_competition .approved_0,
+#space_competition .approved_1 {}
+#space_competition .approved_0 {}
+#space_competition .approved_1 {}
+
+#space_competition .check,
+#space_competition .delete:hover {
+	background: url('check.png') no-repeat center center transparent;
+}
+#space_competition .delete,
+#space_competition .check:hover {
+	background: url('delete.png') no-repeat center center transparent;
+}
+#space_competition .check,
+#space_competition .delete {
+	display: block;
+	width: 100%;
+	height: 40px;
+	text-indent: -9999px;
+	cursor: pointer;
+}
+#space_competition .pagination {}
+#space_competition .pagination li {
+	float: left;
+	padding: 5px;
+}
+#space_competition .pagination li.disabled span {
+	color: #333;
+	font-weight: bold;
+}
+#space_competition .btn-group,
+#space_competition .pagination {
+	float: right;
+	margin: 0;
+}
+#space_competition .pagination {
+    font-size: 18px;
+    margin-right: 50px;
+    position: relative;
+    top: -2px;
+}
+#space_competition .pagination a {
+	text-decoration: none;
+}
+#space_competition .photo {
+	overflow: hidden;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+}
+#space_competition .photo:hover {
+	opacity: 0.7;
+}
+#space_competition .photo img {
+    height: auto;
+    left: -3%;
+    position: relative;
+    top: -4%;
+    width: 105%;
+}
+#space_competition .export-csv {
+    background: #444;
+    border-radius: 5px;
+    color: #EEE;
+    display: inline-block;
+    font-weight: bold;
+    margin: 10px 0;
+    padding: 10px;
+    text-decoration: none;
+}
+#space_competition .export-csv:hover {
+	background: #888;
+};
