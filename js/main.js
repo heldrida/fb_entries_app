@@ -16,7 +16,30 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 		.state('entries', {
 			url: '/entries',
 			templateUrl: 'entries.html',
-			controller: 'entriesCtrl'
+			controller: 'entriesCtrl',
+			resolve: {
+				myEntries: function($q, mySettings){
+
+					var deferred = $q.defer();
+
+					$.post(
+						mySettings.wp_base_path + '/wp-admin/admin-ajax.php?action=space_competition',
+						{ option: "approved_entries" },
+						function( data ){
+
+							console.log("approved_entries data: " + data);
+
+							data = JSON.parse(data);
+							
+							deferred.resolve(data);			
+
+						}
+					);
+
+					return deferred.promise;
+
+				}
+			}
 		})
 		.state('terms-and-conditions', {
 			url: '/terms-and-conditions',
@@ -50,9 +73,11 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 	console.log("home ctrl");
 })
 
-.controller('entriesCtrl', function($scope){
+.controller('entriesCtrl', function($scope, myEntries, mySettings){
+
 	console.log("entries ctrl");
-	
+
+	/*
 	$scope.entries = [{
 		full_name: "Michael Moore",
 		description: "Lorem ipsum dolor cassumi zoko para lara dolarem sukuvi wazi. Mappo to lolikoto pozianova uatianpida.",
@@ -73,5 +98,42 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 		description: "Lorem ipsum dolor cassumi zoko para lara dolarem sukuvi wazi. Mappo to lolikoto pozianova uatianpida.",
 		photo: "https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-frc3/t1/31013_3540463685355_1622922072_n.jpg?lvh=1"
 	}];
+	*/
+
+	$scope.entries = myEntries;
+
+	$scope.wp_base_path = mySettings.wp_base_path;
+
+	$scope.page = $scope.page || 1;
+	
+	console.log("scope.page: " + $scope.page);
+
+	$scope.load_more = function(){
+
+		$scope.page += 1;
+
+		$.post(
+			mySettings.wp_base_path + '/wp-admin/admin-ajax.php?action=space_competition',
+			{ option: "approved_entries", page: $scope.page },
+			function( data ){
+
+				console.log("approved_entries data: " + data);
+
+				data = JSON.parse(data);
+				
+				$scope.$apply(function(){
+
+					angular.forEach(data, function(value, key){
+						
+						$scope.entries.push(value);
+
+					});
+
+				});
+
+			}
+		);
+
+	};
 
 });
