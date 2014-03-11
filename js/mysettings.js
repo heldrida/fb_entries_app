@@ -1,5 +1,5 @@
 angular.module('mySettings', [])
 .constant('mySettings', {
-	base_path: '/emerge_space',
-	wp_base_path: '/emerge_space/wordpress'
+	base_path: '/',
+	wp_base_path: '/wordpress'
 });

@@ -48,9 +48,10 @@
                     </ul>
                 </nav>
 
-                <div class="spinner"></div>
- 
-                <main role="main" ui-view>
+                <div class="spinner" ng-show="isViewLoading"></div>
+                
+                <main role="main" ng-show="!isViewLoading">
+                    <ui-view></ui-view>
                 </main>
 
             </div>

@@ -53,6 +53,28 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 
 })
 
+.run(function($rootScope, $timeout){
+
+	$rootScope.isViewLoading = true;
+
+	$rootScope.$on('$stateChangeStart', function(){
+
+		$rootScope.isViewLoading = true;
+
+	});
+
+	$rootScope.$on('$stateChangeSuccess', function(){
+
+		$timeout(function() {
+			
+			$rootScope.isViewLoading = false;
+
+		}, 1000);
+
+	});
+
+})
+
 .controller('navigationCtrl', function($scope, $location){
 
 	$scope.isActive = function (viewLocation) {
