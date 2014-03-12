@@ -33,7 +33,7 @@
                         <li class="txt-a opt" ng-class="isActive('/home')">
                             <a href="#/home">home</a>
                         </li>
-                        <li class="txt-a opt" ng-class="isActive('/enter-your-face')">
+                        <li class="txt-a opt opt-enter" ng-class="isActive('/enter-your-face')">
                             <a href="#/enter-your-face">enter</a>
                         </li>
                         <li class="txt-a nav-logo">
@@ -50,7 +50,7 @@
 
                 <div class="spinner" ng-show="isViewLoading"></div>
                 
-                <main role="main" ng-show="!isViewLoading">
+                <main role="main" ng-show="!isViewLoading" class="my-page-anim">
                     <ui-view></ui-view>
                 </main>
 
@@ -124,26 +124,6 @@
         }, 1000);
         </script>
 
-        <script type="text/javascript">
-        $(document).ready(function(){
-
-            $('.lady').animo({animation: ["bounce"], iterate: "infinite", duration: 4 });
-
-            $('.can-cat').animo({animation: "bounce", iterate: "infinite", duration: 4.3, delay: -1 });
-
-            $('.spacecat').animo({animation: "swinging", iterate: "infinite", duration: 2.2 });
-
-            $('.balloons .first').animo({animation: "vanish",
-                iterate: "infinite", duration: 6 });
-
-            $('.balloons .second').animo({animation: "vanish",
-                iterate: "infinite", duration: 6.9, delay: -1.5 });
-
-            $('.animatable-elements .cat-foo').animo({animation: "vanish_longer",
-                iterate: "infinite", duration: 4 });
-
-        });
-        </script>
         <script>
             var _gaq=[['_setAccount','UA-10353005-1'],['_trackPageview']];
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];

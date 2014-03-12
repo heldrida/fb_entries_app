@@ -470,6 +470,9 @@ button.your_face {
 .red_spc_bg {
     background: url('../img/button_bckground_patern_red.png') repeat-x 0 0 transparent !important;
 }
+.opt-enter {
+    margin-right: 0;
+}
 
 /* spinner animation */
 .spinner {
@@ -478,7 +481,7 @@ button.your_face {
   height: 50px;
   background-color: #FFF;
   position: relative;
-  left: -12px;
+  left: -28px;
   backface-visibility: visible;
     -webkit-backface-visibility: visible;
 
@@ -506,8 +509,57 @@ button.your_face {
   }
 }
 
+/* animation: page */
+.my-page-anim.ng-enter, 
+.my-page-anim.ng-leave, 
+.my-page-anim.ng-move {
+  -webkit-transition: 3s linear all;
+  transition: 3s linear all;
+  position:relative;
+}
+.my-page-anim.ng-enter {
+  opacity:0;
+}
+.my-page-anim.ng-enter.ng-enter-active {
+  opacity:1;
+}
+.my-page-anim.ng-leave {
+  opacity:1;
+}
+.my-page-anim.ng-leave.ng-leave-active {
+  opacity:0;
+}
+.my-page-anim.ng-move {
+  opacity:0.5;
+}
+.my-page-anim.ng-move.ng-move-active {
+  opacity:1;
+}
 
 /* custom animations */
+@-webkit-keyframes vanish_longer {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(300%) translateX(300%);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  60% {
+    -webkit-transform: translateY(200%) translateX(100%);
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(0%) translateX(0%);
+  }
+}
 @keyframes vanish_longer {
   0% {
     opacity: 0;
@@ -538,7 +590,7 @@ button.your_face {
 @-webkit-keyframes vanish {
   0% {
     opacity: 0;
-    transform: translateY(100%);
+    -webkit-transform: translateY(100%);
   }
 
   25% {
@@ -547,7 +599,7 @@ button.your_face {
 
   100% {
     opacity: 0;
-    transform: translateY(0%);
+    -webkit-transform: translateY(0%);
   }
 }
 @keyframes vanish {
