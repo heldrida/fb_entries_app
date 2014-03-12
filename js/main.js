@@ -73,6 +73,25 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 
 	});
 
+	$rootScope.$on('$viewContentLoaded', function(){
+
+        $('.lady').animo({animation: ["bounce"], iterate: "infinite", duration: 4 });
+
+        $('.can-cat').animo({animation: "bounce", iterate: "infinite", duration: 4.3, delay: -1 });
+
+        $('.spacecat').animo({animation: "swinging", iterate: "infinite", duration: 2.2 });
+
+        $('.balloons .first').animo({animation: "vanish",
+            iterate: "infinite", duration: 6 });
+
+        $('.balloons .second').animo({animation: "vanish",
+            iterate: "infinite", duration: 6.9, delay: -1.5 });
+
+        $('.animatable-elements .cat-foo').animo({animation: "vanish_longer",
+            iterate: "infinite", duration: 4 });
+
+	});
+
 })
 
 .controller('navigationCtrl', function($scope, $location){
