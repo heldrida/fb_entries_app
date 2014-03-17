@@ -49,7 +49,7 @@
                 </nav>
 
                 <div class="spinner" ng-show="isViewLoading"></div>
-                
+
                 <main role="main" ng-show="!isViewLoading" class="my-page-anim">
                     <ui-view></ui-view>
                 </main>

@@ -22,7 +22,7 @@ define('DB_NAME', 'emerge_space');
 define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'h4522202');
+define('DB_PASSWORD', 'root');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');

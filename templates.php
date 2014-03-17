@@ -9,8 +9,26 @@
     </div>
 </div>
 <div class="row row-enter-your-face">
-    <p>upload a photo of yourself and tell us why you should go on the <br> mission of a lifetime ofr the chance to get your face into space.</p>
-        <div class="myForm">
+
+    <div id="login-with-facebook" ng-if="fb_like.connected == false">
+        <a href="#" ng-click="login()"><img src="img/login-facebook.png" /></a>
+    </div>
+
+    <div ng-if="fb_like.connected == true && fb_like.status == false">
+        <p>USER NEEDS TO LIKE THE PAGE TO PROCEED</p>
+
+        <div class="fb-like-wrp" ezfb-xfbml>
+            To participate make sure you have liked Emerge on Facebook
+            <div class="fb-like" data-href="https://www.facebook.com/emergestimulationdrink" data-width="20px" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+        </div>
+
+    </div>
+
+    <div ng-if="fb_like.connected == true && fb_like.status == true">
+
+        <p>upload a photo of yourself and tell us why you should go on the <br> mission of a lifetime or the chance to get your face into space.</p>
+        
+        <form name="myForm" class="pure-form myForm" novalidate ng-controller="uploadPhotoCtrl" ng-submit="submit()">
             <div class="col col-a">
                 <div class="photo">
                     <img ng-src="https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-frc3/t1/31013_3540463685355_1622922072_n.jpg?lvh=1" src="https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-frc3/t1/31013_3540463685355_1622922072_n.jpg?lvh=1">
@@ -29,24 +47,33 @@
                 <input type="text" />
             </div>
             <div class="col col-b">
+
                 <p>name</p>
-                <input type="text" name="full_name" />
+                <input type="text" name="full_name" ng-model="user.full_name" />
 
                 <p>email</p>
-                <input type="text" name="email" />
+                <input type="email" name="email" ng-model="user.email" />
 
                 <p>Phone No</p>
-                <input type="text" name="telephone" />
+                <input type="text" name="telephone" ng-model="user.telephone" />
 
                 <p>why you?</p>
-                <textarea name="description"></textarea>
+                <textarea name="description" ng-model="user.description" maxcharlength required min="15" max="150"></textarea>
+
+                <input type="hidden" name="nonce" value="{{nonce}}" ng-model="user.nonce" />
+                <input type="hidden" name="img_crop" ng-model="user.img_crop" />
+                <input type="hidden" name="img_crop_scale" value="{{crop.scale}}" />
+                <input type="hidden" name="img_crop_pos_x" value="{{crop.pos_x}}" />
+                <input type="hidden" name="img_crop_pos_y" value="{{crop.pos_y}}" />
 
             </div>
             <div class="row">                
-                <p class="text_agreement"><input type="checkbox" name="agreement"> I agree to the T's and C's and that I am over 16 years of age and a resident in the UK. </p>
+                <p class="text_agreement"><input type="checkbox" name="agreement" ng-model="user.agreement" required> I agree to the <a href="/#/terms-and-conditions">T's and C's</a> and that I am over 16 years of age and a resident in the UK. </p>
             </div>
             <button class="space your_face">submit your face!</button>
-        </div>
+        </form>
+
+    </div>
 
 </div>
 <ng-include src="'footer.html'"></ng-include>

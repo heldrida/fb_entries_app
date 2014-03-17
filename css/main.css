@@ -393,7 +393,7 @@ button.space:hover {
     margin: 0 auto;
     width: 535px;
 }
-.row-enter-your-face > p {
+.row-enter-your-face > div > p {
     text-align: center;
     text-transform: uppercase;
 }
@@ -419,7 +419,7 @@ button.space:hover {
     opacity: 0.75;
 }
 .myForm .col-a input {
-    width: 200px !important;    
+    width: 206px !important;    
 }
 .myForm .photo,
 .myForm button {
@@ -448,17 +448,21 @@ button.space:hover {
 }
 .myForm .row p {
     line-height: 20px;
-    text-indent: 10px;
 }
 .myForm .row input {
-    padding-right: 25px;
-    position: relative;
-    top: 2px;
-    cursor: pointer;
-    height: auto;
+  cursor: pointer;
+  display: inline-block;
+  height: auto;
+  margin-right: 10px;
+  position: relative;
+  top: 2px;
+}
+.myForm .row a {
+  color: #FFF;
 }
 .myForm .text_agreement {
-    font-size: 12px;
+    font-size: 15px;
+    padding-bottom: 15px;
 }
 .row-enter-your-face .col input,
 .row-enter-your-face .col textarea {
@@ -473,6 +477,27 @@ button.your_face {
 .opt-enter {
     margin-right: 0;
 }
+.myForm input.ng-invalid.ng-dirty,
+.myForm textarea.ng-invalid.ng-dirty {
+    background-color: #FA787E;
+}
+.myForm input.ng-valid.ng-dirty,
+.myForm textarea.ng-valid.ng-dirty {
+    background-color: #78FA89;
+}
+#login-with-facebook {}
+#login-with-facebook a {
+  border: 0;
+  position: relative;
+  z-index: 2;
+  display: block;
+  margin: 100px auto;
+  width: 500px;
+}
+#login-with-facebook a:hover {
+  opacity: 0.7;
+}
+
 
 /* spinner animation */
 .spinner {
