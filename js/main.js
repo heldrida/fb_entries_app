@@ -1,4 +1,4 @@
-angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'mySettings'])
+angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'mySettings', 'ui.bootstrap'])
 
 .config(function($stateProvider, $urlRouterProvider, $locationProvider, $FBProvider, mySettings){
 
@@ -227,7 +227,7 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 				var fb_profile_data = false;
 
 				$FB.api('/me', function(response){
-					
+
 					fb_profile_data = response;
 
 					the_query.wait(function(rows) {

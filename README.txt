@@ -39,6 +39,7 @@
 
 		http://stackoverflow.com/questions/724391/saving-image-from-php-url-using-php
 
+	- date picker with ui-bootstrap
 
-		
+		http://angular-ui.github.io/bootstrap/#/datepicker
 		

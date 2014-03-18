@@ -513,6 +513,15 @@ button.your_face {
 .fb-like-wrp .txt {
   padding-right: 10px;
 }
+/* datepicker */
+.dropdown-menu {
+  position: absolute;
+  background: #EEE;
+  top: 50px;
+  z-index: 10;
+  border-radius: 5px;
+  color: #111;
+}
 
 
 /* spinner animation */
