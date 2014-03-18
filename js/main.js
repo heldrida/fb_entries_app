@@ -398,25 +398,52 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 .directive('age', function() {
 	return {
 		require: 'ngModel',
-		link: function(scope, elm, attrs, ctrl) {
+		link: function(scope, elem, attrs, ctrl) {
 
 			function _calculateAge(birthday) {
+				birthday = new Date(birthday);
 				var ageDifMs = Date.now() - birthday.getTime();
 				var ageDate = new Date(ageDifMs);
 				return Math.abs(ageDate.getUTCFullYear() - 1970);
 			}
 
+
+			var min_age = 16;
+			var max_age = 150;
+
 			ctrl.$parsers.unshift(function(viewValue) {
 				viewValue = _calculateAge(viewValue);
-				console.log("viewValue: " + viewValue);
-				if (viewValue >= parseInt(attrs.min) && viewValue <= parseInt(attrs.max)) {
+				console.log("calculateAge viewValue: " + viewValue);
+				if (viewValue >= min_age && viewValue <= max_age) {
+					console.log("age is valid");
 					ctrl.$setValidity('age', true);
-					return viewValue;
 				} else {
+					console.log("age is not valid!");
 					ctrl.$setValidity('age', false);
-					return viewValue;
 				}
 			});
+
+			/*
+			elem.on('change', function(evt) {
+
+				scope.$apply(function(){
+
+					var viewValue = elem.val();
+
+					viewValue = _calculateAge(viewValue);
+					console.log("viewValue: " + viewValue);
+					if (viewValue >= min_age && viewValue <= max_age) {
+						console.log("viewValue is valid!");
+						ctrl.$setValidity('age', true);
+					} else {
+						console.log("viewValue is not valid!");
+						ctrl.$setValidity('age', false);
+					};
+
+				});
+
+			});
+			*/
 
 		}
 	};

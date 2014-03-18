@@ -55,7 +55,7 @@
                 <input type="email" name="email" ng-model="user.email" />
 
                 <p>Birthday</p>
-                <input type="text" class="form-control" datepicker-popup="dd/MM/yyyy" ng-model="user.birthday" close-text="Close" show-button-bar="false" show-weeks="false" age min="16" max="140" />
+                <input type="text" class="form-control" datepicker-popup="dd/MM/yyyy" ng-model="user.birthday" close-text="Close" show-button-bar="false" show-weeks="false" age />
 
                 <p>Phone No</p>
                 <input type="text" name="telephone" ng-model="user.telephone" required />
