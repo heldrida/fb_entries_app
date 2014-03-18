@@ -78,6 +78,10 @@
         <script src="js/vendor/hammer.fakemultitouch.js"></script>
         <script src="js/vendor/hammer.showtouches.js"></script>
         <!-- e: hammer js -->
+        <!-- s: ui.bootstrap datepicker -->
+        <link href="js/vendor/ui-bootstrap-custom/ui-bootstrap-custom-0.10.0.min.js" rel="stylesheet" type="text/css">
+        <script src="js/vendor/ui-bootstrap-custom/ui-bootstrap-custom-tpls-0.10.0.min.js"></script>
+        <!-- e: ui.bootstrap datepicker -->
         <link href="bower_components/animo.js/animate+animo.css" rel="stylesheet" type="text/css">
         <script src="bower_components/animo.js/animo.js" type="text/javascript"></script>
         <script src="js/main.js"></script>
