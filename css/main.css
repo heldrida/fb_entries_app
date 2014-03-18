@@ -466,6 +466,9 @@ button.space:hover {
     padding-bottom: 15px;
     text-align: left;
 }
+.text_agreement.invalid {
+  color: #EA342F;
+}
 .row-enter-your-face .col input,
 .row-enter-your-face .col textarea {
     width: 100%;
@@ -480,11 +483,15 @@ button.your_face {
     margin-right: 0;
 }
 .myForm input.ng-invalid.ng-dirty,
-.myForm textarea.ng-invalid.ng-dirty {
+.myForm textarea.ng-invalid.ng-dirty,
+.submitted input.ng-invalid.ng-pristine ,
+.submitted textarea.ng-invalid.ng-pristine  {
     background-color: #FA787E;
 }
 .myForm input.ng-valid.ng-dirty,
-.myForm textarea.ng-valid.ng-dirty {
+.myForm textarea.ng-valid.ng-dirty,
+.submitted input.ng-valid.ng-pristine ,
+.submitted textarea.ng-valid.ng-pristine {
     background-color: #78FA89;
 }
 #login-with-facebook {}

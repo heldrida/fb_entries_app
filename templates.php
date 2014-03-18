@@ -30,7 +30,7 @@
 
         <p>upload a photo of yourself and tell us why you should go on the <br> mission of a lifetime or the chance to get your face into space.</p>
         
-        <form name="myForm" class="pure-form myForm" novalidate ng-controller="uploadPhotoCtrl" ng-submit="submit()">
+        <form name="myForm" class="pure-form myForm" novalidate ng-controller="uploadPhotoCtrl" ng-submit="submit()" ng-class="{true: 'submitted'}[submitted]">
             <div class="col col-a">
 
                 <div class="photo" ng-show="use_profile_photo">
@@ -55,10 +55,10 @@
                 <input type="email" name="email" ng-model="user.email" />
 
                 <p>Birthday</p>
-                <input type="text" class="form-control" datepicker-popup="dd/MM/yyyy" ng-model="user.birthday" close-text="Close" show-button-bar="false" show-weeks="false" />
+                <input type="text" class="form-control" datepicker-popup="dd/MM/yyyy" ng-model="user.birthday" close-text="Close" show-button-bar="false" show-weeks="false" age min="16" max="140" />
 
                 <p>Phone No</p>
-                <input type="text" name="telephone" ng-model="user.telephone" />
+                <input type="text" name="telephone" ng-model="user.telephone" required />
 
                 <p>why you?</p>
                 <textarea name="description" ng-model="user.description" maxcharlength required min="15" max="150"></textarea>
@@ -70,10 +70,11 @@
                 <input type="hidden" name="img_crop_pos_y" value="{{crop.pos_y}}" />
 
             </div>
-            <div class="row">                
-                <p class="text_agreement"><input type="checkbox" name="agreement" ng-model="user.agreement" required> I agree to the <a href="/#/terms-and-conditions">T's and C's</a> and that I am over 16 years of age and a resident in the UK. </p>
+            <div class="row">
+
+                <p class="text_agreement" ng-class="submitted == true && myForm.agreement.$error.required ? 'invalid' : ''"><input type="checkbox" name="agreement" ng-model="user.agreement" required> I agree to the <a href="/#/terms-and-conditions">T's and C's</a> and that I am over 16 years of age and a resident in the UK. </p>
             </div>
-            <button class="space your_face">submit your face!</button>
+            <button class="space your_face" ng-click="submitted=true">submit your face!</button>
         </form>
 
     </div>

@@ -42,4 +42,12 @@
 	- date picker with ui-bootstrap
 
 		http://angular-ui.github.io/bootstrap/#/datepicker
+
+	- form validation
+
+		https://stackoverflow.com/questions/22484253/how-to-trigger-form-validation-css-classes-when-theres-form-default-data
+
+		http://jsfiddle.net/thomporter/ANxmv/2/
+
+		
 		
