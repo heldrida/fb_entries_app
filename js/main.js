@@ -393,4 +393,31 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
             }
         }
    };
+})
+
+.directive('age', function() {
+	return {
+		require: 'ngModel',
+		link: function(scope, elm, attrs, ctrl) {
+
+			function _calculateAge(birthday) {
+				var ageDifMs = Date.now() - birthday.getTime();
+				var ageDate = new Date(ageDifMs);
+				return Math.abs(ageDate.getUTCFullYear() - 1970);
+			}
+
+			ctrl.$parsers.unshift(function(viewValue) {
+				viewValue = _calculateAge(viewValue);
+				console.log("viewValue: " + viewValue);
+				if (viewValue >= parseInt(attrs.min) && viewValue <= parseInt(attrs.max)) {
+					ctrl.$setValidity('age', true);
+					return viewValue;
+				} else {
+					ctrl.$setValidity('age', false);
+					return viewValue;
+				}
+			});
+
+		}
+	};
 });
