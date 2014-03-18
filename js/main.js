@@ -355,6 +355,11 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 
 		var deferred = $q.defer();
 
+		$FB.api('/me', function(response){
+			$scope.user.fb_profile_uid = response.id;
+			deferred.resolve(true);
+		});
+		
 		deferred.promise.then(function(){
 
 			$.post(
@@ -362,6 +367,9 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 				$scope.user,
 				function( data ){
 					
+					console.log("data:");
+					console.log(data);
+
 					lock = false;
 					$scope.$apply(function(){
 
@@ -384,6 +392,9 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 
 		if ( $scope.user.description === undefined ) {
 				
+			console.log("$scope.user.description");
+			console.log($scope.user.description);
+
 			return "0";
 	
 		} else if ( !$scope.user.description.hasOwnProperty(length) ) {
