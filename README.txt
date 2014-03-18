@@ -34,4 +34,11 @@
 	- prevent event default on angularjs ng-click
 
 		http://stackoverflow.com/questions/10931315/how-to-preventdefault-on-anchor-tags-in-angularjs
+
+	- save image from url
+
+		http://stackoverflow.com/questions/724391/saving-image-from-php-url-using-php
+
+
+		
 		

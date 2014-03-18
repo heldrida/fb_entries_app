@@ -67,7 +67,7 @@ a {
 .font-gothic {
     font-family: 'Carrois Gothic SC', sans-serif;
 }
-body {
+html {
     background: url('../img/space_bacground.png') repeat 0 0 transparent;
     -webkit-backface-visibility: visible !important;
 }
@@ -87,7 +87,7 @@ nav {
 nav ul {
     float: left;
     left: 50%;
-    margin: 0;
+    margin: 0 0 0 28px;
     padding: 30px 0;
     position: relative;
     text-align: center;
@@ -393,7 +393,7 @@ button.space:hover {
     margin: 0 auto;
     width: 535px;
 }
-.row-enter-your-face > div > p {
+.row-enter-your-face > div p {
     text-align: center;
     text-transform: uppercase;
 }
@@ -402,6 +402,7 @@ button.space:hover {
 }
 .myForm .col {
     float: left;
+    padding-bottom: 30px;
 }
 .myForm .col-a {
     width: 210px;
@@ -463,6 +464,7 @@ button.space:hover {
 .myForm .text_agreement {
     font-size: 15px;
     padding-bottom: 15px;
+    text-align: left;
 }
 .row-enter-your-face .col input,
 .row-enter-your-face .col textarea {
@@ -486,16 +488,30 @@ button.your_face {
     background-color: #78FA89;
 }
 #login-with-facebook {}
-#login-with-facebook a {
+#login-with-facebook > div {
   border: 0;
   position: relative;
   z-index: 2;
   display: block;
   margin: 100px auto;
   width: 500px;
+  cursor: pointer;
 }
-#login-with-facebook a:hover {
+#login-with-facebook > div:hover {
   opacity: 0.7;
+}
+.fb-like-wrp {
+  display: block;
+  line-height: 20px;
+  height: 20px;
+  margin: 0 auto;
+  max-width: 500px;
+}
+.fb-like-wrp div {
+  float: left;
+}
+.fb-like-wrp .txt {
+  padding-right: 10px;
 }
 
 
@@ -506,7 +522,6 @@ button.your_face {
   height: 50px;
   background-color: #FFF;
   position: relative;
-  left: -28px;
   backface-visibility: visible;
     -webkit-backface-visibility: visible;
 

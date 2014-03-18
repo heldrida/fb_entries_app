@@ -11,15 +11,17 @@
 <div class="row row-enter-your-face">
 
     <div id="login-with-facebook" ng-if="fb_like.connected == false">
-        <a href="#" ng-click="login()"><img src="img/login-facebook.png" /></a>
+        <div ng-click="login()"><img src="img/login-facebook.png" /></div>
     </div>
 
     <div ng-if="fb_like.connected == true && fb_like.status == false">
-        <p>USER NEEDS TO LIKE THE PAGE TO PROCEED</p>
 
         <div class="fb-like-wrp" ezfb-xfbml>
-            To participate make sure you have liked Emerge on Facebook
-            <div class="fb-like" data-href="https://www.facebook.com/emergestimulationdrink" data-width="20px" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+            
+            <div class="txt">To participate make sure you have liked Emerge on Facebook</div>
+
+            <div class="fb-like" data-href="https://www.facebook.com/emergestimulationdrink" data-width="100px" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+
         </div>
 
     </div>
@@ -30,8 +32,9 @@
         
         <form name="myForm" class="pure-form myForm" novalidate ng-controller="uploadPhotoCtrl" ng-submit="submit()">
             <div class="col col-a">
-                <div class="photo">
-                    <img ng-src="https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-frc3/t1/31013_3540463685355_1622922072_n.jpg?lvh=1" src="https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-frc3/t1/31013_3540463685355_1622922072_n.jpg?lvh=1">
+
+                <div class="photo" ng-show="use_profile_photo">
+                    <img ng-src="http://graph.facebook.com/{{fb_like.data.id}}/picture?width=300&height=300" />
                 </div>
 
                 <br>
@@ -42,9 +45,6 @@
 
                 <button>browse</button>
 
-                <br>
-
-                <input type="text" />
             </div>
             <div class="col col-b">
 
@@ -53,6 +53,9 @@
 
                 <p>email</p>
                 <input type="email" name="email" ng-model="user.email" />
+
+                <p>Birthday</p>
+                <input type="text" name="birthday" ng-model="user.birthday" />
 
                 <p>Phone No</p>
                 <input type="text" name="telephone" ng-model="user.telephone" />
@@ -114,7 +117,7 @@ OPERATOR: (1) This competition is operated by Cott Beverages Limited (Cott) of C
     <button class="space" ng-click="load_more()">load more faces!</button>
     <div class="animatable-elements">
         <div class="cat-foo">
-            <img src="img/cat-foo.png" />
+            <img src="img/cat-foo.png?20140318" />
         </div>
         <div class="balloons">
             <div class="first animated vanish" style="animation-duration: 6s; animation-iteration-count: infinite; animation-timing-function: linear;">
