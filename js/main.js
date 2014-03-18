@@ -30,82 +30,38 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 
 					$FB.api('/me', function(response){
 						fb_profile_data = response;
+
+				        the_query.wait(function(rows) {
+
+				            if (rows.length == 1 && rows[0].uid == user_id) {
+
+								deferred.resolve({
+									connected: true,
+									status: true,
+									data: fb_profile_data
+								});
+				            
+				            } else {
+
+								deferred.resolve({
+									connected: true,
+									status: false,
+									data: false
+								});
+
+				            };
+
+				        });
+
 					});
-
-			        the_query.wait(function(rows) {
-
-			            if (rows.length == 1 && rows[0].uid == user_id) {
-
-							deferred.resolve({
-								connected: true,
-								status: true,
-								data: fb_profile_data
-							});
-			            
-			            } else {
-
-							deferred.resolve({
-								connected: true,
-								status: false,
-								data: false
-							});
-
-			            };
-
-			        });
 
 			    } else {
 
-					$FB.login(function(response) {
-
-						if (response.authResponse) {
-							
-							// user is logged in and granted some permissions.
-
-							// recursive fn wasn't working, so...
-							$FB.getLoginStatus(function(response) {
-
-							    if (response.status == 'connected') {
-
-							        var user_id = response.authResponse.userID;
-							        var page_id = "145862242107";
-							        var fql_query = "SELECT uid FROM page_fan WHERE page_id =" + page_id + " and uid=" + user_id;
-							        var the_query = FB.Data.query(fql_query);
-
-							        the_query.wait(function(rows) {
-
-							            if (rows.length == 1 && rows[0].uid == user_id) {
-							            	
-											deferred.resolve({
-												connected: true,
-												status: true,
-												data: fb_profile_data
-											});
-							            
-							            } else {
-
-											deferred.resolve({
-												connected: true,
-												status: false,
-												data: false
-											});
-
-							            };
-
-							        });
-
-							    }
-
-							});
-
-						} else {
-							
-							// User cancelled login or did not fully authorize.
-							console.log("User not fully authorize!");
-
-						};
-
-					}, {scope:'publish_actions,user_likes,email,user_birthday'});
+					deferred.resolve({
+						connected: false,
+						status: false,
+						data: false
+					});
 
 			    }
 
@@ -220,11 +176,13 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 
 })
 
-.controller('enterYourFaceCtrl', function($scope, $FB, $http, $fbLikeStatus){
+.controller('enterYourFaceCtrl', function($scope, $FB, $q, $timeout, $http, $fbLikeStatus){
 	
 	$scope.nonce = "";
 
 	$scope.fb_like = $fbLikeStatus;
+
+	$scope.use_profile_photo = true;
 
 	/*
 	 *	get nonce
@@ -238,22 +196,74 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 
 	// callback that logs arguments
 	var page_like_callback = function(url, html_element) {
-	  $scope.fb_like = true;
-	}
+	 	
+		$FB.api('/me', function(response){
+			fb_profile_data = response;
+
+			$scope.fb_like = {
+				connected: true,
+				status: true,
+				data: fb_profile_data
+			};
+
+		});
+
+	};
 
 	// In your onload handler add this call
 	$FB.Event.subscribe('edge.create', page_like_callback);
 
 	$scope.login = function(){
 
+		var deferred = $q.defer();
+
 		$FB.login(function(response) {
 			if (response.authResponse) {
-				console.log('Authenticated!');
-				// location.reload(); //or do whatever you want
+
+				var user_id = response.authResponse.userID;
+				var page_id = "145862242107";
+				var fql_query = "SELECT uid FROM page_fan WHERE page_id =" + page_id + " and uid=" + user_id;
+				var the_query = FB.Data.query(fql_query);
+				var fb_profile_data = false;
+
+				$FB.api('/me', function(response){
+					
+					fb_profile_data = response;
+
+					the_query.wait(function(rows) {
+
+					    if (rows.length == 1 && rows[0].uid == user_id) {
+
+							deferred.resolve({
+								connected: true,
+								status: true,
+								data: fb_profile_data
+							});
+					    
+					    } else {
+
+							deferred.resolve({
+								connected: true,
+								status: false,
+								data: false
+							});
+
+					    };
+
+					});
+
+				});
+
+
 			} else {
+
 				console.log('User cancelled login or did not fully authorize.');
+			
 			}
-		});
+
+		}, {scope:'publish_actions,user_likes,email,user_birthday'});
+
+		$scope.fb_like = deferred.promise;
 
 	};
 
@@ -311,7 +321,14 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 
 .controller('uploadPhotoCtrl', function($scope, $http, $FB, mySettings, $q) {
 
-	$scope.user = {};
+	console.log($scope.$parent.fb_like.data);
+
+	$scope.user = {
+		birthday: $scope.$parent.fb_like.data.birthday,
+		email: $scope.$parent.fb_like.data.email,
+		full_name: $scope.$parent.fb_like.data.name,
+
+	};
 	$scope.wp_base_path = mySettings.wp_base_path;
 	var lock = false;
 
