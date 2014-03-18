@@ -650,6 +650,16 @@ button.your_face {
 .my-page-anim.ng-move.ng-move-active {
   opacity:1;
 }
+#chars-counter {
+  position: relative;
+  top: -25px;
+  right: -160px;
+  color: #555;
+  font-size: 12px;
+  background: transparent;
+  text-align: right;
+  width: 130px;
+}
 
 /* custom animations */
 @-webkit-keyframes vanish_longer {

@@ -61,7 +61,8 @@
                 <input type="text" name="telephone" ng-model="user.telephone" required />
 
                 <p>why you?</p>
-                <textarea name="description" ng-model="user.description" maxcharlength required min="15" max="150"></textarea>
+                <textarea name="description" ng-model="user.description" maxcharlength required></textarea>
+                <div id="chars-counter">( {{ charactersCounter() }} characters left! )</div>
 
                 <input type="hidden" name="nonce" value="{{nonce}}" ng-model="user.nonce" />
                 <input type="hidden" name="img_crop" ng-model="user.img_crop" />

@@ -49,5 +49,9 @@
 
 		http://jsfiddle.net/thomporter/ANxmv/2/
 
-		
+
+	- angular js character counter
+
+		http://stackoverflow.com/questions/20603107/angularjs-text-area-character-counter
+
 		

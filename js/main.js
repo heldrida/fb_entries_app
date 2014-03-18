@@ -327,6 +327,7 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 		birthday: $scope.$parent.fb_like.data.birthday,
 		email: $scope.$parent.fb_like.data.email,
 		full_name: $scope.$parent.fb_like.data.name,
+		description: ""
 
 	};
 	$scope.wp_base_path = mySettings.wp_base_path;
@@ -377,6 +378,26 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 
 	};
 
+	$scope.charactersCounter = function() {
+
+		var max_chars = 150;
+
+		if ( $scope.user.description === undefined ) {
+				
+			return "0";
+	
+		} else if ( !$scope.user.description.hasOwnProperty(length) ) {
+
+			return max_chars;
+
+		} else {
+
+			return max_chars - $scope.user.description.length;
+
+		}
+
+	};
+
 })
 
 .directive('a', function() {
@@ -423,27 +444,27 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 				}
 			});
 
-			/*
-			elem.on('change', function(evt) {
+		}
+	};
+})
 
-				scope.$apply(function(){
+.directive('maxcharlength', function() {
+	return {
+		require: 'ngModel',
+		link: function(scope, elm, attrs, ctrl) {
 
-					var viewValue = elem.val();
+			var chars_max = 150;
+			var chars_min = 0;
 
-					viewValue = _calculateAge(viewValue);
-					console.log("viewValue: " + viewValue);
-					if (viewValue >= min_age && viewValue <= max_age) {
-						console.log("viewValue is valid!");
-						ctrl.$setValidity('age', true);
-					} else {
-						console.log("viewValue is not valid!");
-						ctrl.$setValidity('age', false);
-					};
-
-				});
-
+			ctrl.$parsers.unshift(function(viewValue) {
+				if (viewValue.length > chars_max || viewValue.length < chars_min) {
+					ctrl.$setValidity('maxcharlength', false);
+					return undefined;
+				} else {
+					ctrl.$setValidity('maxcharlength', true);
+					return viewValue;
+				}
 			});
-			*/
 
 		}
 	};
