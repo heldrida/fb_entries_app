@@ -26,7 +26,7 @@
 
     </div>
 
-    <div ng-if="fb_like.connected == true && fb_like.status == true && template_data.success_page == false">
+    <div ng-if="fb_like.connected == true && fb_like.status == true && template_data.success_page == false && template_data.approval_process == false">
 
         <p>upload a photo of yourself and tell us why you should go on the <br> mission of a lifetime or the chance to get your face into space.</p>
         
@@ -84,17 +84,45 @@
 
     </div>
 
-    <div ng-if="template_data.success_page == true" class="entry-approval">
+    <div ng-if="template_data.success_page == true && template_data.approval_process == false" class="entry-approval">
 
-        <p>What happens now:</p>
+            <p>What happens now:</p>
 
-        <p>our space scientists need to <br /> <span class="red big">approve your entry</span></p>
+            <p>our space scientists need to <br /> <span class="red big">approve your entry</span></p>
 
-        <p>to make sure it's all ok, once it's approved</p>
+            <p>to make sure it's all ok, once it's approved</p>
 
-        <p>you can <span class="uppercase big">visit this page again</span> to see it.</p>
+            <p>you can <span class="uppercase big">visit this page again</span> to see it.</p>
 
-        <p><span class="red big">good luck!</span></p>
+            <p><span class="red big">good luck!</span></p>
+
+    </div>
+
+    <div ng-if="template_data.approval_process == true">
+
+        <div ng-if="template_data.approval_status == true">
+        
+        <div class="entry">
+            <div class="photo">
+                <img ng-src="{{ wp_base_path }}/wp-content/plugins/space_competition/uploads/{{ entry.photo }}" />
+            </div>
+            <div class="details">
+                <p class="red">Name</p>
+                <p class="full_name">{{ entry.full_name }}</p>
+                <p class="red">Why should you be the one?</p>            
+                <p class="description">{{ entry.description }}</p>
+            </div>
+        </div>
+
+        </div>
+
+        <div ng-if="template_data.approval_status == false" class="entry-approval">
+
+            <p><span class="red big">your entry<br> is awaiting approval!</span></p>
+            
+            <p>please come back later <br />to see when your entry has been approved.</p>
+
+        </div>
 
     </div>
 

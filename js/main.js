@@ -176,15 +176,20 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 
 })
 
-.controller('enterYourFaceCtrl', function($scope, $FB, $q, $timeout, $http, $fbLikeStatus){
+.controller('enterYourFaceCtrl', function($scope, $FB, $q, $timeout, $http, $fbLikeStatus, mySettings){
 	
 	$scope.nonce = "";
 
+	$scope.wp_base_path = mySettings.wp_base_path;
+
 	$scope.fb_like = $fbLikeStatus;
+
+	// check if user is in approval process
+	user_approval_pending( $fbLikeStatus.data.id );
 
 	$scope.use_profile_photo = true;
 
-	$scope.template_data = { success_page: true };
+	$scope.template_data = { success_page: false };
 
 	/*
 	 *	get nonce
@@ -196,16 +201,65 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 		$scope.nonce = data.nonce;
 	});
 
+	function user_approval_pending(user_profile_id){
+
+			var data = {
+				option: "user_approval_status",
+				user_profile_id: user_profile_id
+			};
+
+			$.post(
+				mySettings.wp_base_path + '/wp-admin/admin-ajax.php?action=space_competition',
+				data,
+				function( data ){
+		
+					data = JSON.parse(data);
+					
+					console.log(data);
+
+					if ( typeof data === "object" ) {
+					
+						$scope.$apply(function(){
+
+							$scope.template_data.success_page = false;
+							$scope.template_data.approval_process = true;
+							$scope.template_data.approval_status = data[0].approved === "1" ? true : false;
+							
+							console.log("approved");
+							console.log(data.approved);
+
+							$scope.entry = data[0];
+
+						});
+
+					} else {
+
+						$scope.$apply(function(){
+
+							$scope.template_data.success_page = false;
+							$scope.template_data.approval_process = false;
+
+						});
+
+					};
+
+			});
+
+	};
+
 	// callback that logs arguments
 	var page_like_callback = function(url, html_element) {
 	 	
 		$FB.api('/me', function(response){
-			fb_profile_data = response;
+
+			// check if user already submited entry
+			// show approval status page
+			//user_approval_pending( response.id );
 
 			$scope.fb_like = {
 				connected: true,
 				status: true,
-				data: fb_profile_data
+				data: response
 			};
 
 		});
@@ -228,6 +282,10 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 		$FB.login(function(response) {
 
 			if (response.authResponse) {
+
+				// check if user already submited entry
+				// show approval status page
+				//user_approval_pending( response.authResponse.userID );
 
 				var user_id = response.authResponse.userID;
 				var page_id = "145862242107";
