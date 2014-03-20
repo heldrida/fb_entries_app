@@ -102,17 +102,33 @@
 
         <div ng-if="template_data.approval_status == true">
         
-        <div class="entry">
-            <div class="photo">
-                <img ng-src="{{ wp_base_path }}/wp-content/plugins/space_competition/uploads/{{ entry.photo }}" />
+            <div class="row row-entries">
+
+                <div class="entry">
+                    <div class="photo">
+                        <img ng-src="{{ wp_base_path }}/wp-content/plugins/space_competition/uploads/{{ entry.photo }}" />
+                    </div>
+                    <div class="details">
+
+                        <p class="red">Name</p>
+                        <p class="full_name">{{ entry.full_name }}</p>
+
+                        <p class="red">email</p>
+                        <p class="email">{{ entry.email }}</p>
+
+                        <p class="red">birthday</p>
+                        <p class="birthday">CHANGE DB COLUMN</p>
+
+                        <p class="red">phone no</p>
+                        <p class="telephone">{{ entry.telephone }}</p>
+
+                        <p class="red">Why should you be the one?</p>
+                        <p class="description">{{ entry.description }}</p>
+                    
+                    </div>
+                </div>
+
             </div>
-            <div class="details">
-                <p class="red">Name</p>
-                <p class="full_name">{{ entry.full_name }}</p>
-                <p class="red">Why should you be the one?</p>            
-                <p class="description">{{ entry.description }}</p>
-            </div>
-        </div>
 
         </div>
 
