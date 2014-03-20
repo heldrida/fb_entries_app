@@ -161,8 +161,8 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
         $('.balloons .second').animo({animation: "vanish",
             iterate: "infinite", duration: 6.9, delay: -1.5 });
 
-        $('.animatable-elements .cat-foo').animo({animation: "vanish_longer",
-            iterate: "infinite", duration: 4 });
+        //$('.animatable-elements .cat-foo').animo({animation: "vanish_longer", iterate: "infinite", duration: 4 });
+        $('.animatable-elements .cat-foo').animo({animation: "swinging", iterate: "infinite", duration: 0.8 });
 
 	});
 
