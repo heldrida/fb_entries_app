@@ -604,7 +604,26 @@ button.your_face {
 .entry-approval .big {
   font-size: 31px;
 }
-
+.approved-entry .red {
+  clear: both;
+}
+.approved-entry .entry {
+  display: inline-block;
+  height: auto !important;
+}
+.approved-entry .details {
+  width: 100% !important;
+}
+.approved-entry .details {
+  height: auto !important;
+  float: left !important;
+}
+.approved-entry .photo,
+.approved-entry .birthday,
+.approved-entry .email,
+.approved-entry .telephone {
+    margin-bottom: 20px;
+}
 
 /* spinner animation */
 .spinner {

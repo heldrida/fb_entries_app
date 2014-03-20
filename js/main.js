@@ -436,8 +436,12 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 
 })
 
-.controller('homeCtrl', function($scope){
-	console.log("home ctrl");
+.controller('homeCtrl', function($scope, $state){
+	
+	$scope.navigateTo = function(page){
+		$state.go(page);
+	};
+
 })
 
 .controller('entriesCtrl', function($scope, myEntries, mySettings){
