@@ -26,7 +26,7 @@
 
     </div>
 
-    <div ng-if="fb_like.connected == true && fb_like.status == true">
+    <div ng-if="fb_like.connected == true && fb_like.status == true && template_data.success_page == false">
 
         <p>upload a photo of yourself and tell us why you should go on the <br> mission of a lifetime or the chance to get your face into space.</p>
         
@@ -81,6 +81,20 @@
             </div>
             <button class="space your_face" ng-click="submitted=true">submit your face!</button>
         </form>
+
+    </div>
+
+    <div ng-if="template_data.success_page == true" class="entry-approval">
+
+        <p>What happens now:</p>
+
+        <p>our space scientists need to <br /> <span class="red big">approve your entry</span></p>
+
+        <p>to make sure it's all ok, once it's approved</p>
+
+        <p>you can <span class="uppercase big">visit this page again</span> to see it.</p>
+
+        <p><span class="red big">good luck!</span></p>
 
     </div>
 

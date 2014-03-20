@@ -588,6 +588,19 @@ button.your_face {
   background-color: #555;
   border-color: #555;
 }
+.entry-approval {
+  font-size: 21px;
+}
+.entry-approval p {}
+.entry-approval .red {
+  color: red;
+}
+.entry-approval .uppercase {
+  text-transform: uppercase;
+}
+.entry-approval .big {
+  font-size: 31px;
+}
 
 
 /* spinner animation */
