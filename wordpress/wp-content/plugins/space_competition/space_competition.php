@@ -147,7 +147,7 @@ function approved_entries(){
 
 	$page = mysql_real_escape_string( $_POST['page'] ) && is_numeric( $_POST['page'] ) ? mysql_real_escape_string( $_POST['page'] ) : 1;
 
-	$total_per_page = 3;
+	$total_per_page = 5;
 	$start = ( $page - 1 ) * $total_per_page;
 	//$end = $total_per_page * $page;
 

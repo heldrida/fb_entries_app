@@ -141,6 +141,9 @@ main {
 .row {
     color: #FFF;
 }
+.row p {
+  font-family: "futura-pt-condensed", sans-serif;
+}
 .row-header img {
     position: relative;
     top: 0;
@@ -180,12 +183,14 @@ main {
     max-width: 330px;
 }
 .row-enter-now div p {
-    font-size: 1.2em;
-    letter-spacing: -0.04em;
+    font-size: 1.1em;
+    letter-spacing: -0.06em;
     margin: 0 auto;
-    width: 65%;
+    width: 75%;
+    padding-left: 15px;
     padding-bottom: 1em;
     text-align: center;
+    text-transform: uppercase;
 }
 .row-enter-now .highlight {
     color: #EA342F;
