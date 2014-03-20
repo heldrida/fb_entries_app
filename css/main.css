@@ -344,6 +344,9 @@ button.space:hover {
 .row-entries .entry .details {
     color: #FFF;
 }
+.row-entries .entry .details p {
+  text-align: left;
+}
 .row-entries .red {
     color: #EA342F;
 }

@@ -61,7 +61,7 @@ function my_plugin_page(){
 	    		<tr ng-repeat="entry in $data" class="entry_{{$index}}">
 					<td data-title="\'Facebook Profile ID\'"><a href="http://facebook.com/{{entry.fb_profile_uid}}" target="_blank">{{entry.fb_profile_uid}}</a></td>
 					<td data-title="\'Name\'" sortable="\'full_name\'">{{entry.full_name}}</td>
-					<td data-title="\'age\'">{{entry.age}}</td>
+					<td data-title="\'birthday (Y-M-D)\'">{{entry.birthday}}</td>
 					<td data-title="\'email\'">
 						<a href="mailto:{{entry.email}}">{{entry.email}}</a>
 					</td>
@@ -275,6 +275,9 @@ function new_entry(){
 
 	$filename = save_user_profile_picture();
 
+	$dateFormated = split('/', $_POST['birthday']);
+	$birthday = $dateFormated[2].'-'.$dateFormated[0].'-'.$dateFormated[1];
+
 	if ( $filename ){
 
 		// Save to database
@@ -285,7 +288,7 @@ function new_entry(){
 		$sql = "INSERT INTO `$tbl_name` (
 											fb_profile_uid,
 											full_name,
-											age,
+											birthday,
 											email,
 											telephone,
 											description,
@@ -294,7 +297,7 @@ function new_entry(){
 				VALUES (
 					%d,
 					%s,
-					%d,
+					%s,
 					%s,
 					%s,
 					%s,
@@ -305,7 +308,7 @@ function new_entry(){
 					$sql,
 					$_POST['fb_profile_uid'],
 					$_POST['full_name'],
-					$_POST['age'],
+					$birthday,
 					$_POST['email'],
 					$_POST['telephone'],
 					$_POST['description'],
@@ -455,7 +458,7 @@ function my_plugin_install(){
 	  `id` int(11) NOT NULL AUTO_INCREMENT,
 	  `fb_profile_uid` int(11) NOT NULL,
 	  `full_name` varchar(150) NOT NULL,
-	  `age` int(11) NOT NULL,
+  	  `birthday` date NOT NULL,
 	  `email` varchar(150) NOT NULL,
 	  `telephone` varchar(100) NOT NULL,
 	  `description` text NOT NULL,

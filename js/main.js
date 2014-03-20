@@ -350,7 +350,9 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 		description: "",
 		user_profile_picture: "http://graph.facebook.com/" + $scope.$parent.fb_like.data.id + "/picture?width=300&height=300"
 	};
+
 	$scope.wp_base_path = mySettings.wp_base_path;
+	
 	var lock = false;
 
 	$scope.submit = function(){
@@ -376,6 +378,9 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 		});
 		
 		deferred.promise.then(function(){
+
+			console.log("$scope.user");
+			console.log($scope.user);
 
 			$.post(
 				mySettings.wp_base_path + '/wp-admin/admin-ajax.php?action=space_competition',
