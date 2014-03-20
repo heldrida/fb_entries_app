@@ -61,7 +61,7 @@ function my_plugin_page(){
 	    		<tr ng-repeat="entry in $data" class="entry_{{$index}}">
 					<td data-title="\'Facebook Profile ID\'"><a href="http://facebook.com/{{entry.fb_profile_uid}}" target="_blank">{{entry.fb_profile_uid}}</a></td>
 					<td data-title="\'Name\'" sortable="\'full_name\'">{{entry.full_name}}</td>
-					<td data-title="\'birthday (Y-M-D)\'">{{entry.birthday}}</td>
+					<td data-title="\'birthday (Y-M-D)\'">{{entry.birthday}} <span class="age">(Age is {{age(entry.birthday)}})</span></td>
 					<td data-title="\'email\'">
 						<a href="mailto:{{entry.email}}">{{entry.email}}</a>
 					</td>

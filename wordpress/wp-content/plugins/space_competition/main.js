@@ -78,4 +78,15 @@ angular.module('SpaceCompetitionManager', ['ngTable','ngTableExport', 'mySetting
     	return parseInt(bool) ? 'check' : 'delete';
     };
 
+    $scope.age = function(birthday) {
+
+		birthday = new Date(birthday);
+		
+		var ageDifMs = Date.now() - birthday.getTime();
+		var ageDate = new Date(ageDifMs);
+
+		return Math.abs(ageDate.getUTCFullYear() - 1970);
+
+    };
+
 });

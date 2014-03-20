@@ -20,6 +20,10 @@
 #space_competition table tbody td {
 	background: #DDD;	
 }
+#space_competition td .age {
+	font-style: italic;
+	color: #555;
+}
 #space_competition .approved_0,
 #space_competition .approved_1 {}
 #space_competition .approved_0 {}
