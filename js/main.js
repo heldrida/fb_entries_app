@@ -213,11 +213,18 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 	// In your onload handler add this call
 	$FB.Event.subscribe('edge.create', page_like_callback);
 
+	var login_callback = function(response){
+		response.status === "connected" ? page_like_callback() : function() { $scope.fb_like.connected = false; };
+	};
+
+	$FB.Event.subscribe('auth.statusChange', login_callback);
+
 	$scope.login = function(){
 
 		var deferred = $q.defer();
 
 		$FB.login(function(response) {
+
 			if (response.authResponse) {
 
 				var user_id = response.authResponse.userID;
@@ -257,8 +264,12 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 
 			} else {
 
-				console.log('User cancelled login or did not fully authorize.');
-			
+				$scope.fb_like = {
+					connected: false,
+					status: false,
+					data: false
+				};
+
 			}
 
 		}, {scope:'publish_actions,user_likes,email,user_birthday'});
