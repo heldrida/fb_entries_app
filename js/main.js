@@ -282,59 +282,7 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 
 })
 
-.controller('termsAndConditionsCtrl', function($scope){
-
-})
-
-.controller('homeCtrl', function($scope){
-	console.log("home ctrl");
-})
-
-.controller('entriesCtrl', function($scope, myEntries, mySettings){
-
-	console.log("entries ctrl");
-
-	$scope.entries = myEntries;
-
-	$scope.wp_base_path = mySettings.wp_base_path;
-
-	$scope.page = $scope.page || 1;
-	
-	console.log("scope.page: " + $scope.page);
-
-	$scope.load_more = function(){
-
-		$scope.page += 1;
-
-		$.post(
-			mySettings.wp_base_path + '/wp-admin/admin-ajax.php?action=space_competition',
-			{ option: "approved_entries", page: $scope.page },
-			function( data ){
-
-				console.log("approved_entries data: " + data);
-
-				data = JSON.parse(data);
-				
-				$scope.$apply(function(){
-
-					angular.forEach(data, function(value, key){
-						
-						$scope.entries.push(value);
-
-					});
-
-				});
-
-			}
-		);
-
-	};
-
-})
-
 .controller('uploadPhotoCtrl', function($scope, $http, $FB, mySettings, $q) {
-
-	console.log($scope.$parent.fb_like.data);
 
 	$scope.user = {
 		fb_profile_uid: $scope.$parent.fb_like.data.id,
@@ -415,6 +363,56 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 			return max_chars - $scope.user.description.length;
 
 		}
+
+	};
+
+})
+
+.controller('termsAndConditionsCtrl', function($scope){
+
+})
+
+.controller('homeCtrl', function($scope){
+	console.log("home ctrl");
+})
+
+.controller('entriesCtrl', function($scope, myEntries, mySettings){
+
+	console.log("entries ctrl");
+
+	$scope.entries = myEntries;
+
+	$scope.wp_base_path = mySettings.wp_base_path;
+
+	$scope.page = $scope.page || 1;
+	
+	console.log("scope.page: " + $scope.page);
+
+	$scope.load_more = function(){
+
+		$scope.page += 1;
+
+		$.post(
+			mySettings.wp_base_path + '/wp-admin/admin-ajax.php?action=space_competition',
+			{ option: "approved_entries", page: $scope.page },
+			function( data ){
+
+				console.log("approved_entries data: " + data);
+
+				data = JSON.parse(data);
+				
+				$scope.$apply(function(){
+
+					angular.forEach(data, function(value, key){
+						
+						$scope.entries.push(value);
+
+					});
+
+				});
+
+			}
+		);
 
 	};
 
