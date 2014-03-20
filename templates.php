@@ -39,11 +39,15 @@
 
                 <br>
 
-                <button class="red_spc_bg">use profile photo</button>
+                <div ng-show="false">
+                    
+                    <button class="red_spc_bg">use profile photo</button>
 
-                <br>
+                    <br>
 
-                <button>browse</button>
+                    <button>browse</button>
+
+                </div>
 
             </div>
             <div class="col col-b">
