@@ -141,27 +141,22 @@ function entries(){
 
 function approved_entries(){
 
-	/*
-		start = (page - 1)*20 ;
-		end = 20 * page;
-		select * from table limit (start, end);
-	*/
-
 	global $wpdb;
 
 	$tbl_name = $wpdb->prefix . "space_competition";
 
 	$page = mysql_real_escape_string( $_POST['page'] ) && is_numeric( $_POST['page'] ) ? mysql_real_escape_string( $_POST['page'] ) : 1;
+
 	$total_per_page = 3;
 	$start = ( $page - 1 ) * $total_per_page;
-	$end = $total_per_page * $page;
+	//$end = $total_per_page * $page;
 
 	$sql = "SELECT * 
 			FROM `$tbl_name`
 			WHERE `approved` = 1
 			ORDER BY `registration_date` DESC
-			LIMIT $start, $end";
-
+			LIMIT $start, $total_per_page";
+ 
 	$res = $wpdb->get_results( $sql, 'OBJECT' );
 
 	echo $res ? json_encode($res) : json_encode(false);
