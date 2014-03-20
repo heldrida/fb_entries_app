@@ -368,7 +368,7 @@ button.space:hover {
     position: absolute;
 }
 .row-entries .balloons .second {
-    bottom: 450px;
+    bottom: 650px;
     left: 135px;
     position: absolute;
 }
@@ -378,8 +378,9 @@ button.space:hover {
     right: -100px;
 }
 .animatable-elements .cat-foo {
+    bottom: 10px;
+    left: 100px;
     position: relative;
-    bottom: 500px;
 }
 .terms-and-conditions {
     width: 530px;
