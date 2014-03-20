@@ -246,9 +246,36 @@ function img_crop(){
 
 }
 
+function save_user_profile_picture(){
+
+	if ( !isset($_POST['user_profile_picture']) || empty($_POST['user_profile_picture']) ) {
+		
+		return false;
+
+	};
+
+	$path = dirname(__FILE__) . "/uploads";
+
+	$filename = md5( time() . $original ) . ".jpg";
+
+	$ch = curl_init( $_POST['user_profile_picture'] );
+	$fp = fopen( $path . "/" . $filename, 'wb');
+	curl_setopt($ch, CURLOPT_FILE, $fp);
+	curl_setopt($ch, CURLOPT_HEADER, 0);
+	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+	curl_exec($ch);
+	curl_close($ch);
+	fclose($fp);
+
+	return $filename;
+
+}
+
 function new_entry(){
 
-	if ( $filename = img_crop() ){
+	$filename = save_user_profile_picture();
+
+	if ( $filename ){
 
 		// Save to database
 		global $wpdb;

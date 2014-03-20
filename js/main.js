@@ -184,6 +184,8 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 
 	$scope.use_profile_photo = true;
 
+	$scope.template_data = {};
+
 	/*
 	 *	get nonce
 	 */
@@ -335,18 +337,17 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 	console.log($scope.$parent.fb_like.data);
 
 	$scope.user = {
+		fb_profile_uid: $scope.$parent.fb_like.data.id,
 		birthday: $scope.$parent.fb_like.data.birthday,
 		email: $scope.$parent.fb_like.data.email,
 		full_name: $scope.$parent.fb_like.data.name,
-		description: ""
-
+		description: "",
+		user_profile_picture: "http://graph.facebook.com/" + $scope.$parent.fb_like.data.id + "/picture?width=300&height=300"
 	};
 	$scope.wp_base_path = mySettings.wp_base_path;
 	var lock = false;
 
 	$scope.submit = function(){
-
-		console.log( $scope.myForm.$valid );
 
 		if ( ! $scope.myForm.$valid || lock) {
 			console.log("Form not valid!");
@@ -357,10 +358,7 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 		lock = true;
 
 		// ng ignores hidden fields, so it's set manually
-		$scope.user.option = "new_entry";
-		$scope.user.img_crop_scale = $('input[name="img_crop_scale"]').val();
-		$scope.user.img_crop_pos_x = $('input[name="img_crop_pos_x"]').val();
-		$scope.user.img_crop_pos_y = $('input[name="img_crop_pos_y"]').val();		
+		$scope.user.option = "new_entry";	
 		$scope.user.nonce = $('input[name="nonce"]').val();
 		$scope.user.fb_profile_uid = false;
 
@@ -384,7 +382,7 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 					lock = false;
 					$scope.$apply(function(){
 
-						$scope.user = {};
+						//$scope.user = {};
 
 						$('form[name="myForm"]').scope().template_data.success_page = true;
 
