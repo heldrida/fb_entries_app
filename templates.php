@@ -102,13 +102,14 @@
 
         <div ng-if="template_data.approval_status == true">
         
-            <div class="row row-entries">
+            <div class="row row-entries approved-entry">
 
                 <div class="entry">
-                    <div class="photo">
-                        <img ng-src="{{ wp_base_path }}/wp-content/plugins/space_competition/uploads/{{ entry.photo }}" />
-                    </div>
+
                     <div class="details">
+
+                        <p class="red">Picture</p>           
+                        <p class="photo"><img ng-src="{{ wp_base_path }}/wp-content/plugins/space_competition/uploads/{{ entry.photo }}" /></p>
 
                         <p class="red">Name</p>
                         <p class="full_name">{{ entry.full_name }}</p>
@@ -116,8 +117,8 @@
                         <p class="red">email</p>
                         <p class="email">{{ entry.email }}</p>
 
-                        <p class="red">birthday</p>
-                        <p class="birthday">CHANGE DB COLUMN</p>
+                        <p class="red">birthday (YYYY-MM-DD)</p>
+                        <p class="birthday">{{ entry.birthday }}</p>
 
                         <p class="red">phone no</p>
                         <p class="telephone">{{ entry.telephone }}</p>
@@ -126,6 +127,7 @@
                         <p class="description">{{ entry.description }}</p>
                     
                     </div>
+
                 </div>
 
             </div>
@@ -303,7 +305,7 @@ OPERATOR: (1) This competition is operated by Cott Beverages Limited (Cott) of C
         <img src="img/planet_blue.png" />
     </div>
     
-    <button class="space">enter now!</button>
+    <button class="space" ng-click="navigateTo('enter-your-face')">enter now!</button>
 
 </div>
 
