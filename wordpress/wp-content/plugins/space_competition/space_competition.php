@@ -357,6 +357,26 @@ function img_upload(){
 
 }
 
+function user_approval_status(){
+
+	global $wpdb;
+
+	$tbl_name = $wpdb->prefix . "space_competition";
+
+	$uid = $_POST['user_profile_id'];
+
+	$sql = "SELECT * 
+			FROM `$tbl_name` 
+			WHERE `fb_profile_uid` =" . $uid . " 
+			ORDER BY `registration_date` DESC
+			LIMIT 1";
+
+	$res = $wpdb->get_results( $sql, 'OBJECT' );
+
+	echo $res ? json_encode($res) : json_encode(false);
+
+}
+
 function space_competition_callback(){
 
 	if ( !isset($_POST['option']) ){
@@ -392,6 +412,12 @@ function space_competition_callback(){
 		case 'new_entry':
 
 			new_entry();
+
+		break;
+
+		case 'user_approval_status':
+
+			user_approval_status();
 
 		break;
 
