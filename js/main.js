@@ -184,7 +184,7 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 
 	$scope.use_profile_photo = true;
 
-	$scope.template_data = {};
+	$scope.template_data = { success_page: true };
 
 	/*
 	 *	get nonce
@@ -332,7 +332,8 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 
 						//$scope.user = {};
 
-						$('form[name="myForm"]').scope().template_data.success_page = true;
+						//$('form[name="myForm"]').scope().template_data.success_page = true;
+						$scope.$parent.template_data.success_page = true;
 
 					});
 
