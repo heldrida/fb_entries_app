@@ -606,7 +606,7 @@ button.your_face {
   font-size: 31px;
 }
 .approved-entry .red {
-  clear: both;
+
 }
 .approved-entry .entry {
   display: inline-block;
@@ -618,6 +618,10 @@ button.your_face {
 .approved-entry .details {
   height: auto !important;
   float: left !important;
+}
+.approved-entry .photo {
+  width: 230px !important;
+  height: 230px !important;
 }
 .approved-entry .photo,
 .approved-entry .birthday,

@@ -107,8 +107,7 @@
                 <div class="entry">
 
                     <div class="details">
-
-                        <p class="red">Picture</p>           
+         
                         <p class="photo"><img ng-src="{{ wp_base_path }}/wp-content/plugins/space_competition/uploads/{{ entry.photo }}" /></p>
 
                         <p class="red">Name</p>
