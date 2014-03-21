@@ -8,7 +8,7 @@
         </div>
     </div>
 </div>
-<div class="row row-enter-your-face">
+<div class="row row-enter-your-face font-gothic">
 
     <div id="login-with-facebook" ng-if="fb_like.connected == false">
         <div ng-click="login()"><img src="img/login-facebook.png" /></div>
@@ -116,8 +116,8 @@
                         <p class="red">email</p>
                         <p class="email">{{ entry.email }}</p>
 
-                        <p class="red">birthday (YYYY-MM-DD)</p>
-                        <p class="birthday">{{ entry.birthday }}</p>
+                        <p class="red">Age</p>
+                        <p class="birthday">{{ calculateAge(entry.birthday) }}</p>
 
                         <p class="red">phone no</p>
                         <p class="telephone">{{ entry.telephone }}</p>
@@ -167,7 +167,7 @@ OPERATOR: (1) This competition is operated by Cott Beverages Limited (Cott) of C
         </div>
     </div>
 </div>
-<div class="row row-entries">
+<div class="row row-entries font-gothic">
     <div class="entry" ng-repeat="entry in entries">
         <div class="photo">
             <img ng-src="{{ wp_base_path }}/wp-content/plugins/space_competition/uploads/{{ entry.photo }}" />
