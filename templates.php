@@ -18,9 +18,9 @@
 
         <div class="fb-like-wrp" ezfb-xfbml>
             
-            <div class="txt">To participate make sure you have liked Emerge on Facebook</div>
+            <div class="fb-like" data-href="https://www.facebook.com/emergestimulationdrink" data-width="auto" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
 
-            <div class="fb-like" data-href="https://www.facebook.com/emergestimulationdrink" data-width="100px" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+            <div class="txt">To participate make sure you have liked Emerge on Facebook</div>
 
         </div>
 
@@ -28,7 +28,7 @@
 
     <div ng-if="fb_like.connected == true && fb_like.status == true && template_data.success_page == false && template_data.approval_process == false">
 
-        <p>upload a photo of yourself and tell us why you should go on the <br> mission of a lifetime or the chance to get your face into space.</p>
+        <p id="txt-upload-photo" class="text-shadow-light-blue">upload a photo of yourself and tell us why you should go on the <br> mission of a lifetime or the chance to get your face into space.</p>
         
         <form name="myForm" class="pure-form myForm" novalidate ng-controller="uploadPhotoCtrl" ng-submit="submit()" ng-class="{true: 'submitted'}[submitted]">
             <div class="col col-a">
@@ -79,7 +79,7 @@
 
                 <p class="text_agreement" ng-class="submitted == true && myForm.agreement.$error.required ? 'invalid' : ''"><input type="checkbox" name="agreement" ng-model="user.agreement" required> I agree to the <a href="/#/terms-and-conditions">T's and C's</a> and that I am over 16 years of age and a resident in the UK. </p>
             </div>
-            <button class="space your_face" ng-click="submitted=true">submit your face!</button>
+            <button class="space your_face font-gothic" ng-click="submitted=true">submit your face!</button>
         </form>
 
     </div>
@@ -141,6 +141,13 @@
 
         </div>
 
+    </div>
+
+    <div class="bg">
+        <div class="elems elem-a"></div>
+        <div class="elems elem-b"></div>
+        <div class="elems elem-c"></div>
+        <div class="elems elem-d"></div>
     </div>
 
 </div>
