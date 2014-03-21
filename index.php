@@ -41,7 +41,7 @@
                             <a href="#/enter-your-face">enter</a>
                         </li>
                         <li class="txt-a nav-logo">
-                            <img src="img/logo.png?20140306">
+                            <img src="img/logo.png?20140321">
                         </li>
                         <li class="txt-a opt" ng-class="isActive('/entries')">
                             <a href="#/entries">entries</a>

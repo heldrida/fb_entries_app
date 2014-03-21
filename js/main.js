@@ -167,8 +167,13 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
         $('.balloons .second').animo({animation: "vanish",
             iterate: "infinite", duration: 6.9, delay: -1.5 });
 
-        //$('.animatable-elements .cat-foo').animo({animation: "vanish_longer", iterate: "infinite", duration: 4 });
         $('.animatable-elements .cat-foo').animo({animation: "swinging", iterate: "infinite", duration: 0.8 });
+
+        $('.row-enter-your-face .elem-b').animo({animation: "vanish", iterate: "infinite", duration: 4.7 });
+
+        $('.row-enter-your-face .elem-c').animo({animation: "vanish", iterate: "infinite", duration: 5.8 });
+
+        //$('.row-enter-your-face .elem-d').animo({animation: "swinger", iterate: "infinite", duration: 8.8 });
 
 	});
 

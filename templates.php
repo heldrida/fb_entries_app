@@ -102,7 +102,7 @@
 
         <div ng-if="template_data.approval_status == true">
         
-            <div class="row row-entries approved-entry">
+            <div class="row row-entries approved-entry my-entry">
 
                 <div class="entry">
 
@@ -122,7 +122,7 @@
                         <p class="red">phone no</p>
                         <p class="telephone">{{ entry.telephone }}</p>
 
-                        <p class="red">Why should you be the one?</p>
+                        <p class="red br">Why should you be the one?</p>
                         <p class="description">{{ entry.description }}</p>
                     
                     </div>

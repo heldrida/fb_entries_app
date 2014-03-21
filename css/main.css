@@ -240,6 +240,7 @@ main {
 }
 .row-countdown {
   margin-top: 50px;
+  position: relative;
 }
 .row-countdown table {
     width: 565px;
@@ -327,7 +328,7 @@ button.space {
     background: url("../img/button_bckground_patern.png?20140307") repeat scroll 0 0 rgba(0, 0, 0, 0);
     border: 4px solid #FFFFFF;
     color: #FFFFFF;
-    font-size: 2.2em;
+    font-size: 1.8em;
     height: 65px;
     line-height: 60px;
     text-shadow: 1px 2px 6px #000000;
@@ -597,6 +598,9 @@ button.space:hover {
 .text_agreement.invalid {
   color: #EA342F;
 }
+.row-enter-your-face {
+  position: relative;
+}
 .row-enter-your-face .col input,
 .row-enter-your-face .col textarea {
     width: 100%;
@@ -720,8 +724,11 @@ button.your_face {
 }
 .entry-approval {
   font-size: 21px;
+  padding: 50px 0;
 }
-.entry-approval p {}
+.entry-approval p {
+  font-size: 1.2em !important;
+}
 .entry-approval .red {
   color: red;
 }
@@ -729,11 +736,13 @@ button.your_face {
   text-transform: uppercase;
 }
 .entry-approval .big {
-  font-size: 31px;
+  font-size: 1.4em;
 }
 .approved-entry .red {
   font-size: 1.4em !important;
 }
+.entry-approval .big,
+.entry-approval .red {}
 .approved-entry .entry {
   display: inline-block;
   height: auto !important;
@@ -754,6 +763,12 @@ button.your_face {
 .approved-entry .email,
 .approved-entry .telephone {
     margin-bottom: 20px;
+}
+.my-entry .entry {
+  width: 100%;
+}
+.my-entry .br {
+  clear: both;
 }
 .row-enter-your-face .details p {
     font-size: 1.2em;
@@ -1037,6 +1052,24 @@ button.your_face {
 .swinging {
   -webkit-animation-name: swinging;
   animation-name: swinging;
+}
+@-webkit-keyframes swinger {
+  100% {
+    -webkit-transform: rotate(380deg);
+    -ms-transform: rotate(380deg);
+    transform: rotate(380deg);
+  }
+}
+@keyframes swinger {
+  100% {
+    -webkit-transform: rotate(380deg);
+    -ms-transform: rotate(380deg);
+    transform: rotate(380deg);
+  }
+}
+.swinger {
+  -webkit-animation-name: swinger;
+  animation-name: swinger;
 }
 
 
