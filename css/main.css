@@ -220,8 +220,18 @@ main {
     right: -60px;
     top: -110px;
 }
-.row-countdown {
-  background: url("../img/countdown_background.png") repeat scroll -120px -19px transparent;
+.row-countdown .bg {
+  background: url("../img/countdown_background.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+  height: 112%;
+  left: 10px;
+  position: absolute !important;
+  top: -150px;
+  width: 100%;
+  z-index: 2 !important;
+}
+.row-countdown * {
+  position: relative;
+  z-index: 3;
 }
 .row-countdown,
 .row-video,
@@ -339,7 +349,8 @@ button.space:hover {
 }
 .row-footer p {
     text-align: center;
-    font-size: 1.4em;
+    font-size: 1.6em;
+    margin-bottom: 10px;
 }
 .footer-logo {
     background: url("../img/footerlogo.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
@@ -351,7 +362,7 @@ button.space:hover {
     color: #FFF;
 }
 .row-footer .description p {
-    font-size: 12px;
+    font-size: 13px;
     color: #FFF;
 }
 .text-shadow-light-blue {
@@ -364,10 +375,10 @@ button.space:hover {
     text-shadow: 2px 3px 4px #000, -1px 2px 3px #000;
 }
 .text-shadow-blue {
-    text-shadow: 0 0 15px #FFFFFF, 0 0 10px #55AAFF, 5px 5px 30px #FF00FF;
+    text-shadow: 0 0 15px #FFFFFF, 5px 5px 30px #FF00FF;
 }
 .text-shadow-superglow {
-    text-shadow: 0 0 50px #55AAFF, 5px 5px 62px #FF00FF, -5px -12px 50px #AA55FF,  -10px 10px 20px #00FFCC, -10px -10px 20px #00FFCC, 1px 1px 2px #000000;
+    text-shadow: 0 0 50px #55AAFF, 5px 5px 62px #FFAAFF;
 }
 .row-entries {
     margin: 0 auto;

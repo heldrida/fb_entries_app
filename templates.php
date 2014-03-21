@@ -231,6 +231,8 @@ OPERATOR: (1) This competition is operated by Cott Beverages Limited (Cott) of C
 
 <div class="row row-b row-countdown font-gothic">
 
+    <div class="bg"></div>
+
     <table id="countdown">
         <thead class="text-shadow-soft">
             <tr>
@@ -268,7 +270,7 @@ OPERATOR: (1) This competition is operated by Cott Beverages Limited (Cott) of C
 
     <div class="contest-description text-shadow-dark">
 
-        <p class="text-shadow-light-blue"><?php echo "the competition runs from start date 01/05/2014 to 31/05/2014 at that point we'll go through all of the entries and the one that we feel has given us the best reason to go will be picked as our intergalactic hero."; ?></p>
+        <p class="text-shadow-light-blue"><?php echo "the competition runs from start date 01/05/2014 to 31/05/2014 at that point we'll go through all of the entries and the<br/> one that we feel has given us the best reason to go will be picked as our intergalactic hero."; ?></p>
 
     </div>
 
@@ -320,9 +322,9 @@ OPERATOR: (1) This competition is operated by Cott Beverages Limited (Cott) of C
 
     <p class="text-shadow-superglow"><a href="http://www.emergespaceprogramme.com" target="_blank">www.emergespaceprogramme.com</a> <a href="https://twitter.com/search?q=%23YourFaceInSpace&src=hash" target="blank"><span class="hashtag">#</span>yourfaceinspace</p>
 
-    <div class="description text-shadow-blue">
+    <div class="description">
 
-        <p>t's and c's apply. please read full terms at our facebook address. the winners face represented on a 3d model will be sent on a weather balloon to the edge of space. competition runs until 16:00 gmt 31/05/2014. you must be over 16 years to enter. <br/> no purchase necessary. you must be a uk resident.</p>
+        <p>t's and c's apply. please read full terms at our facebook address. the winners face represented on a 3d model will be sent on a<br/> weather balloon to the edge of space. competition runs until 16:00 gmt 31/05/2014. you must be over 16 years to enter. <br/> no purchase necessary. you must be a uk resident.</p>
 
         <p>copyright © <?php echo date('Y', time()); ?> cott beverages ltd. all rights reserved.</p>
 
