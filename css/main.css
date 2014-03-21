@@ -324,11 +324,13 @@ main {
   font-size: 2.3em !important;
 }
 button.space {
-    background: url('../img/button_bckground_patern.png?20140307') repeat 0 0 transparent;
+    background: url("../img/button_bckground_patern.png?20140307") repeat scroll 0 0 rgba(0, 0, 0, 0);
     border: 4px solid #FFFFFF;
     color: #FFFFFF;
-    font-size: 1.5em;
-    height: 68px;
+    font-size: 2.2em;
+    height: 65px;
+    line-height: 60px;
+    text-shadow: 1px 2px 6px #000000;
     text-transform: uppercase;
     width: auto;
     -webkit-transition: all 0.3s;
@@ -353,10 +355,10 @@ button.space:hover {
     margin-bottom: 10px;
 }
 .footer-logo {
-    background: url("../img/footerlogo.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
-    height: 182px;
-    width: 140px;
-    margin: 0 auto;   
+  background: url("../img/footerlogo.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+  height: 150px;
+  margin: 0 auto;
+  width: 140px; 
 }
 .row-footer span.hashtag {
     color: #FFF;
@@ -417,6 +419,9 @@ button.space:hover {
 .row-entries button.space {
     width: 100%;
 }
+.row-header-entries {
+  height: 390px;
+}
 .row-header-entries .astronauts .lady {
     left: -30px;
     position: absolute;
@@ -446,6 +451,7 @@ button.space:hover {
 .terms-and-conditions {
     width: 530px;
     margin: 0 auto;
+    font-size: arial;
 }
 .row-enter-your-face .photo {
     border: 4px solid #FFFFFF;
@@ -457,10 +463,61 @@ button.space:hover {
 .row-enter-your-face .myForm {
     margin: 0 auto;
     width: 535px;
+    position: relative;
+}
+.row-enter-your-face > div {
+  position: relative;
+  z-index: 2;
+}
+.row-enter-your-face > .bg {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+.row-enter-your-face .bg .elem-a {
+  background: url("../img/countdown_background.png") no-repeat scroll -50px 0 rgba(0, 0, 0, 0);
+  height: 150px;
+  left: -50px;
+  position: absolute;
+  top: 110px;
+  width: 150px;
+}
+.row-enter-your-face .bg .elem-b {
+  background: url("../img/Ballon_float2.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+  height: 150px;
+  left: 0;
+  position: absolute;
+  top: 360px;
+  width: 150px;
+}
+.row-enter-your-face .bg .elem-c {
+  background: url("../img/Ballon_float1.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+  height: 150px;
+  left: 665px;
+  position: absolute;
+  top: 150px;
+  width: 150px;
+}
+.row-enter-your-face .bg .elem-d {
+  background: url("../img/cat-foo.png") no-repeat scroll -50px -45px rgba(0, 0, 0, 0);
+  height: 300px;
+  left: 615px;
+  position: absolute;
+  top: 540px;
+  transform: rotate(20deg);
+  -webkit-transform: rotate(20deg);
+  width: 250px;
 }
 .row-enter-your-face > div p {
     text-align: center;
     text-transform: uppercase;
+    font-size: 1.3em;
+}
+#txt-upload-photo {
+  margin: 0 0 45px 0;
 }
 .myForm > div {
     display: inline-block;
@@ -521,15 +578,21 @@ button.space:hover {
   height: auto;
   margin-right: 10px;
   position: relative;
-  top: 2px;
+  top: 3px;
+}
+.myForm input,
+.myForm textarea {
+  border-radius: 0px !important;
 }
 .myForm .row a {
   color: #FFF;
 }
 .myForm .text_agreement {
-    font-size: 15px;
-    padding-bottom: 15px;
-    text-align: left;
+  font-family: arial;
+  font-size: 0.8em;
+  letter-spacing: normal;
+  padding-bottom: 15px;
+  text-align: left;
 }
 .text_agreement.invalid {
   color: #EA342F;
@@ -575,15 +638,17 @@ button.your_face {
 .fb-like-wrp {
   display: block;
   line-height: 20px;
-  height: 20px;
+  height: 100px;
   margin: 0 auto;
   max-width: 500px;
+  text-align: center;
+  width: auto;
 }
 .fb-like-wrp div {
-  float: left;
+  margin-bottom: 8px;
 }
 .fb-like-wrp .txt {
-  padding-right: 10px;
+  font-family: arial;
 }
 /* datepicker */
 .myForm .col-b {
@@ -762,11 +827,12 @@ button.your_face {
   position: relative;
   top: -25px;
   right: -160px;
-  color: #555;
+  color: #aaa;
   font-size: 12px;
   background: transparent;
   text-align: right;
   width: 130px;
+  font-family: arial;
 }
 
 /* custom animations */

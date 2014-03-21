@@ -35,6 +35,8 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 
 				            if (rows.length == 1 && rows[0].uid == user_id) {
 
+				            	console.log("user connected true, fb like is true");
+
 								deferred.resolve({
 									connected: true,
 									status: true,
@@ -42,6 +44,8 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 								});
 				            
 				            } else {
+
+				            	console.log("user connected true, fb like is false");
 
 								deferred.resolve({
 									connected: true,
@@ -56,6 +60,8 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 					});
 
 			    } else {
+
+				    console.log("user connected false, fb like is false");
 
 					deferred.resolve({
 						connected: false,
@@ -301,19 +307,23 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 
 					    if (rows.length == 1 && rows[0].uid == user_id) {
 
-							deferred.resolve({
+			            	console.log("user connected true, fb like is true");
+
+							$scope.fb_like = {
 								connected: true,
 								status: true,
 								data: fb_profile_data
-							});
+							};
 					    
 					    } else {
 
-							deferred.resolve({
+			            	console.log("user connected true, fb like is false");
+
+							$scope.fb_like = {
 								connected: true,
 								status: false,
 								data: false
-							});
+							};
 
 					    };
 
@@ -324,6 +334,8 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 
 			} else {
 
+			    console.log("user connected false, fb like is false");
+
 				$scope.fb_like = {
 					connected: false,
 					status: false,
@@ -333,8 +345,6 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 			}
 
 		}, {scope:'publish_actions,user_likes,email,user_birthday'});
-
-		$scope.fb_like = deferred.promise;
 
 	};
 
