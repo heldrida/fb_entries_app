@@ -14,22 +14,13 @@
 
         <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
         <link rel="stylesheet" href="css/normalize.min.css">
+        <link href='../fonts/font-face.css' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/main.css">
+        <!--
         <link href='http://fonts.googleapis.com/css?family=Carrois+Gothic+SC' rel='stylesheet' type='text/css'>
+        -->
 
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-
-        <!-- s: typekit -->
-        <script type="text/javascript">
-          (function(d) {
-            var config = {
-              kitId: 'dnb6zah',
-              scriptTimeout: 3000
-            },
-            h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-          })(document);
-        </script>
-        <!-- e: typekit -->
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -41,7 +32,7 @@
             
             <div class="pure-u-1">
             
-                <nav ng-controller="navigationCtrl">
+                <nav ng-controller="navigationCtrl" class="font-gothic">
                     <ul>
                         <li class="txt-a opt" ng-class="isActive('/home')">
                             <a href="#/home">home</a>
@@ -133,10 +124,10 @@
                 return x;
             };
 
-            $('#contdown span.days').text( getPrefix(days) );
-            $('#contdown span.hours').text( getPrefix(hours) );
-            $('#contdown span.minutes').text( getPrefix(minutes) );
-            $('#contdown span.seconds').text( getPrefix(seconds) );
+            $('#countdown span.days').text( getPrefix(days) );
+            $('#countdown span.hours').text( getPrefix(hours) );
+            $('#countdown span.minutes').text( getPrefix(minutes) );
+            $('#countdown span.seconds').text( getPrefix(seconds) );
 
         }, 1000);
         </script>

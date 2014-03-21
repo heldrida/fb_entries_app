@@ -65,7 +65,7 @@ a {
 }
 
 .font-gothic {
-    font-family: 'Carrois Gothic SC', sans-serif;
+    font-family: 'antonioregular';
 }
 html {
     background: url('../img/space_bacground.png') repeat 0 0 transparent;
@@ -87,18 +87,18 @@ nav {
 nav ul {
     float: left;
     left: 50%;
-    margin: 0 0 0 28px;
-    padding: 30px 0;
+    margin: 0 0 0 36px;
+    padding: 25px 0;
     position: relative;
     text-align: center;
     width: auto;
 }
 nav li {
     float: left;
-    margin-right: 1.4em;
+    margin-right: 3em;
     position: relative;
     right: 50%;
-    height: 45px;
+    height: 48px;
     background: url('../img/nav_mark.png') no-repeat center 100px transparent;      
     cursor: pointer;
     -webkit-transition: all 0.45s;
@@ -117,19 +117,21 @@ li.opt:hover,
 li.active {
     text-shadow: 0 0 10px #6BB2C4, 0 0 5px #87F,
         0 0 16px #FFF;
-  background: url('../img/nav_mark.png') no-repeat center 16px transparent;  
+  background: url('../img/nav_mark.png') no-repeat center 23px transparent;  
 }
 .txt-a {
     color: #FFF;
     text-transform: uppercase;
-    font-size: 1.1em;
+    font-size: 1.25em;
+    letter-spacing: 1px;
 }
 .nav-logo {
     margin-right: 0;
+    margin-left: 8px;
 }
 .nav-logo img {
     position: relative;
-    top: -50px;
+    top: -42px;
 }
 main {
     max-width: 760px;
@@ -137,13 +139,12 @@ main {
     margin: 0 auto;
     position: relative;
     z-index: 10;
+    top: -20px;
 }
 .row {
     color: #FFF;
 }
-.row p {
-  font-family: "futura-pt-condensed", sans-serif;
-}
+.row p {}
 .row-header img {
     position: relative;
     top: 0;
@@ -175,25 +176,31 @@ main {
     top: 300px;
 }
 .row-enter-now .balloons .second {
-    left: 10px;
-    top: 400px;
+    left: -15px;
+    top: 250px;
 }
 .row-enter-now div img {
     padding: 80px 0 20px;
     max-width: 330px;
 }
 .row-enter-now div p {
-    font-size: 1.1em;
-    letter-spacing: -0.06em;
-    margin: 0 auto;
-    width: 75%;
-    padding-left: 15px;
-    padding-bottom: 1em;
-    text-align: center;
-    text-transform: uppercase;
+  font-size: 1.24em;
+  letter-spacing: normal;
+  margin: 0 auto;
+  padding-bottom: 0.45em;
+  padding-left: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 75%;
+  line-height: normal;
 }
 .row-enter-now .highlight {
-    color: #EA342F;
+  color: #EA342F;
+  font-size: 1.25em;
+  letter-spacing: normal;
+}
+.row-enter-now .white {
+  color: #FFF !important;
 }
 .astronauts {
     height: auto;
@@ -213,6 +220,17 @@ main {
     right: -60px;
     top: -110px;
 }
+.row-countdown {
+  background: url("../img/countdown_background.png") repeat scroll -120px -19px transparent;
+}
+.row-countdown,
+.row-video,
+.row-blastoff {
+    text-transform: uppercase;
+}
+.row-countdown {
+  margin-top: 50px;
+}
 .row-countdown table {
     width: 565px;
     margin: 0 auto;
@@ -224,7 +242,7 @@ main {
 }
 .row-countdown tbody td {
     color: #FFF;
-    font-size: 3em;    
+    font-size: 3em; 
 }
 .row-countdown tbody td span {
     font-weight: bold;
@@ -237,6 +255,19 @@ main {
     font-size: 3em;
     margin: 0;
     padding: 0;
+}
+.row-countdown .seconds {
+  display: inline-block;
+  width: 100px;
+}
+.row-countdown .time {
+  font-size: 1.4em;
+}
+.row-countdown .dots {
+  font-size: 1em;
+  position: relative;
+  text-shadow: -3px -3px 10px #AAAAFF, 1px 3px 5px #11AAFF;
+  top: -5px;
 }
 .row-countdown .contest-description p {
     color: #FFF;
@@ -273,6 +304,15 @@ main {
     padding: 20px;
 }
 .row-enter-now {}
+.until-launch {
+  font-size: 2.2em !important;
+}
+.contest-description {
+  padding: 40px 0;
+}
+.check-cowboy {
+  font-size: 2.3em !important;
+}
 button.space {
     background: url('../img/button_bckground_patern.png?20140307') repeat 0 0 transparent;
     border: 4px solid #FFFFFF;
@@ -314,8 +354,11 @@ button.space:hover {
     font-size: 12px;
     color: #FFF;
 }
+.text-shadow-light-blue {
+    text-shadow: -3px -3px 15px #AAAAee, 1px 3px 25px #11AAee;
+}
 .text-shadow-soft {
-    text-shadow: 0 0 92px #AAAAFF, 0 0 2px #000088, 0 0 30px #BBBBFF;
+  text-shadow: 0 0 10px #444;
 }
 .text-shadow-dark {
     text-shadow: 2px 3px 4px #000, -1px 2px 3px #000;

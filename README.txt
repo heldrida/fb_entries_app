@@ -54,4 +54,9 @@
 
 		http://stackoverflow.com/questions/20603107/angularjs-text-area-character-counter
 
+	- futura condensed font ttf
+
+		http://www.saratogawire.com/media/css/fonts/futura/
+
+		
 		
