@@ -565,7 +565,7 @@ button.your_face {
   position: relative;
   z-index: 2;
   display: block;
-  margin: 100px auto;
+  margin: 45px auto;
   width: 500px;
   cursor: pointer;
 }
