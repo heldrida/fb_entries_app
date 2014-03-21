@@ -338,6 +338,13 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 
 	};
 
+	$scope.calculateAge = function(birthday) {
+		birthday = new Date(birthday);
+		var ageDifMs = Date.now() - birthday.getTime();
+		var ageDate = new Date(ageDifMs);
+		return Math.abs(ageDate.getUTCFullYear() - 1970);
+	}
+
 })
 
 .controller('uploadPhotoCtrl', function($scope, $http, $FB, mySettings, $q) {
@@ -468,16 +475,36 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 				console.log("approved_entries data: " + data);
 
 				data = JSON.parse(data);
-				
-				$scope.$apply(function(){
 
-					angular.forEach(data, function(value, key){
-						
-						$scope.entries.push(value);
+				if ( !data ){
+					
+					$('.row-entries button.space').animo({
+						animation: "vanish-rotate",
+						duration: 0.8 
+					}, function(){
+						$('.row-entries button.space').hide();
+					});
+
+				};
+				
+		        $('.animatable-elements .cat-foo').animo({
+		        	animation: "vanish-cat",
+		        	duration: 1.2 
+		        }, function(){
+
+					$scope.$apply(function(){
+
+						angular.forEach(data, function(value, key){
+							
+							$scope.entries.push(value);
+
+						});
 
 					});
 
-				});
+       				$('.animatable-elements .cat-foo').animo({animation: "swinging", iterate: "infinite", duration: 0.8 });
+
+		        });
 
 			}
 		);

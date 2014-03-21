@@ -87,7 +87,7 @@ nav {
 nav ul {
     float: left;
     left: 50%;
-    margin: 0 0 0 36px;
+    margin: 0 0 0 40px;
     padding: 25px 0;
     position: relative;
     text-align: center;
@@ -404,7 +404,9 @@ button.space:hover {
     color: #FFF;
 }
 .row-entries .entry .details p {
+  font-size: 1em;
   text-align: left;
+  text-transform: uppercase;
 }
 .row-entries .red {
     color: #EA342F;
@@ -665,7 +667,7 @@ button.your_face {
   font-size: 31px;
 }
 .approved-entry .red {
-
+  font-size: 1.4em !important;
 }
 .approved-entry .entry {
   display: inline-block;
@@ -679,8 +681,8 @@ button.your_face {
   float: left !important;
 }
 .approved-entry .photo {
-  width: 230px !important;
-  height: 230px !important;
+  width: 265px !important;
+  height: 265px !important;
 }
 .approved-entry .photo,
 .approved-entry .birthday,
@@ -688,6 +690,13 @@ button.your_face {
 .approved-entry .telephone {
     margin-bottom: 20px;
 }
+.row-enter-your-face .details p {
+    font-size: 1.2em;
+    letter-spacing: normal;
+    text-align: left;
+}
+
+
 
 /* spinner animation */
 .spinner {
@@ -844,6 +853,58 @@ button.your_face {
 .vanish {
   -webkit-animation-name: vanish;
   animation-name: vanish;
+}
+@-webkit-keyframes vanish-cat {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0%) translateX(0%) rotate(0deg);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-250%) translateX(50%) rotate(90deg);
+  }
+}
+@keyframes vanish-cat {
+  0% {
+    opacity: 1;
+    transform: translateY(0%) translateX(0%) rotate(0deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-250%) translateX(50%) rotate(90deg);
+  }
+}
+.vanish-cat {
+  -webkit-animation-name: vanish-cat;
+  animation-name: vanish-cat;
+}
+@-webkit-keyframes vanish-rotate {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) scale(1,1);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: rotate(360deg) scale(0.2,0.2);
+  }
+}
+@keyframes vanish-rotate {
+  0% {
+    opacity: 1;
+    transform:  rotate(0deg) scale(1,1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotate(360deg) scale(0.2,0.2);
+  }
+}
+.vanish-rotate {
+  -webkit-animation-name: vanish-rotate;
+  animation-name: vanish-rotate;
 }
 @-webkit-keyframes swinging {
   0% {
