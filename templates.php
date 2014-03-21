@@ -222,14 +222,16 @@ OPERATOR: (1) This competition is operated by Cott Beverages Limited (Cott) of C
         <img src="img/Enter_now.png?20140306" />
         <p>time to pack those bags and put your socks on space kids.</p>
         <p>cause' we're taking you on a <span class="highlight">journey through time &amp; space</span>. <br/> well...pretty much.</p>
-        <p>we are giving <span class="highlight">one lucky winner</span> the chance to get their beautiful face up <span class="highlight">into the stratosphere</span>.<br/>so what are you waiting for?<br/>sign up for the <span class="highlight">emerge space programme now!</span></p>
-        <p>all you have to do is upload your finest selfie and tell us why you should be the one...</p>
+        <p>we are giving <span class="highlight">one lucky winner</span> the chance to get their <br />beautiful face up <span class="highlight">into the stratosphere</span>.<br/>
+            <span class="highlight white">so what are you waiting for?</span>
+            <br/>sign up for the <span class="highlight">emerge space programme now!</span></p>
+        <p>all you have to do is upload <span class="highlight white">your finest selfie</span><br /> and tell us why you should be the one...</p>
     </div>
 </div>
 
 <div class="row row-b row-countdown font-gothic">
 
-    <table id="contdown">
+    <table id="countdown">
         <thead class="text-shadow-soft">
             <tr>
                 <td>days</td>
@@ -244,29 +246,29 @@ OPERATOR: (1) This competition is operated by Cott Beverages Limited (Cott) of C
         <tbody class="text-shadow-dark">
             <tr>
                 <td>
-                    <span class="days">00</span>
+                    <span class="time days">00</span>
                 </td>
-                <td>:</td>
+                <td><span class="time dots">:</span></td>
                 <td>
-                    <span class="hours">00</span>
+                    <span class="time hours">00</span>
                 </td>
-                <td>:</td>
+                <td><span class="time dots">:</span></td>
                 <td>
-                    <span class="minutes">00</span>
+                    <span class="time minutes">00</span>
                 </td>
-                <td>:</td>
+                <td><span class="time dots">:</span></td>
                 <td>
-                    <span class="seconds">00</span>
+                    <span class="time seconds">00</span>
                 </td>
             </tr>
         </tbody>
     </table>
 
-    <p class="text-shadow-soft">until launch!</p>
+    <p class="until-launch text-shadow-soft">until launch!</p>
 
     <div class="contest-description text-shadow-dark">
 
-        <p><?php echo "the competition runs from start date 01/05/2014 to 31/05/2014 at that point we'll go through all of the entries and the one that we feel has given us the best reason to go will be picked as our intergalactic hero."; ?></p>
+        <p class="text-shadow-light-blue"><?php echo "the competition runs from start date 01/05/2014 to 31/05/2014 at that point we'll go through all of the entries and the one that we feel has given us the best reason to go will be picked as our intergalactic hero."; ?></p>
 
     </div>
 
@@ -274,7 +276,7 @@ OPERATOR: (1) This competition is operated by Cott Beverages Limited (Cott) of C
 
 <div class="row row-b row-video font-gothic">
     
-    <p class="text-shadow-soft">check out this "space cowboy"</p>
+    <p class="check-cowboy text-shadow-soft">check out this "space cowboy"</p>
     
     <iframe width="586" height="356" src="//www.youtube.com/embed/Y-rFT-uHm4w?rel=0" frameborder="0" allowfullscreen></iframe>
 
@@ -284,11 +286,11 @@ OPERATOR: (1) This competition is operated by Cott Beverages Limited (Cott) of C
     
     <div class="description">
 
-        <p>a winner will be selected and with the use of some advanced cloning technological, top of the range scene and math, their face will be transformed into an intergalactic phenomenon, aka (a wibbly wobbly spaceman model.)</p>
+        <p>a winner will be selected and with the use of some advanced<br /> cloning technological, top of the range scene and math, their face<br /> will be transformed into an intergalactic phenomenon,<br /> aka (a wibbly wobbly spaceman model.)</p>
 
-        <p>it will then be launched up into the stratosphere to gaze down on this little planet we call home.</p>
+        <p>it will then be launched up into the stratosphere<br /> to gaze down on this little planet we call home.</p>
         
-        <p>we'll be filming this spectacular eet in glorious technicolor so your mission can be played over and over again.</p>
+        <p>we'll be filming this spectacular eet in glorious technicolor so<br /> your mission can be played over and over again.</p>
 
         
         <div class="spacecat">
