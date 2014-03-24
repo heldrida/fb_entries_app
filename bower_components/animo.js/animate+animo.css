@@ -13,9 +13,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 */
 
 body, .animated, * { /* Addresses a small issue in webkit: http://bit.ly/NEdoDq */
-	backface-visibility: hidden;
+	/*backface-visibility: hidden;*/
 	-o-backface-visibility: hidden;
-	-moz-backface-visibility: hidden;
+	/*-moz-backface-visibility: hidden;*/
 	-webkit-backface-visibility: hidden;
 }
 .animated {

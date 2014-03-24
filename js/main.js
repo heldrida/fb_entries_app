@@ -138,9 +138,15 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 	$rootScope.isViewLoading = true;
 
 	$rootScope.$on('$stateChangeStart', function(){
-
+		
 		$rootScope.isViewLoading = true;
 
+		if ( $('.mobile-nav-open').length > 0 ) {
+
+			$('.nav-mobile').removeClass('mobile-nav-open');
+
+		};
+		
 	});
 
 	$rootScope.$on('$stateChangeSuccess', function(){
@@ -592,6 +598,25 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 					ctrl.$setValidity('maxcharlength', true);
 					return viewValue;
 				}
+			});
+
+		}
+	};
+})
+
+.directive('mobileNavSwitch', function(){
+	return {
+		restrict: 'A',
+		link: function(scope, elem, attrs, ctrl){
+
+			var $navMobile = $(elem).parent('.nav-mobile');
+
+			elem.on('click', function(e){
+
+				e.preventDefault();
+
+				$navMobile.toggleClass( "mobile-nav-open" );
+
 			});
 
 		}
