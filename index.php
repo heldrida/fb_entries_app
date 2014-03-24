@@ -32,7 +32,34 @@
             
             <div class="pure-u-1">
             
-                <nav ng-controller="navigationCtrl" class="font-gothic">
+                <nav class="nav-mobile font-gothic">
+                    
+                    <div class="logo">
+                        <img src="img/logo.png?20140325">
+                    </div>
+
+                    <div class="mobile-nav-icon" mobile-nav-switch>
+                        <img src="../img/mobile-nav-icon.png">
+                    </div>
+
+                    <ul>
+                        <li class="txt-a opt" ng-class="isActive('/home')">
+                            <a href="#/home">home</a>
+                        </li>
+                        <li class="txt-a opt opt-enter" ng-class="isActive('/enter-your-face')">
+                            <a href="#/enter-your-face">enter</a>
+                        </li>
+                        <li class="txt-a opt" ng-class="isActive('/entries')">
+                            <a href="#/entries">entries</a>
+                        </li>
+                        <li class="txt-a opt" ng-class="isActive('/terms-and-conditions')">
+                            <a href="#/terms-and-conditions">t's&amp;c's</a>
+                        </li>
+                    </ul>
+
+                </nav>
+
+                <nav ng-controller="navigationCtrl" class="font-gothic non-mobile">
                     <ul>
                         <li class="txt-a opt" ng-class="isActive('/home')">
                             <a href="#/home">home</a>

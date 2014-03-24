@@ -1071,6 +1071,9 @@ button.your_face {
   -webkit-animation-name: swinger;
   animation-name: swinger;
 }
+.nav-mobile {
+  display: none;
+}
 
 
 /* ==========================================================================
@@ -1081,19 +1084,86 @@ button.your_face {
 
 }
 
-@media only screen and (max-width: 480px) {
-    body {
-        width:100%;
+@media only screen and (max-width: 580px) {
+    nav.non-mobile {
+      display: none;
     }
-    .content nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 999;
+    .mobile-nav-icon {
+      bottom: 63px;
+      height: 50px;
+      position: absolute;
+      right: 10px;
+      width: 50px;
+      cursor: pointer;
     }
-    .content main {
-        margin-top: 6em;
-        width: 320px;
+    .mobile-nav-open {
+      top: 0px !important;
+    }
+    .mobile-nav-icon:hover {
+      opacity: 0.7;
+    }
+    .nav-mobile {
+      background: url("../img/nav_background.png") repeat-x scroll 0 210px transparent;
+      height: auto;
+      position: fixed;
+      width: 100%;
+      z-index: 999;
+      display: block;
+      padding-bottom: 120px;
+      top: -242px;
+      -webkit-transition: all 0.45s;
+         -moz-transition: all 0.45s;
+          -ms-transition: all 0.45s;
+      transition: all 0.45s;
+    }
+    .nav-mobile .logo {
+    width: 130px;
+    height: 120px;
+    position: absolute;
+    bottom: 10px;
+    left: -10px;
+    }
+    .nav-mobile ul {
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    left: 0;
+    background: #000;
+    z-index: -1;
+    /* top: 70px; */
+    font-size: 1.4em;
+    /* visibility: hidden; */
+    /* float: left; */
+    }
+    .nav-mobile li {
+    display: block;
+    float: left;
+    width: 100%;
+    height: auto;
+    text-align: left;
+    position: relative;
+    left: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #aaa;
+    padding-left: 30px;
+    padding: 10px 30px;
+    }
+    .nav-mobile li,
+    .nav-mobile li.opt:hover {
+      background: none;
+    }
+    .nav-mobile li.opt:hover,
+    .nav-mobile li.active {
+      text-shadow: 0 0 10px #6BB2C4, 0 0 5px #8877FF, 0 0 16px #FFFFFF;
+    }
+    .nav-mobile .opt > a {
+        display: inline-block;
+        width: 100%;
+    }
+    main {
+      top: 80px;
     }
     .uploader input[type="file"] {
         display: block !important;
