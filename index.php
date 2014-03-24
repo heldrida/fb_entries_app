@@ -33,13 +33,17 @@
             <div class="pure-u-1">
             
                 <nav class="nav-mobile font-gothic">
-                    
-                    <div class="logo">
-                        <img src="img/logo.png?20140325">
-                    </div>
+      
+                    <div class="layer-top">
 
-                    <div class="mobile-nav-icon" mobile-nav-switch>
-                        <img src="../img/mobile-nav-icon.png">
+                        <div class="logo">
+                            <img src="img/logo.png?20140325">
+                        </div>
+
+                        <div class="mobile-nav-icon" mobile-nav-switch>
+                            <img src="../img/mobile-nav-icon.png">
+                        </div> 
+
                     </div>
 
                     <ul>
@@ -52,7 +56,7 @@
                         <li class="txt-a opt" ng-class="isActive('/entries')">
                             <a href="#/entries">entries</a>
                         </li>
-                        <li class="txt-a opt" ng-class="isActive('/terms-and-conditions')">
+                        <li class="txt-a opt opt-tncs" ng-class="isActive('/terms-and-conditions')">
                             <a href="#/terms-and-conditions">t's&amp;c's</a>
                         </li>
                     </ul>

@@ -609,7 +609,7 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 		restrict: 'A',
 		link: function(scope, elem, attrs, ctrl){
 
-			var $navMobile = $(elem).parent('.nav-mobile');
+			var $navMobile = $('.nav-mobile');
 
 			elem.on('click', function(e){
 
