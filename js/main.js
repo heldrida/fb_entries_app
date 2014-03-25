@@ -479,6 +479,10 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 
 	};
 
+	$scope.useProfilePhoto = function(){
+		$scope.use_profile_photo = true;
+	};
+
 })
 
 .controller('termsAndConditionsCtrl', function($scope){

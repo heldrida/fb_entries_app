@@ -63,6 +63,9 @@ directives.directive('uploader', ['imgCrop', '$timeout', 'mySettings', function(
 						$form.removeAttr('action');
 
 						$scope.$apply(function() {
+
+							$scope.progress = 100;
+
 							$scope.avatar = mySettings.wp_base_path + "/wp-content/plugins/space_competition/uploads" + "/" + $scope.filename;
 							$scope.$parent.avatar = $scope.avatar;
 							$scope.$parent.use_profile_photo = false;

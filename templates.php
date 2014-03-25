@@ -2,8 +2,11 @@
 <div class="uploader">
 
     <!-- the real input[type=file] is hidden -->
-    <input type="file" name="uploader" style="display:none;"
+    <div class="fake-upload browse-btn">
+            <span>upload photo</span>
+            <input type="file" name="uploader"
          onchange="angular.element(this).scope().sendFile(this);"/>
+    </div>
 
     <!-- input field, used to open the real input[type=file]  -->
     <div class="fake-uploader">
@@ -14,8 +17,8 @@
     </div>
 
     <!-- progress bar -->
-    <div class="progress" ng-show="progress!=0">
-        <span>{{progress}}%</span>
+    <div class="progress" ng-show="progress!=0 && progress !=100">
+        <span>Upload progress: {{progress}}%</span>
         <div class="bar" style="width:{{progress}}%;"></div>
     </div>
 
@@ -64,15 +67,20 @@
                     <img id="myImg" ng-src="{{avatar}}" style="position:relative; top:0px; left:0px;" />
                 </div>
 
+                <div id="photo-instructions" ng-if="avatar != ''" style="" ng-show="use_profile_photo == false">
+                    <p class="desktop"><span class="help-icon"></span>
+                    <strong>Need to reposition photo ?</strong>
+                    Click and drag to move photo in the frame or press the <strong>&#8679; SHIFT</strong> key and mouse click to zoom!</p>
+                    <p class="mobile"><span class="help-icon"></span>
+                    <strong>Need to reposition photo ?</strong>
+                    Touch and drag to move photo in the frame or pinch to zoom!</p>
+                </div>
+
                 <br>
 
                 <div>
-                    
-                    <button class="red_spc_bg">use profile photo</button>
 
-                    <br>
-
-                    <button>browse</button>
+                    <div class="use-profile-photo" ng-click="useProfilePhoto()">use profile photo</div>
 
                     <uploader action="{{ wp_base_path }}/wp-admin/admin-ajax.php?action=space_competition"></uploader>
 
