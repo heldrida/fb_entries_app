@@ -1,3 +1,26 @@
+<script type="text/ng-template" id="uploader.html">
+<div class="uploader">
+
+    <!-- the real input[type=file] is hidden -->
+    <input type="file" name="uploader" style="display:none;"
+         onchange="angular.element(this).scope().sendFile(this);"/>
+
+    <!-- input field, used to open the real input[type=file]  -->
+    <div class="fake-uploader">
+        <div class="pure-control-group">
+            <label for="uploader">Choose image </label>
+            <input type="text" readonly="readonly" ng-model="avatar"/>
+        </div>
+    </div>
+
+    <!-- progress bar -->
+    <div class="progress" ng-show="progress!=0">
+        <span>{{progress}}%</span>
+        <div class="bar" style="width:{{progress}}%;"></div>
+    </div>
+
+</div>
+</script>
 <script type="text/ng-template" id="enter-your-face.html">
 <div class="row row-a row-header row-header-entries">
     <img src="img/enter_your_face.png?20140307" />
@@ -33,19 +56,25 @@
         <form name="myForm" class="pure-form myForm" novalidate ng-controller="uploadPhotoCtrl" ng-submit="submit()" ng-class="{true: 'submitted'}[submitted]">
             <div class="col col-a">
 
-                <div class="photo" ng-show="use_profile_photo">
+                <div class="photo" ng-show="use_profile_photo == true">
                     <img ng-src="http://graph.facebook.com/{{fb_like.data.id}}/picture?width=300&height=300" />
+                </div>
+
+                <div id="avatar" ng-if="avatar != ''" style="" ng-show="use_profile_photo == false">
+                    <img id="myImg" ng-src="{{avatar}}" style="position:relative; top:0px; left:0px;" />
                 </div>
 
                 <br>
 
-                <div ng-show="false">
+                <div>
                     
                     <button class="red_spc_bg">use profile photo</button>
 
                     <br>
 
                     <button>browse</button>
+
+                    <uploader action="{{ wp_base_path }}/wp-admin/admin-ajax.php?action=space_competition"></uploader>
 
                 </div>
 

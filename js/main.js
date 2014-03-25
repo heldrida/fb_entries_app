@@ -366,6 +366,27 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 		return Math.abs(ageDate.getUTCFullYear() - 1970);
 	}
 
+	$scope.selected = function(cords) {
+
+		$scope.cropped=true;
+
+	    var rx = 150 / cords.w;
+
+	    var ry = 150 / cords.h;          
+
+	       $('#preview').css({
+
+	        width: Math.round(rx * boundx) + 'px',
+
+	        height: Math.round(ry * boundy) + 'px',
+
+	        marginLeft: '-' + Math.round(rx * cords.x) + 'px',
+
+	        marginTop: '-' + Math.round(ry * cords.y) + 'px'
+
+	    });
+	};
+
 })
 
 .controller('uploadPhotoCtrl', function($scope, $http, $FB, mySettings, $q) {
@@ -534,6 +555,97 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 
 })
 
+.service('imgCrop', function () {
+
+	function init() {
+
+		// If no touch device, show touches
+		if(!Hammer.HAS_TOUCHEVENTS && !Hammer.HAS_POINTEREVENTS) {
+			Hammer.plugins.showTouches();
+		}
+		// If no touch device, emulate
+		if(!Hammer.HAS_TOUCHEVENTS && !Hammer.HAS_POINTEREVENTS) {
+			Hammer.plugins.fakeMultitouch();
+		}
+		//
+		var hammertime = Hammer(document.getElementById('avatar'), {
+			transform_always_block: true,
+			transform_min_scale: 0,
+			drag_block_horizontal: true,
+			drag_block_vertical: true,
+			drag_min_distance: 0
+		});
+
+		var posX=0, posY=0,
+			lastPosX=0, lastPosY=0,
+			bufferX=0, bufferY=0,
+		    scale=1, last_scale,
+		    rotation= 1, last_rotation, dragReady=0;
+
+		hammertime.on('touch drag dragend transform', function(ev) {
+		    elemRect = document.getElementById('myImg');
+			manageMultitouch(ev);
+		});
+
+		function manageMultitouch(ev){
+
+			var el = ev.target.parentNode;
+			
+			switch(ev.type) {
+		        case 'touch':
+		            last_scale = scale;
+		            last_rotation = rotation;
+		        break;
+
+		        case 'drag':
+		            	posX = ev.gesture.deltaX + lastPosX;
+		            	posY = ev.gesture.deltaY + lastPosY;
+		        break;
+
+		        case 'transform':
+		            rotation = last_rotation + ev.gesture.rotation;
+		            scale = Math.max(0.25, Math.min(last_scale * ev.gesture.scale, 10));
+		        break;
+
+				case 'dragend':
+					lastPosX = posX;
+					lastPosY = posY;
+				break;
+		    }
+			/*
+		    var transform =
+		            "translate3d("+posX+"px,"+posY+"px, 0) " +
+		            "scale3d("+scale+","+scale+", 1) " +
+		            "rotate("+rotation+"deg) ";
+			*/
+
+		    var transform =
+		            "translate("+posX+"px,"+posY+"px) " +
+		            "scale("+scale+","+scale+") ";
+
+		    elemRect.style.transform = transform;
+		    elemRect.style.oTransform = transform;
+		    elemRect.style.msTransform = transform;
+		    elemRect.style.mozTransform = transform;
+		    elemRect.style.webkitTransform = transform;
+
+		    $('input[name="img_crop_scale"]').val(scale);
+		    $('input[name="img_crop_pos_x"]').val(posX);
+		    $('input[name="img_crop_pos_y"]').val(posY);
+		    $('input[name="img_crop_deg"]').val(rotation);
+
+		};
+
+        //scope.$on('$destroy', rmImage);
+
+	};
+
+	return {
+		init: init
+	};
+
+})
+
 .directive('a', function() {
     return {
         restrict: 'E',
@@ -630,7 +742,7 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 			$(elem).focus(function() {
 			  this.blur();
 			});
-			
+
 		}
 	}
 });

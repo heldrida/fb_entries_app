@@ -64,6 +64,8 @@ directives.directive('uploader', ['imgCrop', '$timeout', 'mySettings', function(
 
 						$scope.$apply(function() {
 							$scope.avatar = mySettings.wp_base_path + "/wp-content/plugins/space_competition/uploads" + "/" + $scope.filename;
+							$scope.$parent.avatar = $scope.avatar;
+							$scope.$parent.use_profile_photo = false;
 							//$('input[name="img_crop"]').val( $scope.filename );
 							$('input[name="img_crop"]').scope().user.img_crop = $scope.filename;
 							console.log( "img_crop: " + ( $('input[name="img_crop"]').scope().user.img_crop ) );

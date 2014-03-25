@@ -776,7 +776,24 @@ button.your_face {
     letter-spacing: normal;
     text-align: left;
 }
-
+#avatar {
+  border: 4px solid #FFF;
+  height: 198px;
+  overflow: hidden;
+  width: 198px;
+}
+.fake-uploader,
+.progress {
+    color: #888;
+}
+.fake-uploader label {
+    padding-right: 1em;
+}
+.progress .bar {
+    background: #CCCCCC;
+    border-radius: 10px;
+    height: 20px;
+}
 
 
 /* spinner animation */
