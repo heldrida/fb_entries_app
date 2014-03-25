@@ -360,6 +360,7 @@ button.space:hover {
   height: 150px;
   margin: 0 auto;
   width: 140px; 
+  clear: both;
 }
 .row-footer span.hashtag {
     color: #FFF;
@@ -1385,7 +1386,14 @@ button.your_face {
       top: -30px;
     }
     button.space {
-      font-size: 1.6em;
+      font-size: 1.4em;
+    }
+    input[name="agreement"] {
+      margin-bottom: 50px;
+    }
+    .entry-approval {
+      font-size: 1em;
+      padding: 50px 10px;
     }
     .uploader input[type="file"] {
         display: block !important;
