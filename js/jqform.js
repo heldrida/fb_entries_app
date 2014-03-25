@@ -72,6 +72,27 @@ directives.directive('uploader', ['imgCrop', '$timeout', 'mySettings', function(
 							//$('input[name="img_crop"]').val( $scope.filename );
 							$('input[name="img_crop"]').scope().user.img_crop = $scope.filename;
 							console.log( "img_crop: " + ( $('input[name="img_crop"]').scope().user.img_crop ) );
+
+							function setCropDefaultValues(){
+
+								/* default form values for cropping */
+								$('input[name="img_crop_scale"]').val(1);
+								$('input[name="img_crop_pos_x"]').val(0);
+								$('input[name="img_crop_pos_y"]').val(0);
+								$('input[name="img_crop_deg"]').val(0);
+								$('input[name="img_crop_width"], input[name="img_crop_height"]').val( parseInt( $('#avatar').css('width') ) );
+
+							};
+
+							setCropDefaultValues();
+
+							window.addEventListener('resize', function(event){
+
+								// the crop values etc should change when window resizes
+								console.log("on window resize, crop values should change");
+
+							});
+
 						});
 
 					}

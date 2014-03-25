@@ -638,6 +638,8 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 		    $('input[name="img_crop_pos_y"]').val(posY);
 		    $('input[name="img_crop_deg"]').val(rotation);
 
+			$('input[name="img_crop_width"], input[name="img_crop_height"]').val( parseInt( $('#avatar').css('width') ) );
+
 		};
 
         //scope.$on('$destroy', rmImage);
