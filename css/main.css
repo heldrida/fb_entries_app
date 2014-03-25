@@ -529,22 +529,92 @@ button.space:hover {
     padding-bottom: 30px;
 }
 .myForm .col-a {
-    width: 210px;
+    width: 206px;
     margin-right: 25px;
 }
-.myForm .col-a button {
+.myForm .col-a button,
+.use-profile-photo,
+.browse-btn {
     border: 4px solid #FFFFFF;
-    width: 206px;
+    width: 100%;
     text-transform: uppercase;
     background: url("../img/button_bckground_patern.png?20140307") repeat scroll 0 0 transparent;
     color: #FFF;
     line-height: 32px;
+    font-family:  'antonioregular';
+    font-size: 1.2em;
+    text-shadow: 1px 1px 4px #333;
+    cursor: pointer;
 }
-.myForm .col-a button:hover {
+.myForm .col-a button:hover,
+.use-profile-photo:hover {
     opacity: 0.75;
 }
+.use-profile-photo {
+  background: url("../img/button_bckground_patern_red.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0) !important;
+  clear: both;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 97%;
+}
+/* s: fake upload */
+.fake-upload {
+  cursor: pointer;
+  font-size: 1.2em;
+  height: 35px;
+  line-height: 36px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 198px;
+  margin-bottom: 10px;
+}
+.fake-upload:hover {
+  opacity: 0.6;
+}
+.fake-upload input {
+    display: block !important;
+    width: 100% !important;
+    height: 57px !important;
+    opacity: 0 !important;
+    overflow: hidden !important;
+}
+.fake-upload > span {
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+.fake-uploader {
+  display: none;
+}
+/* e: fake upload */
+#photo-instructions {
+  clear: both;
+  float: left;
+  font-family: arial;
+  font-size: 0.6em;
+  margin-bottom: 20px;
+  text-align: left;
+}
+#photo-instructions .mobile {
+  display: none;
+}
+#photo-instructions .upper {
+  text-transform: uppercase;
+}
+#photo-instructions p strong {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+#photo-instructions > p {
+  text-align: left;
+  text-transform: none;
+  font-size: 1.2em;
+}
 .myForm .col-a input {
-    width: 206px !important;    
+    width: 206px;    
 }
 .myForm .photo,
 .myForm button {
@@ -781,18 +851,26 @@ button.your_face {
   height: 198px;
   overflow: hidden;
   width: 198px;
+  margin-bottom: 10px;
 }
 .fake-uploader,
 .progress {
-    color: #888;
+    color: #fff;
 }
 .fake-uploader label {
     padding-right: 1em;
 }
 .progress .bar {
-    background: #CCCCCC;
+    background: #FFF;
     border-radius: 10px;
-    height: 20px;
+    height: 10px;
+}
+.progress > span {
+  display: block;
+  font-family: arial;
+  font-size: 0.65em;
+  margin-bottom: 2px;
+  text-transform: uppercase;
 }
 
 
@@ -867,6 +945,18 @@ button.your_face {
   width: 130px;
   font-family: arial;
 }
+.help-icon {
+  background: url("../img/help-icon.png") no-repeat scroll 0 -2px rgba(0, 0, 0, 0);
+  display: block;
+  float: left;
+  height: 30px;
+  left: -2px;
+  padding-right: 5px;
+  position: relative;
+  top: 3px;
+  width: 30px;
+}
+
 
 /* custom animations */
 @-webkit-keyframes vanish_longer {
@@ -1100,6 +1190,13 @@ button.your_face {
 
 @media only screen and (min-width: 35em) {
 
+}
+
+@media only screen and (max-width: 640px) {
+    nav li {
+        font-size: 1.2em !important;
+        margin-right: 2em;
+    }
 }
 
 @media only screen and (max-width: 580px) {
@@ -1377,12 +1474,14 @@ button.your_face {
     .myForm .col-b {
       width: 100%;
     }
-    .row-enter-your-face .photo {
-      border: 6px solid #FFFFFF;
+    .row-enter-your-face .photo,
+    #avatar {
+      border: 4px solid #FFFFFF;
       float: left;
       height: auto;
       margin-right: 25px;
-      width: 96%;
+      margin-bottom: 10px;
+      width: 97%;
     }
     .row-enter-your-face .col input, 
     .row-enter-your-face .col textarea {
@@ -1412,11 +1511,14 @@ button.your_face {
       font-size: 1em;
       padding: 50px 10px;
     }
-    .uploader input[type="file"] {
-        display: block !important;
+    .fake-upload {
+      width: 97%;
     }
-    .fake-uploader {
-        display: none !important;
+    #photo-instructions .desktop {
+      display: none;
+    }
+    #photo-instructions .mobile {
+      display: block;
     }
 }
 

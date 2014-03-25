@@ -61,6 +61,14 @@
 	- disable keyboard mobile browser
 
 		http://stackoverflow.com/questions/8335834/how-can-i-hide-the-android-keyboard-using-javascript
-		
+
 		http://stackoverflow.com/questions/7045889/how-to-hide-keyboard-on-phonegap-android?lq=1
+
+	- browser / file upload style css
+
+		http://jsfiddle.net/gabrieleromanato/mxq9R/
+
+	- post on fb users behalf
+
+		http://stackoverflow.com/questions/4070418/posting-on-on-a-users-wall-on-behalf-of-the-user
 		
