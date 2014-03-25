@@ -110,7 +110,9 @@
                 <input type="hidden" name="img_crop_scale" value="{{crop.scale}}" />
                 <input type="hidden" name="img_crop_pos_x" value="{{crop.pos_x}}" />
                 <input type="hidden" name="img_crop_pos_y" value="{{crop.pos_y}}" />
-
+                <input type="hidden" name="img_crop_width" value="{{crop.width}}" />
+                <input type="hidden" name="img_crop_height" value="{{crop.height}}" />
+                
             </div>
             <div class="row">
 
