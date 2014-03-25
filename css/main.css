@@ -1085,13 +1085,16 @@ button.your_face {
 }
 
 @media only screen and (max-width: 580px) {
+
+    body {
+      font-size: 16px;
+    }
     nav.non-mobile {
       display: none;
     }
     .layer-top {
       background: url("../img/nav_background.png") repeat-x scroll 0 -15px rgba(0, 0, 0, 0);
       height: 75px;
-      position: fixed;
       width: 100%;
       z-index: 9999;
     }
@@ -1102,6 +1105,10 @@ button.your_face {
       right: 10px;
       top: 15px;
       width: 50px;
+    }
+    .mobile-nav-open {
+      padding-bottom: 120px;
+      height: auto;
     }
     .mobile-nav-open ul {
       top: 0px !important;
@@ -1115,11 +1122,12 @@ button.your_face {
     .nav-mobile {
       background: none repeat scroll 0 0 transparent;
       display: block;
-      height: auto;
-      padding-bottom: 120px;
+      height: 100px;
+      padding-bottom: 0px;
       position: fixed;
       width: 100%;
       z-index: 999;
+      top: 0;
     }
     .nav-mobile .logo {
       height: 120px;
@@ -1133,7 +1141,7 @@ button.your_face {
       font-size: 1.4em;
       height: auto;
       left: 0;
-      margin: 69px 0 0;
+      margin: -5px 0 0;
       padding: 0 0 80px;
       position: relative;
       top: -300px;
@@ -1175,6 +1183,168 @@ button.your_face {
     }
     main {
       top: 80px;
+    }
+    .row-enter-now div p {
+      width: 90%;
+      font-size: 1em;
+      padding-left: 0;
+    }
+    .row-enter-now img.enter-now {
+      max-width: none;
+      width: 60% !important;
+    }
+    .astronauts > div {
+      width: 50%;
+    }
+    .astronauts .lady {
+      left: 0;
+    }
+    .astronauts .can-cat {
+      right: 0;
+    }
+    .astronauts .lady img {
+      position: relative;
+      left: -30%;
+    }
+    .astronauts .can-cat img {
+      position: relative;
+      right: -30%;
+    }
+    .row-header-entries .astronauts .lady img {
+      position: relative;
+      left: -15%;
+    }
+    .planet-enter-blue {
+      background: url("../img/planetblue.png") no-repeat scroll center center transparent;
+      height: 682px;
+      max-width: 764px;
+    }
+    .row-countdown table {
+      font-size: 1em;
+      margin: 0 auto;
+      width: auto;
+      position: relative;
+      left: 5px;
+    }
+    .row-countdown .contest-description p {
+      color: #FFFFFF;
+      font-size: 1.3em;
+      padding: 0 10px;
+      text-align: center;
+    }
+    .check-cowboy {
+      font-size: 1.6em !important;
+    }
+    .row-video iframe {
+      height: 320px;
+      margin: 0 auto;
+      width: 100%;
+      position: relative;
+      z-index: 999 !important;
+    }
+    .row-countdown .bg {
+      background: none;
+    }
+    .balloons {
+      display: none;
+    }
+    .row-enter-now .balloons .first {
+      right: -5%;
+      top: 300px;
+    }
+    .row-enter-now .balloons .second {
+      left: -5%;
+      top: 250px;
+    }
+    .row-enter-now .planet {
+      display: none;
+    }
+    .row-blastoff {
+      background-size: 150%;
+    }
+    .row-footer p {
+      font-size: 0.6em;
+    }
+    .row-footer .description p {
+      padding: 0 10px;
+     font-size: 0.4em;
+ 
+    }
+    .row-header-entries .astronauts {
+      top: 0;
+      height: 100%;
+    }
+    .row-header-entries .astronauts .lady {
+      top: 35%;
+      left: 0;
+      width: 50%;
+      height: 100%;
+    }
+    .row-header-entries .astronauts .lady img {
+
+    }
+    .row-entries .entry .details p {
+      clear: both;
+      width: 100% !important;
+      height: auto !important;
+    }
+    .row-entries .entry .photo img {
+      width: 100%;
+    }
+    .row-header-entries {
+      height: auto;
+      position: relative;
+    }
+    .row-entries {
+      margin: 0 auto;
+      width: 85%;
+    }
+    .row-entries .entry p {}
+    .row-enter-your-face .bg .elems {
+      display: none;
+    }
+    .row-entries .entry .photo {
+      width: 100%;
+      height: auto;
+      margin: 0 0 10px 0;
+      border: 8px solid #FFF;
+    }
+    .row-entries .entry {
+      height: auto;
+      margin-left: -8px;
+      margin-bottom: 80px;
+      width: 100%;
+      float: left;
+      clear: both;
+    }
+    .row-entries .entry .details {
+      color: #FFF;
+      position: relative;
+      font-size: 1em;
+    }
+    .terms-and-conditions {
+      width: 90%;
+      font-size: 0.8em;
+    }
+    .row-blastoff .description {
+      width: 95%;
+    }
+    main {
+      overflow: hidden;
+    }
+    .spinner {
+      margin: 200px auto;
+    }
+    .footer-logo {
+      background: url("../img/footerlogo.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+      height: 110px;
+      margin: 0 auto;
+      background-size: 100px;
+      width: 100px;
+    }
+    #login-with-facebook > div {
+      width: 320px;
+      margin: 0 auto;
     }
     .uploader input[type="file"] {
         display: block !important;
