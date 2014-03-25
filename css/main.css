@@ -1346,6 +1346,47 @@ button.your_face {
       width: 320px;
       margin: 0 auto;
     }
+    #txt-upload-photo {
+        font-size: 0.6em;
+        margin: 10px auto 40px;
+        width: 80%;
+    }
+    .row-enter-your-face .myForm {
+        margin: 0 auto;
+        width: 75%;
+    }
+    .myForm .col-a,
+    .myForm .col-b {
+      width: 100%;
+    }
+    .row-enter-your-face .photo {
+      border: 6px solid #FFFFFF;
+      float: left;
+      height: auto;
+      margin-right: 25px;
+      width: 96%;
+    }
+    .row-enter-your-face .col input, 
+    .row-enter-your-face .col textarea {
+      margin-bottom: 15px;
+      width: 100%;
+    }
+    .photo > img {
+      height: 100%;
+      width: 100%;
+    }
+    #chars-counter {
+      font-size: 12px;
+      right: -10px;
+      text-align: left;
+      top: -40px;
+    }
+    .dropdown-menu table {
+      top: -30px;
+    }
+    button.space {
+      font-size: 1.6em;
+    }
     .uploader input[type="file"] {
         display: block !important;
     }

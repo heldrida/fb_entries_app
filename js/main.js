@@ -621,4 +621,35 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 
 		}
 	};
+})
+
+.directive('disableKeyboard', function(){
+	return {
+		link: function(scope, elem, attrs, ctrl){
+
+			$(elem).focus(function() {
+			  this.blur();
+			});
+			
+			/*
+			function hideKeyboard(element) {
+			    element.attr('readonly', 'readonly'); // Force keyboard to hide on input field.
+			    element.attr('disabled', 'true'); // Force keyboard to hide on textarea field.
+			    setTimeout(function() {
+			        element.blur();  //actually close the keyboard
+			        // Remove readonly attribute after keyboard is hidden.
+			        element.removeAttr('readonly');
+			        element.removeAttr('disabled');
+			    }, 100);
+			}
+
+			elem.on('click', function(e){
+				
+				hideKeyboard( $(elem) );
+
+			});
+			*/
+
+		}
+	}
 });

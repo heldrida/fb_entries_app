@@ -58,5 +58,9 @@
 
 		http://www.saratogawire.com/media/css/fonts/futura/
 
+	- disable keyboard mobile browser
+
+		http://stackoverflow.com/questions/8335834/how-can-i-hide-the-android-keyboard-using-javascript
 		
+		http://stackoverflow.com/questions/7045889/how-to-hide-keyboard-on-phonegap-android?lq=1
 		
