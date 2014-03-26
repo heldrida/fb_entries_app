@@ -670,6 +670,7 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 				height: parseInt( $('#avatar').css('width') )
 			};
 
+			console.log( scope.$parent.user.crop );
 
 			//user_scope.crop.deg = deg;
 
