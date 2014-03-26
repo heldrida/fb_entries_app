@@ -168,19 +168,17 @@ function img_crop(){
 	upload_dir_check();
 
 	$form_data = array(
-		'age'	=> $_POST['age'],
-		'email'	=> $_POST['email'],
-		'telephone'	=> $_POST['telephone'],
-		'description' => $_POST['description'],
-		'img_crop' => $_POST['img_crop'],
-		'img_crop_scale' => $_POST['img_crop_scale'] ? $_POST['img_crop_scale'] : 1,
-		'img_crop_pos_x' => $_POST['img_crop_pos_x'],
-		'img_crop_pos_y' => $_POST['img_crop_pos_y'],
-		'img_crop_rotate' => 0
+		'img_crop' => $_POST['crop']['image'],
+		'img_crop_scale' => $_POST['crop']['scale'] ? $_POST['crop']['scale'] : 1,
+		'img_crop_pos_x' => $_POST['crop']['pos_x'],
+		'img_crop_pos_y' => $_POST['crop']['pos_y'],
+		'img_crop_rotate' => 0,
+		'width' =>  $_POST['crop']['width'],
+		'heigth' =>  $_POST['crop']['height']
 	);
 
 	// crop container width
-	$c_width = 300;
+	$c_width = $form_data['width'];
 
 	// Set image to crop
 	$path = dirname(__FILE__) . "/uploads";
@@ -247,6 +245,14 @@ function save_user_profile_picture(){
 		
 		return false;
 
+	} elseif (!empty($_POST['crop']) && is_array($_POST['crop'])) {
+
+		return img_crop();
+
+	} else {
+
+		return false;
+		
 	};
 
 	$path = dirname(__FILE__) . "/uploads";

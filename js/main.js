@@ -453,15 +453,27 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 					console.log("data:");
 					console.log(data);
 
+					data = JSON.parse(data);
+
 					lock = false;
-					$scope.$apply(function(){
 
-						//$scope.user = {};
+					if ( data === false ) {
 
-						//$('form[name="myForm"]').scope().template_data.success_page = true;
-						$scope.$parent.template_data.success_page = true;
+						alert( "A server error has ocurred! Please try again later. We apologize for any inconveniences!" );
+					
+					} else {
 
-					});
+						$scope.$apply(function(){
+
+							$('.my-touch').remove(); /* remove hammer js handler fix */
+							//$scope.user = {};
+
+							//$('form[name="myForm"]').scope().template_data.success_page = true;
+							$scope.$parent.template_data.success_page = true;
+
+						});
+
+					};
 
 				}
 			);
@@ -494,11 +506,9 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 	};
 
 	$scope.useProfilePhoto = function(){
-		console.log("useProfilePhoto");
 		$scope.user.crop = {};
 		$scope.use_profile_photo = true;
 		$scope.user.user_profile_picture = getFacebookProfilePhoto();
-		console.log($scope.user);
 	};
 
 })
@@ -652,6 +662,7 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 		    elemRect.style.webkitTransform = transform;
  
 			scope.$parent.user.crop = {
+				image: scope.filename,
 				pos_x: posX,
 				pos_y: posY,
 				scale: scale,

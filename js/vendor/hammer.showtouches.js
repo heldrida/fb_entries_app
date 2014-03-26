@@ -50,6 +50,7 @@
           if(!touch_elements[id]) {
             // create new element and attach base styles
             var template = document.createElement('div');
+            template.className = "my-touch";
             template.setAttribute('style', template_style);
 
             // append element to body
