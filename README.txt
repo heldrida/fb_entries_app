@@ -75,4 +75,8 @@
 	- block animation stepped curve
 
 		http://jsbin.com/muyeguba/5/
+
+	- IE8 error unexpected call to method or property access
+
+		http://stackoverflow.com/questions/15590746/angularjs-error-unexpected-call-to-method-or-property-access-undefined-only
 		

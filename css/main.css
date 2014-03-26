@@ -432,12 +432,12 @@ button.space:hover {
 }
 .row-entries .balloons .first {
     bottom: 300px;
-    left: -550px;
+    left: -280%;
     position: absolute;
 }
 .row-entries .balloons .second {
     bottom: 650px;
-    left: 135px;
+    left: 20%;
     position: absolute;
 }
 .animatable-elements {
@@ -1181,6 +1181,14 @@ button.your_face {
 }
 .nav-mobile {
   display: none;
+}
+
+/* IE Fixes */
+.no-cssanimations .spinner {
+  background: url("../img/loading.gif") no-repeat scroll center center transparent;
+  border-radius: 50px;
+  height: 35px;
+  width: 35px;
 }
 
 

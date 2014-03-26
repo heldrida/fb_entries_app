@@ -19,8 +19,15 @@
         <!--
         <link href='http://fonts.googleapis.com/css?family=Carrois+Gothic+SC' rel='stylesheet' type='text/css'>
         -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>
+        
+        <!--[if IE 8]> 
+        <script type="text/javascript">
+        document.createElement('ui-view');
+        document.createElement('ng-include');
+        </script>
+        <![endif]-->
 
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
