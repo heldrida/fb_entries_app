@@ -391,13 +391,17 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 
 .controller('uploadPhotoCtrl', function($scope, $http, $FB, mySettings, $q) {
 
+	function getFacebookProfilePhoto(){
+		return "http://graph.facebook.com/" + $scope.$parent.fb_like.data.id + "/picture?width=300&height=300";
+	};
+
 	$scope.user = {
 		fb_profile_uid: $scope.$parent.fb_like.data.id,
 		birthday: $scope.$parent.fb_like.data.birthday,
 		email: $scope.$parent.fb_like.data.email,
 		full_name: $scope.$parent.fb_like.data.name,
 		description: "",
-		user_profile_picture: "http://graph.facebook.com/" + $scope.$parent.fb_like.data.id + "/picture?width=300&height=300",
+		user_profile_picture: getFacebookProfilePhoto(),
 		crop: {
 			image: "",
 			width: "",
@@ -490,8 +494,11 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 	};
 
 	$scope.useProfilePhoto = function(){
+		console.log("useProfilePhoto");
 		$scope.user.crop = {};
 		$scope.use_profile_photo = true;
+		$scope.user.user_profile_picture = getFacebookProfilePhoto();
+		console.log($scope.user);
 	};
 
 })
@@ -572,10 +579,8 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 
 .service('imgCrop', function () {
 
-	function init() {
-		
-		scope = $('form[name="myForm"]').scope();
-		
+	function init(scope) {
+
 		// If no touch device, show touches
 		if(!Hammer.HAS_TOUCHEVENTS && !Hammer.HAS_POINTEREVENTS) {
 			Hammer.plugins.showTouches();
@@ -645,15 +650,15 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 		    elemRect.style.msTransform = transform;
 		    elemRect.style.mozTransform = transform;
 		    elemRect.style.webkitTransform = transform;
+ 
+			scope.$parent.user.crop = {
+				pos_x: posX,
+				pos_y: posY,
+				scale: scale,
+				width: parseInt( $('#avatar').css('width') ),
+				height: parseInt( $('#avatar').css('width') )
+			};
 
-		   	scope.$apply(function(){
-				
-				scope.user.crop.width = scope.user.crop.height = parseInt( $('#avatar').css('width') );
-				scope.user.crop.scale = scale;
-				scope.user.crop.pos_x = posX;		    
-				scope.user.crop.pos_y = posY;
-
-		    });
 
 			//user_scope.crop.deg = deg;
 

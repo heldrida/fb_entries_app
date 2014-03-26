@@ -14,9 +14,7 @@ directives.directive('uploader', ['imgCrop', '$timeout', 'mySettings', function(
 
 			$scope.progress = 0;
 			$scope.avatar = '';
-			var user_scope = $('form[name="myForm"]').scope().user;
-		
-
+			
 			$scope.sendFile = function(el) {
 
 				var $form = $(el).parents('form');
@@ -72,16 +70,16 @@ directives.directive('uploader', ['imgCrop', '$timeout', 'mySettings', function(
 							$scope.$parent.avatar = $scope.avatar;
 							$scope.$parent.use_profile_photo = false;
 							//$('input[name="img_crop"]').val( $scope.filename );
-							$('input[name="img_crop"]').scope().user.img_crop = $scope.filename;
-							console.log( "img_crop: " + ( $('input[name="img_crop"]').scope().user.img_crop ) );
+							//$('input[name="img_crop"]').scope().user.img_crop = $scope.filename;
+							//console.log( "img_crop: " + ( $('input[name="img_crop"]').scope().user.img_crop ) );
 
 							function setCropDefaultValues(){
 
-								user_scope.crop.width = user_scope.crop.height = parseInt( $('#avatar').css('width') );
-								user_scope.crop.scale = 1;
-								user_scope.crop.pos_x = 0;		    
-								user_scope.crop.pos_y = 0;
-								user_scope.crop.image = $scope.filename;
+								$scope.$parent.user.crop.width = $scope.$parent.user.crop.height = parseInt( $('#avatar').css('width') );
+								$scope.$parent.user.crop.scale = 1;
+								$scope.$parent.user.crop.pos_x = 0;		    
+								$scope.$parent.user.crop.pos_y = 0;
+								$scope.$parent.user.crop.image = $scope.filename;
 
 								/* default form values for cropping
 								$('input[name="img_crop_scale"]').val(1);
@@ -124,7 +122,7 @@ directives.directive('uploader', ['imgCrop', '$timeout', 'mySettings', function(
 
 				$timeout(function(){
 
-					imgCrop.init();
+					imgCrop.init($scope);
 
 				}, 0);
 
