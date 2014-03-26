@@ -194,8 +194,12 @@ function img_crop(){
 	$d = getimagesize( $filename );
 
 	// rad
+	/*
 	$rad = deg2rad( $form_data['img_crop_rotate'] );
 	$new_width = $c_width * sin( $rad ) + $c_width * cos( $rad );
+	*/
+
+	$new_width = $c_width;
 
 	// scale
 	$i->resizeImage( 
@@ -206,7 +210,7 @@ function img_crop(){
 	);
 
 	// calculate center
-	$center = ( ( $new_width * $form_data['img_crop_scale'] ) - 300 ) / 2;
+	$center = ( ( $new_width * $form_data['img_crop_scale'] ) - $c_width ) / 2;
 
 	// crop
 	$i->cropImage ( 
