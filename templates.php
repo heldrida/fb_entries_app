@@ -105,13 +105,15 @@
                 <textarea name="description" ng-model="user.description" maxcharlength required></textarea>
                 <div id="chars-counter">( {{ charactersCounter() }} characters left! )</div>
 
-                <input type="hidden" name="nonce" value="{{nonce}}" ng-model="user.nonce" />
-                <input type="hidden" name="img_crop" ng-model="user.img_crop" />
-                <input type="hidden" name="img_crop_scale" value="{{crop.scale}}" />
-                <input type="hidden" name="img_crop_pos_x" value="{{crop.pos_x}}" />
-                <input type="hidden" name="img_crop_pos_y" value="{{crop.pos_y}}" />
-                <input type="hidden" name="img_crop_width" value="{{crop.width}}" />
-                <input type="hidden" name="img_crop_height" value="{{crop.height}}" />
+                <div style="display: none;">
+                    <input type="text" name="nonce" value="{{nonce}}" ng-model="user.nonce" />
+                    <input type="text" name="img_crop" ng-model="user.crop.image" />
+                    <input type="text" name="img_crop_scale" value="{{crop.scale}}" ng-model="user.crop.scale" />
+                    <input type="text" name="img_crop_pos_x" ng-model="user.crop.pos_x" />
+                    <input type="text" name="img_crop_pos_y" ng-model="user.crop.pos_y" />
+                    <input type="text" name="img_crop_width" ng-model="user.crop.width" />
+                    <input type="text" name="img_crop_height" ng-model="user.crop.height" />
+                </div>
                 
             </div>
             <div class="row">

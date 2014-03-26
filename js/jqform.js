@@ -14,6 +14,8 @@ directives.directive('uploader', ['imgCrop', '$timeout', 'mySettings', function(
 
 			$scope.progress = 0;
 			$scope.avatar = '';
+			var user_scope = $('form[name="myForm"]').scope().user;
+		
 
 			$scope.sendFile = function(el) {
 
@@ -75,12 +77,19 @@ directives.directive('uploader', ['imgCrop', '$timeout', 'mySettings', function(
 
 							function setCropDefaultValues(){
 
-								/* default form values for cropping */
+								user_scope.crop.width = user_scope.crop.height = parseInt( $('#avatar').css('width') );
+								user_scope.crop.scale = 1;
+								user_scope.crop.pos_x = 0;		    
+								user_scope.crop.pos_y = 0;
+								user_scope.crop.image = $scope.filename;
+
+								/* default form values for cropping
 								$('input[name="img_crop_scale"]').val(1);
 								$('input[name="img_crop_pos_x"]').val(0);
 								$('input[name="img_crop_pos_y"]').val(0);
 								$('input[name="img_crop_deg"]').val(0);
 								$('input[name="img_crop_width"], input[name="img_crop_height"]').val( parseInt( $('#avatar').css('width') ) );
+								*/
 
 							};
 

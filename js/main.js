@@ -397,7 +397,14 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 		email: $scope.$parent.fb_like.data.email,
 		full_name: $scope.$parent.fb_like.data.name,
 		description: "",
-		user_profile_picture: "http://graph.facebook.com/" + $scope.$parent.fb_like.data.id + "/picture?width=300&height=300"
+		user_profile_picture: "http://graph.facebook.com/" + $scope.$parent.fb_like.data.id + "/picture?width=300&height=300",
+		crop: {
+			image: "",
+			width: "",
+			height: "",
+			pos_x: "",
+			pos_y: ""
+		}
 	};
 
 	$scope.wp_base_path = mySettings.wp_base_path;
@@ -405,6 +412,9 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 	var lock = false;
 
 	$scope.submit = function(){
+
+		console.log("scope.user");
+		console.log($scope.user);
 
 		if ( ! $scope.myForm.$valid || lock) {
 			console.log("Form not valid!");
@@ -480,6 +490,7 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 	};
 
 	$scope.useProfilePhoto = function(){
+		$scope.user.crop = {};
 		$scope.use_profile_photo = true;
 	};
 
@@ -562,7 +573,9 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 .service('imgCrop', function () {
 
 	function init() {
-
+		
+		scope = $('form[name="myForm"]').scope();
+		
 		// If no touch device, show touches
 		if(!Hammer.HAS_TOUCHEVENTS && !Hammer.HAS_POINTEREVENTS) {
 			Hammer.plugins.showTouches();
@@ -633,13 +646,25 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 		    elemRect.style.mozTransform = transform;
 		    elemRect.style.webkitTransform = transform;
 
+		   	scope.$apply(function(){
+				
+				scope.user.crop.width = scope.user.crop.height = parseInt( $('#avatar').css('width') );
+				scope.user.crop.scale = scale;
+				scope.user.crop.pos_x = posX;		    
+				scope.user.crop.pos_y = posY;
+
+		    });
+
+			//user_scope.crop.deg = deg;
+
+			/*
 		    $('input[name="img_crop_scale"]').val(scale);
 		    $('input[name="img_crop_pos_x"]').val(posX);
 		    $('input[name="img_crop_pos_y"]').val(posY);
 		    $('input[name="img_crop_deg"]').val(rotation);
 
 			$('input[name="img_crop_width"], input[name="img_crop_height"]').val( parseInt( $('#avatar').css('width') ) );
-
+			*/
 		};
 
         //scope.$on('$destroy', rmImage);
