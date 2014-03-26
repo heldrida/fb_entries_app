@@ -249,14 +249,10 @@ function save_user_profile_picture(){
 		
 		return false;
 
-	} elseif (!empty($_POST['crop']) && is_array($_POST['crop'])) {
+	} elseif (!empty($_POST['crop']) && (is_array($_POST['crop']) && !empty($_POST['crop']['image']) ) ) {
 
 		return img_crop();
 
-	} else {
-
-		return false;
-		
 	};
 
 	$path = dirname(__FILE__) . "/uploads";
