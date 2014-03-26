@@ -71,4 +71,8 @@
 	- post on fb users behalf
 
 		http://stackoverflow.com/questions/4070418/posting-on-on-a-users-wall-on-behalf-of-the-user
+
+	- block animation stepped curve
+
+		http://jsbin.com/muyeguba/5/
 		
