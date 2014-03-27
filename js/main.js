@@ -556,25 +556,32 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 			{ option: "approved_entries", page: $scope.page },
 			function( data ){
 
-				console.log("approved_entries data: " + data);
-
 				data = JSON.parse(data);
+
+				console.log(" $scope.page " +  JSON.stringify( $scope.page ) );
+				console.log("approved_entries data: " + JSON.stringify( data ) );
+
 
 				if ( !data ){
 					
-					$('.row-entries button.space').animo({
-						animation: "vanish-rotate",
-						duration: 0.8 
-					}, function(){
-						$('.row-entries button.space').hide();
-					});
+					if ( Modernizr.csstransitions ){
+
+						$('.row-entries button.space').animo({
+							animation: "vanish-rotate",
+							duration: 0.8 
+						}, function(){
+							$('.row-entries button.space').hide();
+						});
+
+					} else {
+
+						$('.row-entries button.space').fadeOut();
+
+					};
 
 				};
 				
-		        $('.animatable-elements .cat-foo').animo({
-		        	animation: "vanish-cat",
-		        	duration: 1.2 
-		        }, function(){
+				function pushData(){
 
 					$scope.$apply(function(){
 
@@ -587,6 +594,19 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 					});
 
        				$('.animatable-elements .cat-foo').animo({animation: "swinging", iterate: "infinite", duration: 0.8 });
+
+				};
+
+				!Modernizr.csstransitions ? pushData() : null;
+
+		        $('.animatable-elements .cat-foo').animo({
+		        	animation: "vanish-cat",
+		        	duration: 1.2 
+		        }, function(){
+
+		        	console.log("loadmore animo callback!"); 
+		        	
+		        	pushData();
 
 		        });
 
