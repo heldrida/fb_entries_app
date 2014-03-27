@@ -192,7 +192,7 @@ main {
   text-align: center;
   text-transform: uppercase;
   width: 75%;
-  line-height: normal;
+  line-height: 1.7em;
 }
 .row-enter-now .highlight {
   color: #EA342F;
@@ -1182,6 +1182,30 @@ button.your_face {
 .nav-mobile {
   display: none;
 }
+#simple-slider-slider {
+  clear: both;
+  margin: 0 !important;
+  width: 100% !important;
+}
+#simple-slider-slider > .dragger {
+    background: -webkit-linear-gradient(top , #333, #F00) repeat scroll 0 0 transparent;
+    background: -moz-linear-gradient(top , #333, #F00) repeat scroll 0 0 transparent;
+    background: -ms-linear-gradient(top , #333, #F00) repeat scroll 0 0 transparent;
+    background: linear-gradient(top , #333, #F00) repeat scroll 0 0 transparent;
+    border: 1px solid #888;
+    border-radius: 10px;
+    box-shadow: 0 2px 2px transparent inset, 0 2px 8px transparent;
+    height: 16px;
+    width: 16px;
+}
+#simple-slider-slider > .track, 
+#simple-slider-slider > .highlight-track {
+    background: -webkit-linear-gradient(top , #333333, #DDDDDD) repeat scroll 0 0 transparent;
+    background: -moz-linear-gradient(top , #333333, #DDDDDD) repeat scroll 0 0 transparent;
+    background: -ms-linear-gradient(top , #333333, #DDDDDD) repeat scroll 0 0 transparent;
+    background: linear-gradient(top , #333333, #DDDDDD) repeat scroll 0 0 transparent;
+    border: 1px solid #AAAAAA;
+}
 
 /* IE Fixes */
 .no-cssanimations .spinner {
@@ -1190,6 +1214,7 @@ button.your_face {
   height: 35px;
   width: 35px;
 }
+
 
 
 /* ==========================================================================

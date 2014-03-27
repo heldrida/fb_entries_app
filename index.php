@@ -29,7 +29,12 @@
         <![endif]-->
 
     </head>
+    <!--[if IE ]>
+    <body class="ie">
+    <![endif]-->
+    <!--[if !IE]>-->
     <body>
+    <!--<![endif]-->
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
@@ -126,6 +131,10 @@
         <!-- e: ui.bootstrap datepicker -->
         <link href="bower_components/animo.js/animate+animo.css" rel="stylesheet" type="text/css">
         <script src="bower_components/animo.js/animo.js" type="text/javascript"></script>
+
+        <script src="js/vendor/jquery-simple-slider/simple-slider.min.js"  type="text/javascript" ></script>
+        <link href="js/vendor/jquery-simple-slider/simple-slider.css" rel="stylesheet" type="text/css" />
+
         <script src="js/main.js"></script>
 
         <script type="text/javascript">
