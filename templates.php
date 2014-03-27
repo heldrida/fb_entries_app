@@ -72,9 +72,12 @@
                 </div>
 
                 <div id="photo-instructions" ng-if="avatar != ''" style="" ng-show="use_profile_photo == false">
-                    <p class="desktop"><span class="help-icon"></span>
+                    <p class="desktop non-ie"><span class="help-icon"></span>
                     <strong>Need to reposition photo ?</strong>
                     Click and drag to move photo in the frame or press the <strong>&#8679; SHIFT</strong> key and mouse click to zoom!</p>
+                    <p class="desktop ie"><span class="help-icon"></span>
+                    <strong>Need to reposition photo ?</strong>
+                    Click and drag to move photo in the frame or use the slider to zoom!</p>
                     <p class="mobile"><span class="help-icon"></span>
                     <strong>Need to reposition photo ?</strong>
                     Touch and drag to move photo in the frame or pinch to zoom!</p>

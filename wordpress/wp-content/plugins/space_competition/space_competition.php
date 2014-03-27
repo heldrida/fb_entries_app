@@ -356,11 +356,21 @@ function img_upload(){
 
 	unlink( $temp_filename );
 
-	/**/
-	$dest = imagecreatetruecolor($dimensions[0], $dimensions[0]);
+	/* s: make imgs square to make crops easier to calc */
+	$wider = $dimensions[0] > $dimensions[1] ? $dimensions[0] : $dimensions[1];
+	$dest = imagecreatetruecolor($wider, $wider);
 
-	imagecopy($dest, $image, 0, (($dimensions[0]-$dimensions[1])/2), 0, 0, $dimensions[0], $dimensions[1]);
-	/**/
+	imagecopy(
+				$dest, 		//Destination image link resource.
+				$image, 	//Source image link resource.
+				$dimensions[1] > $dimensions[0] ? (($dimensions[1]-$dimensions[0])/2) : 0, 			//x-coordinate of destination point. 
+				$dimensions[0] > $dimensions[1] ? (($dimensions[0]-$dimensions[1])/2) : 0, //y-coordinate of destination point. 
+				0, 		//x-coordinate of source point. 
+				0, 		//y-coordinate of source point. 
+				$dimensions[0], 	//Source width.
+				$dimensions[1] 		//Source height.
+			);
+	/* e: make imgs square to make crops easier to calc */
 
 	if ( imagejpeg( $dest, $path . "/" . $filename ) ) {
 
