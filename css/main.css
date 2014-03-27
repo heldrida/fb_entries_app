@@ -1206,6 +1206,12 @@ button.your_face {
     background: linear-gradient(top , #333333, #DDDDDD) repeat scroll 0 0 transparent;
     border: 1px solid #AAAAAA;
 }
+#photo-instructions .non-ie {
+  display: block;
+}
+#photo-instructions .ie {
+  display: none;
+}
 
 /* IE Fixes */
 .no-cssanimations .spinner {
@@ -1213,6 +1219,12 @@ button.your_face {
   border-radius: 50px;
   height: 35px;
   width: 35px;
+}
+#photo-instructions .non-ie {
+  display: none !important;
+}
+#photo-instructions .ie {
+  display: block !important;
 }
 
 
