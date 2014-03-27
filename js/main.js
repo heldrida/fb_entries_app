@@ -651,6 +651,8 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 		            "rotate("+rotation+"deg) ";
 			*/
 
+			scale = scope.$parent.use_simple_slider === true ? scope.$parent.user.crop.scale : scale;
+
 		    var transform =
 		            "translate("+posX+"px,"+posY+"px) " +
 		            "scale("+scale+","+scale+") ";
@@ -793,4 +795,37 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 
 		}
 	}
+})
+
+.directive('simpleSlider', function(){
+	return {
+		link: function(scope, elem, attrs, ctrl){
+			
+			$(elem).simpleSlider({
+				range: [1, 10]
+			});
+
+			$(elem).on('slider:ready slider:changed', function(event, data){
+
+				console.log(data);
+
+				scope.$parent.use_simple_slider = true;
+
+				elemRect = document.getElementById('myImg');
+
+				var scale = data.value.toFixed(3);
+			    var transform = "scale("+scale+","+scale+") ";
+
+			    elemRect.style.transform = transform;
+			    elemRect.style.oTransform = transform;
+			    elemRect.style.msTransform = transform;
+			    elemRect.style.mozTransform = transform;
+			    elemRect.style.webkitTransform = transform;
+
+				scope.$parent.user.crop.scale = scale;
+
+			});
+
+		}
+	};
 });

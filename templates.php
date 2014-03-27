@@ -66,6 +66,10 @@
                 <div id="avatar" ng-if="avatar != ''" style="" ng-show="use_profile_photo == false">
                     <img id="myImg" ng-src="{{avatar}}" style="position:relative; top:0px; left:0px;" />
                 </div>
+                
+                <div ng-if="avatar != ''" ng-show="use_profile_photo == false">
+                    <input id="simple-slider" type="text" simple-slider data-slider-range="100,300" />
+                </div>
 
                 <div id="photo-instructions" ng-if="avatar != ''" style="" ng-show="use_profile_photo == false">
                     <p class="desktop"><span class="help-icon"></span>
