@@ -191,8 +191,9 @@ function img_crop(){
 	$i->readImage( $filename );
 
 	// dimension
-	$d = getimagesize( $filename );
+	$d = $i->getImageGeometry();
 
+	$ratio = $d['width'] / $d['height'];
 	// rad
 	/*
 	$rad = deg2rad( $form_data['img_crop_rotate'] );
@@ -211,6 +212,8 @@ function img_crop(){
 
 	// calculate center
 	$center = ( ( $new_width * $form_data['img_crop_scale'] ) - $c_width ) / 2;
+
+	$centerh = ( ( ($ratio*$c_width) * $form_data['img_crop_scale'] ) - ($ratio*$c_width) ) / 2;
 
 	// crop
 	$i->cropImage ( 
@@ -349,9 +352,17 @@ function img_upload(){
 
 	$image = imagecreatefromstring( file_get_contents( $temp_filename ) );
 
+	$dimensions = getimagesize($temp_filename);
+
 	unlink( $temp_filename );
 
-	if ( imagejpeg( $image, $path . "/" . $filename ) ) {
+	/**/
+	$dest = imagecreatetruecolor($dimensions[0], $dimensions[0]);
+
+	imagecopy($dest, $image, 0, (($dimensions[0]-$dimensions[1])/2), 0, 0, $dimensions[0], $dimensions[1]);
+	/**/
+
+	if ( imagejpeg( $dest, $path . "/" . $filename ) ) {
 
 		echo json_encode( $filename );
 

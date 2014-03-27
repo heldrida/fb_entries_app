@@ -131,6 +131,16 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 
 		//$locationProvider.hashPrefix('!');
 
+		function isIE() { 
+			return ((navigator.appName == 'Microsoft Internet Explorer') || ((navigator.appName == 'Netscape') 
+					&& (new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent) != null))); 
+		};
+
+		if ( !isIE() ) {
+			$("html").addClass("ie");
+			return;
+		};
+
 })
 
 .run(function($rootScope, $timeout){
@@ -442,9 +452,9 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 		
 		deferred.promise.then(function(){
 
-			console.log("$scope.user");
-			console.log($scope.user);
-
+			console.log("$scope.user"); 
+			console.log(JSON.stringify( $scope.user.crop ) );
+		
 			$.post(
 				mySettings.wp_base_path + '/wp-admin/admin-ajax.php?action=space_competition',
 				$scope.user,
@@ -672,7 +682,8 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 				height: parseInt( $('#avatar').css('width') )
 			};
 
-			console.log( scope.$parent.user.crop );
+			console.log(JSON.stringify( scope.$parent.user.crop ) );
+
 
 			//user_scope.crop.deg = deg;
 
@@ -800,21 +811,29 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 .directive('simpleSlider', function(){
 	return {
 		link: function(scope, elem, attrs, ctrl){
-			
+		
+			if ( $("html").hasClass("ie") ) {
+				$(elem).parent('div').hide();
+				return;
+			};
+
 			$(elem).simpleSlider({
 				range: [1, 10]
 			});
 
 			$(elem).on('slider:ready slider:changed', function(event, data){
 
-				console.log(data);
-
 				scope.$parent.use_simple_slider = true;
 
 				elemRect = document.getElementById('myImg');
 
 				var scale = data.value.toFixed(3);
-			    var transform = "scale("+scale+","+scale+") ";
+				
+				var w = $("#avatar").width();
+				var posX = scope.$parent.user.crop.pos_x;
+				var posY = scope.$parent.user.crop.pos_y;
+			    
+				var transform = "scale("+scale+","+scale+") ";
 
 			    elemRect.style.transform = transform;
 			    elemRect.style.oTransform = transform;
@@ -823,6 +842,9 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 			    elemRect.style.webkitTransform = transform;
 
 				scope.$parent.user.crop.scale = scale;
+
+				console.log(JSON.stringify( scope.$parent.user.crop ) );
+
 
 			});
 

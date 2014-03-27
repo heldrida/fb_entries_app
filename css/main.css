@@ -1184,7 +1184,7 @@ button.your_face {
 }
 #simple-slider-slider {
   clear: both;
-  margin: 0 !important;
+  margin: 0 0 10px 0 !important;
   width: 100% !important;
 }
 #simple-slider-slider > .dragger {
