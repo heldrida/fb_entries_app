@@ -136,9 +136,9 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 					&& (new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent) != null))); 
 		};
 
+		// add IE class
 		if ( !isIE() ) {
 			$("html").addClass("ie");
-			return;
 		};
 
 })
@@ -870,4 +870,21 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 
 		}
 	};
+})
+
+.directive('iosSupport', function(){
+	return {
+		link: function(scope, elem, attrs, ctrl){
+
+	        // ios < 5 doesn't support input type file
+	        if (navigator.userAgent.match(/(iPad|iPhone);.*CPU.*OS 5_\d/i))
+	        { 
+	        	$(elem).find('input').remove();
+	        	$(elem).on('click', function(){
+	        		alert("We are sorry but this feature is not supported on this version of mobile Safari! Please update and try again please.");
+	        	});
+	        }; 
+
+		}
+	}
 });
