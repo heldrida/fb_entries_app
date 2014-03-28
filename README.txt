@@ -79,4 +79,8 @@
 	- IE8 error unexpected call to method or property access
 
 		http://stackoverflow.com/questions/15590746/angularjs-error-unexpected-call-to-method-or-property-access-undefined-only
+
+	- git pre push hook
+
+		http://blog.ittybittyapps.com/blog/2013/09/03/git-pre-push/
 		
