@@ -2,7 +2,7 @@
 <div class="uploader">
 
     <!-- the real input[type=file] is hidden -->
-    <div class="fake-upload browse-btn">
+    <div class="fake-upload browse-btn" ios-support>
             <span>upload photo</span>
             <input type="file" name="uploader"
          onchange="angular.element(this).scope().sendFile(this);"/>
@@ -66,7 +66,7 @@
                 <div id="avatar" ng-if="avatar != ''" style="" ng-show="use_profile_photo == false">
                     <img id="myImg" ng-src="{{avatar}}" style="position:relative; top:0px; left:0px;" />
                 </div>
-                
+
                 <div ng-if="avatar != ''" ng-show="use_profile_photo == false">
                     <input id="simple-slider" type="text" simple-slider data-slider-range="100,300" />
                 </div>
@@ -325,7 +325,7 @@ OPERATOR: (1) This competition is operated by Cott Beverages Limited (Cott) of C
 
     <div class="contest-description text-shadow-dark">
 
-        <p class="text-shadow-light-blue"><?php echo "the competition runs from start date 01/05/2014 to 31/05/2014 at that point we'll go through all of the entries and the<br/> one that we feel has given us the best reason to go will be picked as our intergalactic hero."; ?></p>
+        <p class="text-shadow-light-blue"><?php echo "the competition runs from start date 01/04/2014 to 31/05/2014 at that point we'll go through all of the entries and the one that we feel has given us the best reason to go will be picked as our intergalactic hero."; ?></p>
 
     </div>
 
@@ -343,7 +343,7 @@ OPERATOR: (1) This competition is operated by Cott Beverages Limited (Cott) of C
     
     <div class="description">
 
-        <p>a winner will be selected and with the use of some advanced<br /> cloning technological, top of the range scene and math, their face<br /> will be transformed into an intergalactic phenomenon,<br /> aka (a wibbly wobbly spaceman model.)</p>
+        <p>a winner will be selected and with the use of some advanced<br /> cloning technological, top of the range science and math, their face<br /> will be transformed into an intergalactic phenomenon,<br /> aka (a wibbly wobbly spaceman model.)</p>
 
         <p>it will then be launched up into the stratosphere<br /> to gaze down on this little planet we call home.</p>
         
@@ -379,7 +379,7 @@ OPERATOR: (1) This competition is operated by Cott Beverages Limited (Cott) of C
 
     <div class="description">
 
-        <p>t's and c's apply. please read full terms at our facebook address. the winners face represented on a 3d model will be sent on a<br/> weather balloon to the edge of space. competition runs until 16:00 gmt 31/05/2014. you must be over 16 years to enter. <br/> no purchase necessary. you must be a uk resident.</p>
+        <p>t's and c's apply. please read full terms at our facebook address. the winners face represented on a 3d model will be sent on a<br/> weather balloon to the edge of space. competition runs until 16:00 gmt 31/05/2014. you must be over 16 years to enter.<br/> no purchase necessary. you must be a uk resident.</p>
 
         <p>copyright © <?php echo date('Y', time()); ?> cott beverages ltd. all rights reserved.</p>
 
