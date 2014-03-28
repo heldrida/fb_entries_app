@@ -14,7 +14,8 @@
  * @package WordPress
  */
 
-if (strpos($_SERVER['HTTP_HOST'],'tlnscompetitions')>-1){
+// Settings for different environments
+if ( strpos($_SERVER['HTTP_HOST'],'tlnscompetitions') >-1 ) {
 
 	$myparams = array(
 					"DB_NAME" => "tlnscomp_emergespace",
