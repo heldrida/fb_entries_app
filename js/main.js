@@ -189,7 +189,7 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 
         $('.row-enter-your-face .elem-c').animo({animation: "vanish", iterate: "infinite", duration: 5.8 });
 
-        //$('.row-enter-your-face .elem-d').animo({animation: "swinger", iterate: "infinite", duration: 8.8 });
+        $('.row-enter-your-face .elem-d').animo({animation: "swinging", iterate: "infinite", duration: 8.8 });
 
 	});
 

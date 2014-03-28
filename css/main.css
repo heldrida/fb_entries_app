@@ -509,9 +509,9 @@ button.space:hover {
 .row-enter-your-face .bg .elem-d {
   background: url("../img/cat-foo.png") no-repeat scroll -50px -45px rgba(0, 0, 0, 0);
   height: 300px;
-  left: 615px;
+  left: 709px;
   position: absolute;
-  top: 540px;
+  top: 563px;
   transform: rotate(20deg);
   -webkit-transform: rotate(20deg);
   width: 250px;
