@@ -274,7 +274,7 @@ OPERATOR: (1) This competition is operated by Cott Beverages Limited (Cott) of C
         </div>
     </div>
     <div class="text-shadow-dark">
-        <img class="enter-now" src="img/Enter_now.png?20140306" />
+        <img class="enter-now" src="img/Enter_now.png?20140306" ng-click="navigateTo('enter-your-face')" />
         <p>time to pack those bags and put your socks on space kids.</p>
         <p>cause' we're taking you on a <span class="highlight">journey through time &amp; space</span>. <br/> well...pretty much.</p>
         <p>we are giving <span class="highlight">one lucky winner</span> the chance to get their <br />beautiful face up <span class="highlight">into the stratosphere</span>.<br/>
