@@ -14,7 +14,6 @@
  * @package WordPress
  */
 
-// Settings for different environments
 if ( strpos($_SERVER['HTTP_HOST'],'tlnscompetitions') >-1 ) {
 
 	$myparams = array(
