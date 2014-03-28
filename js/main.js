@@ -887,4 +887,18 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 
 		}
 	}
+})
+
+.directive('myYoutubeVideo', function(){
+	return {
+		link: function(scope, elem, attrs, ctrl){
+
+			$(elem).hide();
+
+			// the video is still not available so at the moment
+			// this is disabled by default
+			// ideally this should resolve from the backend, if video is set
+
+		}
+	}
 });

@@ -331,7 +331,7 @@ OPERATOR: (1) This competition is operated by Cott Beverages Limited (Cott) of C
 
 </div>
 
-<div class="row row-b row-video font-gothic">
+<div class="row row-b row-video font-gothic" my-youtube-video>
     
     <p class="check-cowboy text-shadow-soft">check out this "space cowboy"</p>
     
