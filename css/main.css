@@ -404,6 +404,9 @@ button.space:hover {
     border: 4px solid #FFF;
     margin-right: 25px;
 }
+.row-entries .entry .photo > img {
+  width: 100%;
+}
 .row-entries .entry .details {
     color: #FFF;
 }
