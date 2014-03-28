@@ -14,15 +14,33 @@
  * @package WordPress
  */
 
+if (strpos($_SERVER['HTTP_HOST'],'tlnscompetitions')>-1){
+
+	$myparams = array(
+					"DB_NAME" => "tlnscomp_emergespace",
+					"DB_USER" => "tlnscomp_espace",
+					"DB_PASSWORD" => "XW6lQ@LB]Qw)"
+				);
+
+} else {
+
+	$myparams = array(
+					"DB_NAME" => "emerge_space",
+					"DB_USER" => "root",
+					"DB_PASSWORD" => "root"
+				);
+
+};
+
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'emerge_space');
+define('DB_NAME', $myparams['DB_NAME']);
 
 /** MySQL database username */
-define('DB_USER', 'root');
+define('DB_USER', $myparams['DB_USER']);
 
 /** MySQL database password */
-define('DB_PASSWORD', 'root');
+define('DB_PASSWORD', $myparams['DB_PASSWORD']);
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
