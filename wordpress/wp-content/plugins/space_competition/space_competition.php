@@ -315,7 +315,7 @@ function new_entry(){
 					$birthday,
 					$_POST['email'],
 					$_POST['telephone'],
-					$_POST['description'],
+					stripslashes_deep( $_POST['description'] ),
 					$filename
 				);
 
