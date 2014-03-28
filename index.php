@@ -14,7 +14,7 @@
 
         <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
         <link rel="stylesheet" href="css/normalize.min.css">
-        <link href='../fonts/font-face.css' rel='stylesheet' type='text/css'>
+        <link href='fonts/font-face.css' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/main.css">
         <!--
         <link href='http://fonts.googleapis.com/css?family=Carrois+Gothic+SC' rel='stylesheet' type='text/css'>
