@@ -1,4 +1,3 @@
-// settings for two different environments
 angular.module('mySettings', [])
 .constant('mySettings', {
 	base_path: window.location.hostname.indexOf('tlnscompetitions') > -1 ? '/emerge_space' : '/',
