@@ -53,7 +53,7 @@
                         </div>
 
                         <div class="mobile-nav-icon" mobile-nav-switch>
-                            <img src="../img/mobile-nav-icon.png">
+                            <img src="img/mobile-nav-icon.png">
                         </div> 
 
                     </div>
