@@ -1380,11 +1380,14 @@ button.your_face {
       max-width: 764px;
     }
     .row-countdown table {
-      font-size: 1em;
+      font-size: 0.95em;
       margin: 0 auto;
       width: auto;
       position: relative;
       left: 5px;
+    }
+    .row-countdown .seconds {
+       width: 65px;
     }
     .row-countdown .contest-description p {
       color: #FFFFFF;
@@ -1527,6 +1530,8 @@ button.your_face {
       margin-right: 25px;
       margin-bottom: 10px;
       width: 97%;
+      position: relative;
+      z-index: 9999;
     }
     .row-enter-your-face .col input, 
     .row-enter-your-face .col textarea {
@@ -1560,10 +1565,10 @@ button.your_face {
       width: 97%;
     }
     #photo-instructions .desktop {
-      display: none;
+      display: none !important;
     }
     #photo-instructions .mobile {
-      display: block;
+      display: block !important;
     }
 }
 

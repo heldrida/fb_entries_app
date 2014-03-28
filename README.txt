@@ -83,4 +83,7 @@
 	- git pre push hook
 
 		http://blog.ittybittyapps.com/blog/2013/09/03/git-pre-push/
+
+	- the developers of this app have not set up this app properly for fb login issue IPHONE
+		http://stackoverflow.com/questions/21329250/the-developers-of-this-app-have-not-set-up-this-app-properly-for-facebook-login
 		
