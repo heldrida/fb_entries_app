@@ -86,4 +86,13 @@
 
 	- the developers of this app have not set up this app properly for fb login issue IPHONE
 		http://stackoverflow.com/questions/21329250/the-developers-of-this-app-have-not-set-up-this-app-properly-for-facebook-login
+
+	- iphone image rotation
+
+		http://stackoverflow.com/questions/8356888/iphone-image-orientation-rotating-images-automatically-with-php-pel-image-moo
+
+		http://stackoverflow.com/questions/4266656/how-to-stop-php-imagick-auto-rotating-images-based-on-exif-orientation-data
+
+		http://www.php.net/manual/en/function.exif-read-data.php
+		
 		
