@@ -12,7 +12,7 @@
         <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, minimum-scale=
 1.0, maximum-scale=1">
 
-        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
+        <link rel="stylesheet" href="//yui.yahooapis.com/pure/0.3.0/pure-min.css">
         <link rel="stylesheet" href="css/normalize.min.css">
         <link href='fonts/font-face.css' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/main.css">
@@ -111,7 +111,6 @@
         <!-- e: emerge space app -->
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
         <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/3.46/jquery.form.min.js"></script>
