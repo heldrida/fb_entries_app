@@ -952,6 +952,10 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 		            return x;
 		        };
 
+
+				console.log( " $('#countdown span.days')"  );
+				console.log($('#countdown span.days'));
+
 		        $('#countdown span.days').text( getPrefix(days) );
 		        $('#countdown span.hours').text( getPrefix(hours) );
 		        $('#countdown span.minutes').text( getPrefix(minutes) );
