@@ -54,7 +54,7 @@
 
     <div ng-if="fb_like.connected == true && fb_like.status == true && template_data.success_page == false && template_data.approval_process == false">
 
-        <p id="txt-upload-photo" class="text-shadow-light-blue">upload a photo of yourself and tell us why you should go on the <br> mission of a lifetime or the chance to get your face into space.</p>
+        <p id="txt-upload-photo" class="text-shadow-light-blue">upload a photo of yourself and tell us why you should go on the <br> mission of a lifetime for the chance to get your face into space.</p>
         
         <form name="myForm" class="pure-form myForm" novalidate ng-controller="uploadPhotoCtrl" ng-submit="submit()" ng-class="{true: 'submitted'}[submitted]">
             <div class="col col-a">
@@ -276,7 +276,7 @@ OPERATOR: (1) This competition is operated by Cott Beverages Limited (Cott) of C
     <div class="text-shadow-dark">
         <img class="enter-now" src="img/Enter_now.png?20140306" ng-click="navigateTo('enter-your-face')" />
         <p>time to pack those bags and put your socks on space kids.</p>
-        <p>cause' we're taking you on a <span class="highlight">journey through time &amp; space</span>. <br/> well...pretty much.</p>
+        <p>'cause we're taking you on a <span class="highlight">journey through time &amp; space</span>. <br/> well...pretty much.</p>
         <p>we are giving <span class="highlight">one lucky winner</span> the chance to get their <br />beautiful face up <span class="highlight">into the stratosphere</span>.<br/>
             <span class="highlight white">so what are you waiting for?</span>
             <br/>sign up for the <span class="highlight">emerge space programme now!</span></p>
@@ -325,7 +325,7 @@ OPERATOR: (1) This competition is operated by Cott Beverages Limited (Cott) of C
 
     <div class="contest-description text-shadow-dark">
 
-        <p class="text-shadow-light-blue"><?php echo "the competition runs from start date 01/04/2014 to 31/05/2014 at that point we'll go through all of the entries and the one that we feel has given us the best reason to go will be picked as our intergalactic hero."; ?></p>
+        <p class="text-shadow-light-blue"><?php echo "the competition runs from star date 01/04/2014 to 31/05/2014 at that point we'll go through all of the entries and the one that we feel has given us the best reason to go will be picked as our intergalactic hero."; ?></p>
 
     </div>
 
@@ -347,7 +347,7 @@ OPERATOR: (1) This competition is operated by Cott Beverages Limited (Cott) of C
 
         <p>it will then be launched up into the stratosphere<br /> to gaze down on this little planet we call home.</p>
         
-        <p>we'll be filming this spectacular eet in glorious technicolor so<br /> your mission can be played over and over again.</p>
+        <p>we'll be filming this spectacular feet in glorious technicolor so<br /> your mission can be played over and over again.</p>
 
         
         <div class="spacecat">
@@ -375,11 +375,11 @@ OPERATOR: (1) This competition is operated by Cott Beverages Limited (Cott) of C
     
     <div class="footer-logo"></div>
 
-    <p class="text-shadow-superglow"><a href="http://www.emergespaceprogramme.com" target="_blank">www.emergespaceprogramme.com</a> <a href="https://twitter.com/search?q=%23YourFaceInSpace&src=hash" target="blank"><span class="hashtag">#</span>yourfaceinspace</p>
+    <p class="text-shadow-superglow"><a href="http://www.emergespaceprogramme.com" target="_blank">www.emergespaceprogramme.com</a> <a href="https://twitter.com/search?q=%23YourFaceInSpace&src=hash" target="blank"><span class="hashtag">#</span>yourfaceinspace</a></p>
 
     <div class="description">
 
-        <p>t's and c's apply. please read full terms at our facebook address. the winners face represented on a 3d model will be sent on a<br/> weather balloon to the edge of space. competition runs until 16:00 gmt 31/05/2014. you must be over 16 years to enter.<br/> no purchase necessary. you must be a uk resident.</p>
+        <p>t's and c's apply. please read full terms <a href="" ng-click="navigateTo('terms-and-conditions')">here</a>. the winners face represented on a 3d model will be sent on a<br/> weather balloon to the edge of space. competition runs until 16:00 gmt 31/05/2014. you must be over 16 years to enter.<br/> no purchase necessary. you must be a uk resident.</p>
 
         <p>copyright © <?php echo date('Y', time()); ?> cott beverages ltd. all rights reserved.</p>
 
