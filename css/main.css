@@ -70,6 +70,7 @@ a {
 html {
     background: url('../img/space_bacground.png') repeat 0 0 transparent;
     -webkit-backface-visibility: visible !important;
+    overflow: hidden;
 }
 #emerge_space {
     width: 100%;
