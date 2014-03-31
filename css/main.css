@@ -342,6 +342,9 @@ button.space {
 button.space:hover {
     opacity: 0.75;
 }
+.row-header img {
+  max-width: 100%;
+}
 .row-enter-now button {
     width: 284px;
 }
