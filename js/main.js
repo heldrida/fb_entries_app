@@ -160,9 +160,9 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 		};
 
 		//window.parent.$("body").animate({scrollTop:0}, 'slow');
-		if ( document.referrer.toLowerCase().indexOf('facebook') > -1 ) {
-			console.log("document.referrer");
-			console.log(document.referrer);
+		if ( document.documentElement.className.indexOf('_fb_') > -1 ) {
+			console.log("document.documentElement.className");
+			console.log(document.documentElement.className);
 			$('html').css('overflow', 'hidden');
 		};
 
