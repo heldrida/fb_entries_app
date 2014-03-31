@@ -379,7 +379,7 @@ OPERATOR: (1) This competition is operated by Cott Beverages Limited (Cott) of C
 
     <div class="description">
 
-        <p>t's and c's apply. please read full terms <a href="" ng-click="navigateTo('terms-and-conditions')">here</a>. the winners face represented on a 3d model will be sent on a<br/> weather balloon to the edge of space. competition runs until 16:00 gmt 31/05/2014. you must be over 16 years to enter.<br/> no purchase necessary. you must be a uk resident.</p>
+        <p>t's and c's apply. please read full terms <a class="here" href="" ng-click="navigateTo('terms-and-conditions')">here</a>. the winners face represented on a 3d model will be sent on a<br/> weather balloon to the edge of space. competition runs until 16:00 gmt 31/05/2014. you must be over 16 years to enter.<br/> no purchase necessary. you must be a uk resident.</p>
 
         <p>copyright © <?php echo date('Y', time()); ?> cott beverages ltd. all rights reserved.</p>
 
