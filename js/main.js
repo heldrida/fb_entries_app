@@ -160,7 +160,7 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 		};
 
 		//window.parent.$("body").animate({scrollTop:0}, 'slow');
-		console.log(window.name.indexOf('app_runner_fb'));
+		console.log(window.name);
 		if(window.name.indexOf('app_runner_fb') != -1){
 			$('html, body').css('overflow', 'hidden');
 		};
