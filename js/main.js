@@ -145,7 +145,7 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 
 })
 
-.run(function($rootScope, $timeout){
+.run(function($rootScope, $timeout, $FB){
 
 	$rootScope.isViewLoading = true;
 
@@ -167,7 +167,7 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 			
 			$rootScope.isViewLoading = false;
 
-			FB.Canvas.setSize({ height: $('main').height() });
+			$FB.Canvas.setSize({ height: $('main').height() });
 
 		}, 1000);
 

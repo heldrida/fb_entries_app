@@ -7,8 +7,8 @@
 
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
+        <title>Emerge Space Programme</title>
+        <meta name="description" content="Get Your Face Into Space with the Emerge Space Programme">
         <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, minimum-scale=
 1.0, maximum-scale=1">
 
