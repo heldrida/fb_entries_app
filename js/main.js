@@ -158,6 +158,8 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 			$('.nav-mobile').removeClass('mobile-nav-open');
 
 		};
+
+		$("html, body").animate({ scrollTop: 0 }, "slow");
 		
 	});
 
