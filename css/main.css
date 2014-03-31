@@ -406,6 +406,7 @@ button.space:hover {
     height: 198px;
     border: 4px solid #FFF;
     margin-right: 25px;
+    overflow: hidden;
 }
 .row-entries .entry .photo > img {
   width: 100%;
