@@ -159,7 +159,7 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 
 		};
 
-		$("html, body").animate({ scrollTop: 0 }, "slow");
+		window.parent.$("body").animate({scrollTop:0}, 'slow');
 		
 	});
 
