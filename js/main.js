@@ -7,6 +7,8 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 			appId: mySettings.app_id
 		});
 
+		window.FB.Canvas.setAutoGrow();
+
 		$rootScope.$broadcast('$onFBInit');
 	};
 
