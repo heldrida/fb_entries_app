@@ -356,7 +356,8 @@ function img_upload(){
 
 	$image = imagecreatefromstring( file_get_contents( $temp_filename ) );
 
-    //$image = autoRotateImage($image, $temp_filename);
+    //$image = autoRotateImageExifImplementation($image, $temp_filename);
+	$image = autoRotateImagePelImplementation($image, $temp_filename);
 
 	$dimensions = getimagesize($temp_filename);
 
@@ -389,9 +390,40 @@ function img_upload(){
 }
 
 function autoRotateImageExifImplementation($image, $file) {
+	// requires php-exif module
 	$exif = exif_read_data( $file );
 	if(!empty($exif['Orientation'])) {
 	    switch($exif['Orientation']) {
+	        case 8:
+	            $image = imagerotate($image,90,0);
+	            break;
+	        case 3:
+	            $image = imagerotate($image,180,0);
+	            break;
+	        case 6:
+	            $image = imagerotate($image,-90,0);
+	            break;
+	    }
+	}
+	return $image;
+}
+
+function autoRotateImagePelImplementation($image, $file) {
+
+	require_once(dirname(__FILE__) . '/pel/PelJpeg.php');
+
+	$jpeg = new PelJpeg($file);
+
+	$exif = $jpeg->getExif();
+
+	$tiff = $exif->getTiff();
+
+	$ifd0 = $tiff->getIfd();
+
+	$desc = $ifd0->getEntry(PelTag::ORIENTATION);
+
+	if(!empty($desc)) {
+	    switch($desc->getValue()) {
 	        case 8:
 	            $image = imagerotate($image,90,0);
 	            break;
