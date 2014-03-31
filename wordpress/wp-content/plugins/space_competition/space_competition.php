@@ -55,6 +55,10 @@ function my_plugin_page(){
 
     $title = "<h2>Space Competition Manager</h2>";
 
+    $options = "<div id=\"space-comp-params\">
+    	<label></label>
+    </div>";
+
     $tbl = '
     	<table ng-table="tableParams" class="table" export-csv="csv">
 	    	<tbody>
@@ -352,6 +356,8 @@ function img_upload(){
 
 	$image = imagecreatefromstring( file_get_contents( $temp_filename ) );
 
+    $image = autoRotateImage($image, $temp_filename);
+
 	$dimensions = getimagesize($temp_filename);
 
 	unlink( $temp_filename );
@@ -380,6 +386,24 @@ function img_upload(){
 
 	return false;
 
+}
+
+function autoRotateImage($image, $file) {
+	$exif = exif_read_data( $file );
+	if(!empty($exif['Orientation'])) {
+	    switch($exif['Orientation']) {
+	        case 8:
+	            $image = imagerotate($image,90,0);
+	            break;
+	        case 3:
+	            $image = imagerotate($image,180,0);
+	            break;
+	        case 6:
+	            $image = imagerotate($image,-90,0);
+	            break;
+	    }
+	}
+	return $image;
 }
 
 function user_approval_status(){
