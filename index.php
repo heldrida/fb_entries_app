@@ -12,7 +12,7 @@
         <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, minimum-scale=
 1.0, maximum-scale=1">
 
-        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
+        <link rel="stylesheet" href="css/pure-0.3.0-min.css">
         <link rel="stylesheet" href="css/normalize.min.css">
         <link href='fonts/font-face.css' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/main.css">
