@@ -965,7 +965,9 @@ button.your_face {
   top: 3px;
   width: 30px;
 }
-
+#myImg {
+  width: 100%;
+}
 
 /* custom animations */
 @-webkit-keyframes vanish_longer {
