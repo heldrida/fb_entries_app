@@ -167,6 +167,8 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 			
 			$rootScope.isViewLoading = false;
 
+			FB.Canvas.setSize({ height: $('main').height() });
+
 		}, 1000);
 
 	});
