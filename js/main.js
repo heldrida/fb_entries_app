@@ -159,8 +159,13 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 
 		};
 
-		window.parent.$("body").animate({scrollTop:0}, 'slow');
-		
+		//window.parent.$("body").animate({scrollTop:0}, 'slow');
+		if ( document.referrer.toLowerCase().indexOf('facebook') > -1 ) {
+			console.log("document.referrer");
+			console.log(document.referrer);
+			$('html').css('overflow', 'hidden');
+		};
+
 	});
 
 	$rootScope.$on('$stateChangeSuccess', function(){
