@@ -468,6 +468,9 @@ button.space:hover {
     margin-right: 25px;
     width: 198px;
 }
+.row-enter-your-face .photo > img {
+  max-width: 100%;
+}
 .row-enter-your-face .myForm {
     margin: 0 auto;
     width: 535px;
