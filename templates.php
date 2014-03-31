@@ -288,7 +288,7 @@ OPERATOR: (1) This competition is operated by Cott Beverages Limited (Cott) of C
 
     <div class="bg"></div>
 
-    <table id="countdown">
+    <table id="countdown" my-clock>
         <thead class="text-shadow-soft">
             <tr>
                 <td>days</td>
