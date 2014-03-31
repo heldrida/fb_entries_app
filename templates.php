@@ -60,7 +60,7 @@
             <div class="col col-a">
 
                 <div class="photo" ng-show="use_profile_photo == true">
-                    <img ng-src="http://graph.facebook.com/{{fb_like.data.id}}/picture?width=300&height=300" />
+                    <img ng-src="//graph.facebook.com/{{fb_like.data.id}}/picture?width=300&height=300" />
                 </div>
 
                 <div id="avatar" ng-if="avatar != ''" style="" ng-show="use_profile_photo == false">
