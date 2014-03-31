@@ -356,7 +356,7 @@ function img_upload(){
 
 	$image = imagecreatefromstring( file_get_contents( $temp_filename ) );
 
-    $image = autoRotateImage($image, $temp_filename);
+    //$image = autoRotateImage($image, $temp_filename);
 
 	$dimensions = getimagesize($temp_filename);
 
