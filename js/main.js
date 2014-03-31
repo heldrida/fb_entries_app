@@ -160,11 +160,8 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 		};
 
 		//window.parent.$("body").animate({scrollTop:0}, 'slow');
-		if ( document.documentElement.className.indexOf('_fb_') > -1 ) {
-			console.log("document.documentElement.className");
-			console.log(document.documentElement.className);
+		if(window.name.indexOf('iframe_canvas_fb') != -1){
 			$('html, body').css('overflow', 'hidden');
-			//document.body.style.overflow = "hidden";
 		};
 
 	});
