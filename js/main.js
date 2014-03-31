@@ -918,50 +918,7 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 .directive('myClock', function(){
 	return {
 		link: function(scope, elem, attrs, ctrl){
-			// clock
-		    // set the date we're counting down to
-		    var target_date = new Date("May 31, 2014").getTime();
-		     
-		    // variables for time units
-		    var days, hours, minutes, seconds;
-		     
-
-		    // update the tag with id "countdown" every 1 second
-		    setInterval(function () {
-		     
-		        // find the amount of "seconds" between now and target
-		        var current_date = new Date().getTime();
-		        var seconds_left = (target_date - current_date) / 1000;
-		     
-		        // do some time calculations
-		        days = parseInt(seconds_left / 86400);
-		        seconds_left = seconds_left % 86400;
-		         
-		        hours = parseInt(seconds_left / 3600);
-		        seconds_left = seconds_left % 3600;
-		         
-		        minutes = parseInt(seconds_left / 60);
-		        seconds = parseInt(seconds_left % 60);
-		         
-		        function getPrefix(x){
-		            
-		            if (x < 10) {
-		                x = "0" + x;
-		            };
-
-		            return x;
-		        };
-
-
-				console.log( " $('#countdown span.days')"  );
-				console.log($('#countdown span.days'));
-
-		        $('#countdown span.days').text( getPrefix(days) );
-		        $('#countdown span.hours').text( getPrefix(hours) );
-		        $('#countdown span.minutes').text( getPrefix(minutes) );
-		        $('#countdown span.seconds').text( getPrefix(seconds) );
-
-		    }, 1000);
+			// move clock here
 		}
 	}
 });
