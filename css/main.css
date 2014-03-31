@@ -353,6 +353,9 @@ button.space:hover {
     text-decoration: none;
     text-transform: uppercase;
 }
+.row-footer a.here {
+  text-transform: none;
+}
 .row-footer p {
     text-align: center;
     font-size: 1.6em;
