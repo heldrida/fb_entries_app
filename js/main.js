@@ -163,7 +163,7 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 		if ( document.documentElement.className.indexOf('_fb_') > -1 ) {
 			console.log("document.documentElement.className");
 			console.log(document.documentElement.className);
-			$('html').css('overflow', 'hidden');
+			$('html, body').css('overflow', 'hidden');
 		};
 
 	});
