@@ -1232,10 +1232,10 @@ button.your_face {
   width: 35px;
 }
 #photo-instructions .non-ie {
-  display: none !important;
+  display: block !important;
 }
 #photo-instructions .ie {
-  display: block !important;
+  display: none !important;
 }
 
 

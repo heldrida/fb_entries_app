@@ -388,7 +388,7 @@ function img_upload(){
 
 }
 
-function autoRotateImage($image, $file) {
+function autoRotateImageExifImplementation($image, $file) {
 	$exif = exif_read_data( $file );
 	if(!empty($exif['Orientation'])) {
 	    switch($exif['Orientation']) {
