@@ -266,7 +266,8 @@ function save_user_profile_picture(){
 
 	$filename = md5( time() . $original ) . ".jpg";
 
-	$ch = curl_init( $_POST['user_profile_picture'] );
+	$user_profile_picture = str_replace( "https", "http", strtolower( $_POST['user_profile_picture'] ) );
+	$ch = curl_init( $user_profile_picture );
 	$fp = fopen( $path . "/" . $filename, 'wb');
 	curl_setopt($ch, CURLOPT_FILE, $fp);
 	curl_setopt($ch, CURLOPT_HEADER, 0);

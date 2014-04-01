@@ -412,7 +412,7 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 .controller('uploadPhotoCtrl', function($scope, $http, $FB, mySettings, $q) {
 
 	function getFacebookProfilePhoto(){
-		return "http://graph.facebook.com/" + $scope.$parent.fb_like.data.id + "/picture?width=300&height=300";
+		return "https://graph.facebook.com/" + $scope.$parent.fb_like.data.id + "/picture?width=300&height=300";
 	};
 
 	$scope.user = {
