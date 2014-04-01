@@ -416,6 +416,10 @@ function autoRotateImagePelImplementation($image, $file) {
 
 	$exif = $jpeg->getExif();
 
+	if(empty($exif)) {
+		return $image;
+	};
+
 	$tiff = $exif->getTiff();
 
 	$ifd0 = $tiff->getIfd();
