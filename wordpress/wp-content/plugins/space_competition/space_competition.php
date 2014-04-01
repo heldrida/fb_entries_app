@@ -316,7 +316,7 @@ function new_entry(){
 		$sql = $wpdb->prepare( 
 					$sql,
 					$_POST['fb_profile_uid'],
-					$_POST['full_name'],
+					stripslashes_deep( $_POST['full_name'] ),
 					$birthday,
 					$_POST['email'],
 					$_POST['telephone'],
