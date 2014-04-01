@@ -55,13 +55,14 @@ function my_plugin_page(){
 
     $title = "<h2>Space Competition Manager</h2>";
 
-    $options = "<div id=\"space-comp-params\">
-    	<label>Youtube video:</label>
-    	<input name='youtube_video' value='' />
+    $options = "<form id=\"space-comp-params\" ng-controller=\"optionsCtrl\" ng-submit=\"submit()\">
+    	<label>Youtube Hash <span>(empty to disable)</span></label>
+    	<input name='youtube_video' ng-model=\"options.youtube_video\" />
     	<br />
-    	<label>End date:</label>
-    	<input name='competition_end_date' value='' />
-    </div>";
+    	<label>End date: <span>(dd/mm/yyyy)</span></label>
+		<input name=\"end_date\" type='text' ng-model='options.end_date'  />
+		<button class=\"my_save_options\">Save options</button>
+    </form>";
 
     $tbl = '
     	<table ng-table="tableParams" class="table" export-csv="csv">
@@ -96,7 +97,7 @@ function my_plugin_page(){
 		<a class="export-csv btn btn-primary" ng-mousedown="csv.generate()" ng-href="{{ csv.link() }}" download="test.csv">Export to CSV</a>
     	';
 
-	echo my_wrapper("<div class='wrap'>".$title.$tbl."</div>");
+	echo my_wrapper("<div class='wrap'>".$title.$options.$tbl."</div>");
 
 }
 
@@ -467,6 +468,38 @@ function user_approval_status(){
 
 }
 
+function my_options(){
+
+	if (isset($_POST['save_option_name']) && $_POST['save_option_name'] == "my_competition_options") {
+
+		update_option( "my_competition_options", array(
+			"youtube_video" => str_replace( "http://youtu.be/", "", $_POST["youtube_video"] ),
+			"end_date" => $_POST["end_date"]
+		) );
+
+		$data = get_option( "my_competition_options" );
+		$date = $data["end_date"];
+
+		echo json_encode( array( 
+			"end_date" => $date,
+			"youtube_video" => $data["youtube_video"] 
+		  ) 
+		);
+
+	} elseif (isset($_POST['get_option_name']) && $_POST['get_option_name'] == "my_competition_options") {
+
+		$data = get_option( "my_competition_options" );
+		$date = $data["end_date"];
+
+		echo json_encode( array( 
+			"end_date" => $date,
+			"youtube_video" => $data["youtube_video"] 
+		  ) 
+		);
+	};
+
+}
+
 function space_competition_callback(){
 
 	if ( !isset($_POST['option']) ){
@@ -508,6 +541,12 @@ function space_competition_callback(){
 		case 'user_approval_status':
 
 			user_approval_status();
+
+		break;
+
+		case 'my_options':
+
+			my_options();
 
 		break;
 
@@ -577,6 +616,8 @@ function styles_enqueue() {
     wp_enqueue_script( 'angularjs-ngtable', '//cdn.jsdelivr.net/angular.ngtable/0.3.1/ng-table.js' );
     wp_enqueue_script( 'angularjs-ngtblexport', plugins_url('ng-table-export.js', __FILE__) );
 	wp_enqueue_script( 'angularjs-mysettings', '../../js/mysettings.js' );
+	wp_enqueue_script( 'ui-bootstrap-datepicker', '../../js/vendor/ui-bootstrap-custom/ui-bootstrap-custom-0.10.0.min.js' );
+	wp_enqueue_script( 'ui-bootstrap-datepicker-tpls', '../../js/vendor/ui-bootstrap-custom/ui-bootstrap-custom-tpls-0.10.0.min.js' );
     wp_enqueue_script( 'space_competition_script', plugins_url('main.js', __FILE__) );
 
 }
