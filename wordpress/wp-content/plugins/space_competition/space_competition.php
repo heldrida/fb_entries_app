@@ -56,7 +56,11 @@ function my_plugin_page(){
     $title = "<h2>Space Competition Manager</h2>";
 
     $options = "<div id=\"space-comp-params\">
-    	<label></label>
+    	<label>Youtube video:</label>
+    	<input name='youtube_video' value='' />
+    	<br />
+    	<label>End date:</label>
+    	<input name='competition_end_date' value='' />
     </div>";
 
     $tbl = '

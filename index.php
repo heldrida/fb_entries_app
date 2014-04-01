@@ -69,7 +69,7 @@
                             <a href="#/entries">entries</a>
                         </li>
                         <li class="txt-a opt opt-tncs" ng-class="isActive('/terms-and-conditions')">
-                            <a href="#/terms-and-conditions">t's&amp;c's</a>
+                            <a href="#/terms-and-conditions">t&amp;c'<small>s</small></a>
                         </li>
                     </ul>
 
@@ -90,7 +90,7 @@
                             <a href="#/entries">entries</a>
                         </li>
                         <li class="txt-a opt" ng-class="isActive('/terms-and-conditions')">
-                            <a href="#/terms-and-conditions">t's&amp;c's</a>
+                            <a href="#/terms-and-conditions">t&amp;c'<small>s</small></a>
                         </li>
                     </ul>
                 </nav>
