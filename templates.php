@@ -284,7 +284,7 @@ OPERATOR: (1) This competition is operated by Cott Beverages Limited (Cott) of C
     </div>
 </div>
 
-<div class="row row-b row-countdown font-gothic">
+<div class="row row-b row-countdown font-gothic" ng-controller="clockCtrl">
 
     <div class="bg"></div>
 
@@ -331,11 +331,11 @@ OPERATOR: (1) This competition is operated by Cott Beverages Limited (Cott) of C
 
 </div>
 
-<div class="row row-b row-video font-gothic" my-youtube-video>
+<div class="row row-b row-video font-gothic" ng-controller="videoCtrl" ng-show="hasVideo">
     
     <p class="check-cowboy text-shadow-soft">check out this "space cowboy"</p>
     
-    <iframe width="586" height="356" src="//www.youtube.com/embed/Y-rFT-uHm4w?rel=0" frameborder="0" allowfullscreen></iframe>
+    <iframe width="586" height="356" ng-src="{{ youtube_video }}" frameborder="0" allowfullscreen></iframe>
 
 </div>
 

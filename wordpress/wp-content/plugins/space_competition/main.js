@@ -1,4 +1,4 @@
-angular.module('SpaceCompetitionManager', ['ngTable','ngTableExport', 'mySettings'])
+angular.module('SpaceCompetitionManager', ['ngTable','ngTableExport', 'mySettings', 'ui.bootstrap'])
 
 .controller('listCtrl', function($scope, ngTableParams, $filter, mySettings){
 
@@ -88,5 +88,55 @@ angular.module('SpaceCompetitionManager', ['ngTable','ngTableExport', 'mySetting
 		return Math.abs(ageDate.getUTCFullYear() - 1970);
 
     };
+
+})
+
+.controller("optionsCtrl", function($scope, mySettings){
+	
+	jQuery.post(
+		mySettings.wp_base_path + '/wp-admin/admin-ajax.php?action=space_competition',
+		{
+			option: "my_options",
+			get_option_name: "my_competition_options" 
+		},
+		function( data ){
+
+			data = JSON.parse(data);
+
+			$scope.$apply(function(){
+
+				$scope.options = {
+					youtube_video: data.youtube_video,
+					end_date: data.end_date
+				};
+
+			});
+
+	});
+
+	$scope.submit = function(){
+
+			$scope.options.option = "my_options";
+			$scope.options.save_option_name = 'my_competition_options';
+
+			jQuery.post(
+				mySettings.wp_base_path + '/wp-admin/admin-ajax.php?action=space_competition',
+				$scope.options,
+				function( data ){
+
+					data = JSON.parse(data);
+
+					$scope.$apply(function(){
+
+						$scope.options = {
+							youtube_video: data.youtube_video,
+							end_date: data.end_date
+						};
+
+					});
+
+			});
+
+	};
 
 });
