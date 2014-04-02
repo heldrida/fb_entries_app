@@ -364,7 +364,7 @@ OPERATOR: (1) This competition is operated by Cott Beverages Limited (Cott) of C
         <img src="img/planet_blue.png" />
     </div>
     
-    <button class="space" ng-click="navigateTo('enter-your-face')">enter now!</button>
+    <button class="space font-gothic" ng-click="navigateTo('enter-your-face')">enter now!</button>
 
 </div>
 
