@@ -716,7 +716,7 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 			data = JSON.parse(data);
 
 			deferred.resolve({
-				youtube_video: data.youtube_video != undefined && data.youtube_video != "" ? "http://www.youtube.com/embed/" + data.youtube_video : "",
+				youtube_video: data.youtube_video != undefined && data.youtube_video != "" ? "//www.youtube.com/embed/" + data.youtube_video : "",
 				end_date: data.end_date
 			});
 
