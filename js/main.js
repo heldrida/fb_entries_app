@@ -145,7 +145,8 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 
 		$sceDelegateProvider.resourceUrlWhitelist([
 			'self',
-			"http://www.youtube.com/embed/**"
+			"http://www.youtube.com/embed/**",
+			"https://www.youtube.com/embed/**"
 		]);
 })
 
