@@ -5,15 +5,31 @@ current_branch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
 
 if [[ $current_branch = $protected_branch ]]; then
     
-  # backup db and uploads files to development
-  DEVELOPMENT_WP_URL="emergespace\.magnolia\.thelatenightsalon\.co\.uk\/wordpress";
-  PRODUCTION_WP_URL="tlnscompetitions\.co\.uk\/emerge_space\/wordpress";
-  DB_LOCAL_NAME="emerge_space";
-  DB_PRODUCTION_NAME="tlnscomp_emergespace";
-  NOW=$(date +"%Y%m%d%H%M");
-  DB_FILENAME="production-emerge_space-$NOW.sql";
-  PATH_DEV="/var/www/emerge_space"; 
-  PATH_PRODUCTION="/home/tlnscomp/www/emerge_space";
+  if [ "$HOSTNAME" = magnolia ]; then
+      
+      # backup db and uploads files to development
+      DEVELOPMENT_WP_URL="emergespace\.magnolia\.thelatenightsalon\.co\.uk\/wordpress";
+      PRODUCTION_WP_URL="tlnscompetitions\.co\.uk\/emerge_space\/wordpress";
+      DB_LOCAL_NAME="emerge_space";
+      DB_PRODUCTION_NAME="tlnscomp_emergespace";
+      NOW=$(date +"%Y%m%d%H%M");
+      DB_FILENAME="production-emerge_space-$NOW.sql";
+      PATH_DEV="/var/www/emerge_space"; 
+      PATH_PRODUCTION="/home/tlnscomp/www/emerge_space";
+
+  elif [ "$HOSTNAME" = foo ]; then
+  
+      # backup db and uploads files to development
+      DEVELOPMENT_WP_URL="emerge_space_fb_app\.utopia\.happyendingagency\.co\.uk\/wordpress";
+      PRODUCTION_WP_URL="tlnscompetitions\.co\.uk\/emerge_space\/wordpress";
+      DB_LOCAL_NAME="emerge_space";
+      DB_PRODUCTION_NAME="tlnscomp_emergespace";
+      NOW=$(date +"%Y%m%d%H%M");
+      DB_FILENAME="production-emerge_space-$NOW.sql";
+      PATH_DEV="/var/www/emerge_space_fb_app"; 
+      PATH_PRODUCTION="/home/tlnscomp/www/emerge_space";
+  
+  fi
 
   # dump production db to temp
   ssh root@tlnscompetitions.co.uk "mysqldump $DB_PRODUCTION_NAME > $PATH_PRODUCTION/tmp/$DB_FILENAME && exit";
