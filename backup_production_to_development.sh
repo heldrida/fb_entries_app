@@ -17,7 +17,7 @@ if [[ $current_branch = $protected_branch ]]; then
       PATH_DEV="/var/www/emerge_space"; 
       PATH_PRODUCTION="/home/tlnscomp/www/emerge_space";
 
-  elif [ "$HOSTNAME" = foo ]; then
+  elif [ "$HOSTNAME" = happyending.dev ]; then
   
       # backup db and uploads files to development
       DEVELOPMENT_WP_URL="emerge_space_fb_app\.utopia\.happyendingagency\.co\.uk\/wordpress";
