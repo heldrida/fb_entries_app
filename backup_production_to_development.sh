@@ -16,6 +16,8 @@ if [[ $current_branch = $protected_branch ]]; then
       DB_FILENAME="production-emerge_space-$NOW.sql";
       PATH_DEV="/var/www/emerge_space"; 
       PATH_PRODUCTION="/home/tlnscomp/www/emerge_space";
+      DEV_DB_USER="root"
+      DEV_DB_PW="root"
 
   elif [ "$HOSTNAME" = happyending.dev ]; then
   
@@ -28,7 +30,9 @@ if [[ $current_branch = $protected_branch ]]; then
       DB_FILENAME="production-emerge_space-$NOW.sql";
       PATH_DEV="/var/www/emerge_space_fb_app"; 
       PATH_PRODUCTION="/home/tlnscomp/www/emerge_space";
-  
+      DEV_DB_USER="happy"
+      DEV_DB_PW="43xz)G^1z"
+
   fi
 
   # dump production db to temp
@@ -44,7 +48,7 @@ if [[ $current_branch = $protected_branch ]]; then
   sed -i "s/$PRODUCTION_WP_URL/$DEVELOPMENT_WP_URL/g" $PATH_DEV/tmp/latest.sql;
   
   # update development database with latest copy
-  mysql -uroot -proot -e "drop database if exists $DB_LOCAL_NAME; create database if not exists $DB_LOCAL_NAME;" && mysql -uroot -proot $DB_LOCAL_NAME < $PATH_DEV/tmp/latest.sql;
+  mysql -u$DEV_DB_USER -p$DEV_DB_PW -e "drop database if exists $DB_LOCAL_NAME; create database if not exists $DB_LOCAL_NAME;" && mysql -u$DEV_DB_USER -p$DEV_DB_PW $DB_LOCAL_NAME < $PATH_DEV/tmp/latest.sql;
   
   # save binary files to development environment
   rsync -va root@tlnscompetitions.co.uk:$PATH_PRODUCTION/wordpress/wp-content/plugins/space_competition/uploads/ $PATH_DEV/wordpress/wp-content/plugins/space_competition/uploads/ --progress;
