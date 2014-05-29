@@ -37,8 +37,6 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 
 				            if (rows.length == 1 && rows[0].uid == user_id) {
 
-				            	console.log("user connected true, fb like is true");
-
 								deferred.resolve({
 									connected: true,
 									status: true,
@@ -46,8 +44,6 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 								});
 				            
 				            } else {
-
-				            	console.log("user connected true, fb like is false");
 
 								deferred.resolve({
 									connected: true,
@@ -62,8 +58,6 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 					});
 
 			    } else {
-
-				    console.log("user connected false, fb like is false");
 
 					deferred.resolve({
 						connected: false,
@@ -108,8 +102,6 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 						mySettings.wp_base_path + '/wp-admin/admin-ajax.php?action=space_competition',
 						{ option: "approved_entries" },
 						function( data ){
-
-							console.log("approved_entries data: " + data);
 
 							data = JSON.parse(data);
 							
@@ -165,7 +157,6 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 		};
 
 		//window.parent.$("body").animate({scrollTop:0}, 'slow');
-		console.log(window.name);
 		if(window.name.indexOf('app_runner_fb') > -1){
 			$('html, body').css('overflow', 'hidden');
 		};
@@ -257,8 +248,6 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 		
 					data = JSON.parse(data);
 					
-					console.log(data);
-
 					if ( typeof data === "object" ) {
 					
 						$scope.$apply(function(){
@@ -266,9 +255,6 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 							$scope.template_data.success_page = false;
 							$scope.template_data.approval_process = true;
 							$scope.template_data.approval_status = data[0].approved === "1" ? true : false;
-							
-							console.log("approved");
-							console.log(data.approved);
 
 							$scope.entry = data[0];
 
@@ -343,8 +329,6 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 
 					    if (rows.length == 1 && rows[0].uid == user_id) {
 
-			            	console.log("user connected true, fb like is true");
-
 							$scope.fb_like = {
 								connected: true,
 								status: true,
@@ -352,8 +336,6 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 							};
 					    
 					    } else {
-
-			            	console.log("user connected true, fb like is false");
 
 							$scope.fb_like = {
 								connected: true,
@@ -369,8 +351,6 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 
 
 			} else {
-
-			    console.log("user connected false, fb like is false");
 
 				$scope.fb_like = {
 					connected: false,
@@ -442,11 +422,7 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 
 	$scope.submit = function(){
 
-		console.log("scope.user");
-		console.log($scope.user);
-
 		if ( ! $scope.myForm.$valid || lock) {
-			console.log("Form not valid!");
 			lock = false;
 			return;
 		};
@@ -467,16 +443,10 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 		
 		deferred.promise.then(function(){
 
-			console.log("$scope.user"); 
-			console.log(JSON.stringify( $scope.user.crop ) );
-		
 			$.post(
 				mySettings.wp_base_path + '/wp-admin/admin-ajax.php?action=space_competition',
 				$scope.user,
 				function( data ){
-					
-					console.log("data:");
-					console.log(data);
 
 					data = JSON.parse(data);
 
@@ -512,9 +482,6 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 		var max_chars = 150;
 
 		if ( $scope.user.description === undefined ) {
-				
-			console.log("$scope.user.description");
-			console.log($scope.user.description);
 
 			return "0";
 	
@@ -552,15 +519,11 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 
 .controller('entriesCtrl', function($scope, myEntries, mySettings){
 
-	console.log("entries ctrl");
-
 	$scope.entries = myEntries;
 
 	$scope.wp_base_path = mySettings.wp_base_path;
 
 	$scope.page = $scope.page || 1;
-	
-	console.log("scope.page: " + $scope.page);
 
 	$scope.load_more = function(){
 
@@ -572,10 +535,6 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 			function( data ){
 
 				data = JSON.parse(data);
-
-				console.log(" $scope.page " +  JSON.stringify( $scope.page ) );
-				console.log("approved_entries data: " + JSON.stringify( data ) );
-
 
 				if ( !data ){
 					
@@ -619,8 +578,6 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 		        	duration: 1.2 
 		        }, function(){
 
-		        	console.log("loadmore animo callback!"); 
-		        	
 		        	pushData();
 
 		        });
@@ -812,19 +769,6 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 				height: parseInt( $('#avatar').css('width') )
 			};
 
-			console.log(JSON.stringify( scope.$parent.user.crop ) );
-
-
-			//user_scope.crop.deg = deg;
-
-			/*
-		    $('input[name="img_crop_scale"]').val(scale);
-		    $('input[name="img_crop_pos_x"]').val(posX);
-		    $('input[name="img_crop_pos_y"]').val(posY);
-		    $('input[name="img_crop_deg"]').val(rotation);
-
-			$('input[name="img_crop_width"], input[name="img_crop_height"]').val( parseInt( $('#avatar').css('width') ) );
-			*/
 		};
 
         //scope.$on('$destroy', rmImage);
@@ -871,12 +815,10 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 
 			ctrl.$parsers.unshift(function(viewValue) {
 				viewValue = _calculateAge(viewValue);
-				console.log("calculateAge viewValue: " + viewValue);
+				
 				if (viewValue >= min_age && viewValue <= max_age) {
-					console.log("age is valid");
 					ctrl.$setValidity('age', true);
 				} else {
-					console.log("age is not valid!");
 					ctrl.$setValidity('age', false);
 				}
 			});
@@ -972,9 +914,6 @@ angular.module("emerge_space", ['ui.router', 'jqform', 'ezfb', 'ngAnimate', 'myS
 			    elemRect.style.webkitTransform = transform;
 
 				scope.$parent.user.crop.scale = scale;
-
-				console.log(JSON.stringify( scope.$parent.user.crop ) );
-
 
 			});
 
