@@ -22,12 +22,20 @@ if ( strpos($_SERVER['HTTP_HOST'],'tlnscompetitions') >-1 ) {
 					"DB_PASSWORD" => "XW6lQ@LB]Qw)"
 				);
 
-} else {
+} else if ( strpos($_SERVER['HTTP_HOST'],'magnolia') >-1 ) {
 
 	$myparams = array(
 					"DB_NAME" => "emerge_space",
 					"DB_USER" => "root",
 					"DB_PASSWORD" => "root"
+				);
+
+} else if ( strpos($_SERVER['HTTP_HOST'],'happyending') >-1 ) {
+
+	$myparams = array(
+					"DB_NAME" => "emerge_space",
+					"DB_USER" => "happy",
+					"DB_PASSWORD" => "43xz)G^1z"
 				);
 
 };
