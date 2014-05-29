@@ -1,8 +1,0 @@
-2:34:11 | Pack: colorsplash, start download pack from: 0
-2:34:11 | PacksDownloadManager error: java.lang.NullPointerException
-10:7:54 | user provided a code()
-3:22:26 | FileIOException in write2file, path: file:///SDCard/BlackBerry/camera/IMG-20130812-00242_1376317269875_n.jpg code: 8 message: File not found
-10:43:13 | Share file error: net.rim.device.api.system.ControlledAccessException
-4:51:1 | Share file error: net.rim.device.api.system.ControlledAccessException
-0:35:39 | Share file error: net.rim.device.api.system.ControlledAccessException
-6:49:32 | Share file error: net.rim.device.api.system.ControlledAccessException
